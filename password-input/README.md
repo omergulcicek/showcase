@@ -1,6 +1,6 @@
 ## @omergulcicek/password-input documentation
 
-Interactive documentation and demo site for the [@omergulcicek/forms](https://www.npmjs.com/package/@omergulcicek/password-input) npm package.
+Interactive documentation and demo site for the [@omergulcicek/password-input](https://www.npmjs.com/package/@omergulcicek/password-input) npm package.
 
 ### About
 
