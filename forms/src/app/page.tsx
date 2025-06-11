@@ -18,7 +18,18 @@ export default function Home() {
   const form = useForm();
   const registerWithMask = useHookFormMask(form.register);
 
-  const formFields = useFormFields({
+  const {
+    cardNumber,
+    expiryDate,
+    cvv,
+    tckn,
+    phone,
+    email,
+    url,
+    alpha,
+    password,
+    text,
+  } = useFormFields({
     fields: [
       { name: "cardNumber", type: "cardNumber" },
       { name: "expiryDate", type: "expiryDate" },
@@ -32,7 +43,7 @@ export default function Home() {
       { name: "text", type: "text" },
     ],
     registerWithMask,
-    register: form.register,
+    form,
   });
 
   const handleSubmit = (data: Record<string, unknown>) => {
@@ -141,7 +152,7 @@ export default function Home() {
                     Card Number
                   </Label>
                   <input
-                    {...formFields.cardNumber}
+                    {...cardNumber}
                     id="masked-card"
                     placeholder="**** **** **** ****"
                     className="w-full h-9 px-3 border border-gray-200"
@@ -152,7 +163,7 @@ export default function Home() {
                     Phone
                   </Label>
                   <input
-                    {...formFields.phone}
+                    {...phone}
                     id="masked-phone"
                     placeholder="(5xx) xxx xx xx"
                     className="w-full h-9 px-3 border border-gray-200"
@@ -163,7 +174,7 @@ export default function Home() {
                     Turkish ID
                   </Label>
                   <input
-                    {...formFields.tckn}
+                    {...tckn}
                     id="masked-tckn"
                     placeholder="12345678950"
                     className="w-full h-9 px-3 border border-gray-200"
@@ -197,7 +208,7 @@ export default function Home() {
                     Card Number
                   </Label>
                   <Input
-                    {...formFields.cardNumber}
+                    {...cardNumber}
                     id="shadcn-card"
                     placeholder="**** **** **** ****"
                     className="h-9 text-sm"
@@ -208,7 +219,7 @@ export default function Home() {
                     Phone
                   </Label>
                   <Input
-                    {...formFields.phone}
+                    {...phone}
                     id="shadcn-phone"
                     placeholder="(5xx) xxx xx xx"
                     className="h-9 text-sm"
@@ -219,7 +230,7 @@ export default function Home() {
                     Turkish ID
                   </Label>
                   <Input
-                    {...formFields.tckn}
+                    {...tckn}
                     id="shadcn-tckn"
                     placeholder="12345678950"
                     className="h-9 text-sm"
@@ -261,7 +272,7 @@ export default function Home() {
                       Card Number
                     </Label>
                     <Input
-                      {...formFields.cardNumber}
+                      {...cardNumber}
                       id="payment-card"
                       placeholder="**** **** **** ****"
                       className="h-9 text-sm"
@@ -273,7 +284,7 @@ export default function Home() {
                         Expiry Date
                       </Label>
                       <Input
-                        {...formFields.expiryDate}
+                        {...expiryDate}
                         id="expiry"
                         placeholder="MM/YY"
                         className="h-9 text-sm"
@@ -283,8 +294,26 @@ export default function Home() {
                       <Label htmlFor="cvv" className="text-xs font-medium">
                         CVV
                       </Label>
-                      <Input {...formFields.cvv} id="cvv" placeholder="***" />
+                      <Input {...cvv} id="cvv" placeholder="***" />
                     </div>
+                  </div>
+                  <div className="space-y-1">
+                    <h4 className="my-2 font-medium">Form fields values</h4>
+                    <p className="text-xs text-gray-500">
+                      <span>Card Number: {cardNumber.value}</span>
+                      <br />
+                      <span>Card Number Masked: {cardNumber.maskedValue}</span>
+                    </p>
+                    <p className="text-xs text-gray-500">
+                      <span>Expiry Date: {expiryDate.value}</span>
+                      <br />
+                      <span>Expiry Date Masked: {expiryDate.maskedValue}</span>
+                    </p>
+                    <p className="text-xs text-gray-500">
+                      <span>CVV: {cvv.value}</span>
+                      <br />
+                      <span>CVV Masked: {cvv.maskedValue}</span>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -300,7 +329,7 @@ export default function Home() {
                       Name (Letters Only)
                     </Label>
                     <Input
-                      {...formFields.alpha}
+                      {...alpha}
                       id="name-field"
                       placeholder="Ömer Gülçiçek"
                       className="h-9 text-sm"
@@ -311,7 +340,7 @@ export default function Home() {
                       🇹🇷 Turkish ID
                     </Label>
                     <Input
-                      {...formFields.tckn}
+                      {...tckn}
                       id="turkish-id"
                       placeholder="12345678950"
                       className="h-9 text-sm"
@@ -322,7 +351,7 @@ export default function Home() {
                       Phone
                     </Label>
                     <Input
-                      {...formFields.phone}
+                      {...phone}
                       id="mobile"
                       placeholder="(5xx) xxx xx xx"
                       className="h-9 text-sm"
@@ -336,7 +365,7 @@ export default function Home() {
                       Email
                     </Label>
                     <Input
-                      {...formFields.email}
+                      {...email}
                       id="email-field"
                       placeholder="email@example.com"
                       className="h-9 text-sm"
@@ -347,7 +376,7 @@ export default function Home() {
                       Website
                     </Label>
                     <Input
-                      {...formFields.url}
+                      {...url}
                       id="website"
                       placeholder="https://example.com"
                       className="h-9 text-sm"
@@ -361,7 +390,7 @@ export default function Home() {
                       Password
                     </Label>
                     <Input
-                      {...formFields.password}
+                      {...password}
                       id="password-field"
                       type="password"
                       placeholder="••••••••"
@@ -373,7 +402,7 @@ export default function Home() {
                       Details
                     </Label>
                     <Input
-                      {...formFields.text}
+                      {...details}
                       id="details"
                       placeholder="Additional information..."
                       className="h-9 text-sm"
@@ -460,7 +489,7 @@ export default function PaymentForm() {
       { name: "phone", type: "phone" }
     ],
     registerWithMask,
-    register: form.register
+    form
   })
 
   const handleSubmit = (data: Record<string, unknown>) => {
