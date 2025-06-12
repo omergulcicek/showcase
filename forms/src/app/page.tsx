@@ -28,7 +28,6 @@ export default function Home() {
     url,
     alpha,
     password,
-    text,
   } = useFormFields({
     fields: [
       { name: "cardNumber", type: "cardNumber" },
@@ -40,7 +39,6 @@ export default function Home() {
       { name: "url", type: "url" },
       { name: "alpha", type: "alpha" },
       { name: "password", type: "password" },
-      { name: "text", type: "text" },
     ],
     registerWithMask,
     form,
@@ -394,17 +392,6 @@ export default function Home() {
                       id="password-field"
                       type="password"
                       placeholder="••••••••"
-                      className="h-9 text-sm"
-                    />
-                  </div>
-                  <div className="space-y-1">
-                    <Label htmlFor="details" className="text-xs font-medium">
-                      Details
-                    </Label>
-                    <Input
-                      {...details}
-                      id="details"
-                      placeholder="Additional information..."
                       className="h-9 text-sm"
                     />
                   </div>
