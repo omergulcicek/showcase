@@ -20,10 +20,16 @@ export default function Home() {
 
   const {
     cardNumber,
+    maskedCard,
+    paymentCard,
     expiryDate,
     cvv,
     tckn,
+    tckn2,
+    tckn3,
     phone,
+    maskedPhone,
+    maskedPhone2,
     email,
     url,
     alpha,
@@ -31,10 +37,16 @@ export default function Home() {
   } = useFormFields({
     fields: [
       { name: "cardNumber", type: "cardNumber" },
+      { name: "maskedCard", type: "cardNumber" },
+      { name: "paymentCard", type: "cardNumber" },
       { name: "expiryDate", type: "expiryDate" },
       { name: "cvv", type: "cvv" },
       { name: "tckn", type: "tckn" },
+      { name: "tckn2", type: "tckn" },
+      { name: "tckn3", type: "tckn" },
       { name: "phone", type: "phone" },
+      { name: "maskedPhone", type: "phone" },
+      { name: "maskedPhone2", type: "phone" },
       { name: "email", type: "email" },
       { name: "url", type: "url" },
       { name: "alpha", type: "alpha" },
@@ -150,7 +162,7 @@ export default function Home() {
                     Card Number
                   </Label>
                   <input
-                    {...cardNumber}
+                    {...maskedCard}
                     id="masked-card"
                     placeholder="**** **** **** ****"
                     className="w-full h-9 px-3 border border-gray-200"
@@ -161,7 +173,7 @@ export default function Home() {
                     Phone
                   </Label>
                   <input
-                    {...phone}
+                    {...maskedPhone}
                     id="masked-phone"
                     placeholder="(5xx) xxx xx xx"
                     className="w-full h-9 px-3 border border-gray-200"
@@ -172,7 +184,7 @@ export default function Home() {
                     Turkish ID
                   </Label>
                   <input
-                    {...tckn}
+                    {...tckn2}
                     id="masked-tckn"
                     placeholder="12345678950"
                     className="w-full h-9 px-3 border border-gray-200"
@@ -209,7 +221,6 @@ export default function Home() {
                     {...cardNumber}
                     id="shadcn-card"
                     placeholder="**** **** **** ****"
-                    className="h-9 text-sm"
                   />
                 </div>
                 <div className="space-y-1">
@@ -217,7 +228,7 @@ export default function Home() {
                     Phone
                   </Label>
                   <Input
-                    {...phone}
+                    {...maskedPhone2}
                     id="shadcn-phone"
                     placeholder="(5xx) xxx xx xx"
                     className="h-9 text-sm"
@@ -228,7 +239,7 @@ export default function Home() {
                     Turkish ID
                   </Label>
                   <Input
-                    {...tckn}
+                    {...tckn3}
                     id="shadcn-tckn"
                     placeholder="12345678950"
                     className="h-9 text-sm"
@@ -270,10 +281,9 @@ export default function Home() {
                       Card Number
                     </Label>
                     <Input
-                      {...cardNumber}
+                      {...paymentCard}
                       id="payment-card"
                       placeholder="**** **** **** ****"
-                      className="h-9 text-sm"
                     />
                   </div>
                   <div className="grid grid-cols-2 gap-3">
@@ -298,9 +308,9 @@ export default function Home() {
                   <div className="space-y-1">
                     <h4 className="my-2 font-medium">Form fields values</h4>
                     <p className="text-xs text-gray-500">
-                      <span>Card Number: {cardNumber.value}</span>
+                      <span>Card Number: {paymentCard.value}</span>
                       <br />
-                      <span>Card Number Masked: {cardNumber.maskedValue}</span>
+                      <span>Card Number Masked: {paymentCard.maskedValue}</span>
                     </p>
                     <p className="text-xs text-gray-500">
                       <span>Expiry Date: {expiryDate.value}</span>
