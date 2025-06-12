@@ -91,7 +91,6 @@ export default function Home() {
               <pre className="text-slate-700 dark:text-slate-300 whitespace-pre-wrap">{`"use client"
 
 import React from "react";
-import { House, Star } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
 import { usePasswordInput } from "@omergulcicek/password-input";
@@ -135,6 +134,7 @@ export default function Home() {
               <pre className="text-slate-700 dark:text-slate-300 whitespace-pre-wrap">{`"use client"
 
 import React from "react";
+import { House, Star } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
 import { usePasswordInput } from "@omergulcicek/password-input";
