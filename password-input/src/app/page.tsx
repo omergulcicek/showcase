@@ -126,7 +126,7 @@ export default function Example() {
           <div className="flex flex-col gap-6 mt-20">
             <div className="p-6 rounded-2xl border">
               <div className="flex items-center gap-3 mb-6">
-                <Code className="w-6 h-6 text-lavender-700" />
+                <Code className="w-6 h-6" />
                 <h2 className="text-lg font-semibold">Default Example</h2>
               </div>
               <div className="space-y-4">
@@ -162,7 +162,7 @@ return (
 
             <div className="p-6 rounded-2xl border">
               <div className="flex items-center gap-3 mb-6">
-                <Code className="w-6 h-6 text-orange-700" />
+                <Code className="w-6 h-6" />
                 <h2 className="text-lg font-semibold">Custom Text Example</h2>
               </div>
               <div className="space-y-4">
@@ -205,7 +205,7 @@ return (
 
             <div className="p-6 rounded-2xl border">
               <div className="flex items-center gap-3 mb-6">
-                <Code className="w-6 h-6 text-green-700" />
+                <Code className="w-6 h-6" />
                 <h2 className="text-lg font-semibold">Custom Icon Example</h2>
               </div>
               <div className="space-y-4">
