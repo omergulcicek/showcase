@@ -60,7 +60,7 @@ export default function Example() {
 
   return (
     <>
-      <div className="container mx-auto px-4 py-8 mt-48">
+      <div className="container mx-auto px-4 py-8 mt-24">
         <div className="flex flex-col items-center justify-center gap-6">
           <Balancer
             as="h1"
