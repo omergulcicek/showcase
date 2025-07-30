@@ -66,7 +66,7 @@ export default function Example() {
             as="h1"
             className="text-2xl lg:text-5xl font-bold text-center text-black dark:text-white"
           >
-            usePasswordInput
+            useHookFormMask
           </Balancer>
 
           <Balancer as="div">
