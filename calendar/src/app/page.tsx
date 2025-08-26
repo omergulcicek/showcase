@@ -3,17 +3,16 @@
 import { useCallback, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { downloadIcsFromGit } from "@/utils/download-ics";
+import { CALENDAR_SOURCES } from "@/constants/calendar-sources";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState<string | null>(null);
 
-  const calendars = [
-    {
-      label: "Liderleri indir",
-      slug: "leaders",
-      url: "https://raw.githubusercontent.com/omergulcicek/calendar/refs/heads/main/leaders.json",
-    },
-  ];
+  const calendars = CALENDAR_SOURCES.map((c) => ({
+    label: `${c.displayName} indir`,
+    slug: c.slug,
+    url: c.url,
+  }));
 
   const handleDownload = useCallback(async (url: string) => {
     try {
@@ -41,17 +40,37 @@ export default function Home() {
         </p>
       </div>
       <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {calendars.map((c) => (
-          <Button
-            key={c.label}
-            variant="outline"
-            aria-label={c.label}
-            onClick={() => handleDownload(c.url)}
-            disabled={isLoading === c.url}
-          >
-            {c.label}
-          </Button>
-        ))}
+        {calendars.map((c) => {
+          const subscribeUrl = `${
+            typeof window !== "undefined" ? window.location.origin : ""
+          }/api/ics/${c.slug}`;
+          return (
+            <div key={c.slug} className="flex items-center gap-2">
+              <Button
+                variant="outline"
+                aria-label={c.label}
+                onClick={() => handleDownload(c.url)}
+                disabled={isLoading === c.url}
+              >
+                {c.label}
+              </Button>
+              <Button
+                variant="default"
+                aria-label={`${c.slug} subscribe url copy`}
+                onClick={async () => {
+                  try {
+                    await navigator.clipboard.writeText(subscribeUrl);
+                    alert("Abonelik URL'i kopyalandı.");
+                  } catch {
+                    alert("URL kopyalanamadı.");
+                  }
+                }}
+              >
+                URL&#39;yi Kopyala
+              </Button>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
