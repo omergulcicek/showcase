@@ -1,33 +1,14 @@
 "use client";
 
-import { useCallback, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { downloadIcsFromGit } from "@/utils/download-ics";
 import { CALENDAR_SOURCES } from "@/constants/calendar-sources";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState<string | null>(null);
-
   const calendars = CALENDAR_SOURCES.map((c) => ({
     label: `${c.displayName} indir`,
     slug: c.slug,
     url: c.url,
   }));
-
-  const handleDownload = useCallback(async (url: string) => {
-    try {
-      if (!url) {
-        alert("URL tanımlı değil.");
-        return;
-      }
-      setIsLoading(url);
-      await downloadIcsFromGit(url);
-    } catch {
-      alert("İndirme sırasında bir hata oluştu.");
-    } finally {
-      setIsLoading(null);
-    }
-  }, []);
 
   return (
     <section className="container mx-auto px-6 py-16">
@@ -47,14 +28,6 @@ export default function Home() {
           return (
             <div key={c.slug} className="flex items-center gap-2">
               <Button
-                variant="outline"
-                aria-label={c.label}
-                onClick={() => handleDownload(c.url)}
-                disabled={isLoading === c.url}
-              >
-                {c.label}
-              </Button>
-              <Button
                 variant="default"
                 aria-label={`${c.slug} subscribe url copy`}
                 onClick={async () => {
@@ -66,7 +39,7 @@ export default function Home() {
                   }
                 }}
               >
-                URL&#39;yi Kopyala
+                Liderler URL&#39;yi Kopyala
               </Button>
             </div>
           );
