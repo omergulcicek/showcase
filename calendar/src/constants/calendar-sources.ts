@@ -7,6 +7,12 @@ export const CALENDAR_SOURCES: CalendarSourceType[] = [
     displayName: "Liderler",
     description: "Açık kaynak liderler takvimi",
   },
+  {
+    slug: "battles",
+    url: "https://raw.githubusercontent.com/omergulcicek/calendar/refs/heads/main/battles.json",
+    displayName: "Savaşlar",
+    description: "Açık kaynak savaşlar takvimi",
+  },
 ];
 
 export function findCalendarSourceBySlug(

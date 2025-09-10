@@ -4,12 +4,6 @@ import { Button } from "@/components/ui/button";
 import { CALENDAR_SOURCES } from "@/constants/calendar-sources";
 
 export default function Home() {
-  const calendars = CALENDAR_SOURCES.map((c) => ({
-    label: `${c.displayName} indir`,
-    slug: c.slug,
-    url: c.url,
-  }));
-
   return (
     <section className="container mx-auto px-6 py-16">
       <div className="max-w-2xl mx-auto text-center">
@@ -20,15 +14,15 @@ export default function Home() {
           JSON → ICS dönüşümü ile açık kaynak takvimler.
         </p>
       </div>
-      <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {calendars.map((c) => {
+      <div className="max-w-3xl mx-auto flex flex-col items-center gap-4">
+        {CALENDAR_SOURCES.map((c) => {
           const subscribeUrl = `${
             typeof window !== "undefined" ? window.location.origin : ""
           }/api/ics/${c.slug}`;
           return (
             <div key={c.slug} className="flex items-center gap-2">
               <Button
-                variant="default"
+                variant="outline"
                 aria-label={`${c.slug} subscribe url copy`}
                 onClick={async () => {
                   try {
@@ -39,7 +33,7 @@ export default function Home() {
                   }
                 }}
               >
-                Liderler URL&#39;yi Kopyala
+                {c.displayName} Takvim Abonelik URL&apos;i kopyala
               </Button>
             </div>
           );
