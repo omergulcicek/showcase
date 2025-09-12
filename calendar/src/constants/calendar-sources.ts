@@ -4,13 +4,13 @@ export const CALENDAR_SOURCES: CalendarSourceType[] = [
   {
     slug: "leaders",
     url: "https://raw.githubusercontent.com/omergulcicek/calendar/refs/heads/main/leaders.json",
-    displayName: "Liderler",
+    displayName: "👑 Liderler",
     description: "Açık kaynak liderler takvimi",
   },
   {
     slug: "battles",
     url: "https://raw.githubusercontent.com/omergulcicek/calendar/refs/heads/main/battles.json",
-    displayName: "Savaşlar",
+    displayName: "⚔️ Savaşlar",
     description: "Açık kaynak savaşlar takvimi",
   },
 ];
