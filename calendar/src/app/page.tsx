@@ -30,13 +30,15 @@ export default function Home() {
                   const ok = await copyToClipboard(subscribeUrl);
 
                   if (ok) {
-                    toast.success(`${c.displayName} AbonelikURL'i kopyalandı.`);
+                    toast.success(
+                      `${c.displayName} abonelik URL'i kopyalandı.`
+                    );
                   } else {
                     toast.error("URL kopyalanamadı.");
                   }
                 }}
               >
-                <span>{c.displayName} Takvim Aboneliği</span>
+                <span>{c.displayName} takvim abonelik URL kopyala</span>
                 <Copy className="w-4 h-4" />
               </Button>
             </div>
@@ -50,7 +52,7 @@ export default function Home() {
 
         <p>Takvimi cihazınıza abone olarak eklemek için:</p>
         <ul className="list-disc list-inside pl-4">
-          <li>Abonelik URL’sini kopyalayın.</li>
+          <li>Abone olmak istediğiniz takvim URL&apos;ini kopyalayın.</li>
           <li>
             <strong>Mac</strong>: Takvim &gt; Dosya &gt; Yeni Takvim Aboneliği.
           </li>
@@ -58,6 +60,11 @@ export default function Home() {
             <strong>iPhone/iPad</strong>: Takvim &gt; Takvimler &gt; Takvim Ekle
             &gt; Abonelik Takvimi Ekle.
           </li>
+          <li>
+            URL&apos;i ekledikten sonra takvime istediğiniz rengi ve takvimin ne
+            sıklıkta güncelleneceğini ayarlayın.
+          </li>
+          <li>Hepsi bu kadar!</li>
         </ul>
 
         <p className="mt-4">Detaylı adımlar ve destek için:</p>
