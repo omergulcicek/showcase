@@ -116,7 +116,7 @@ function addAlarm(lines: string[], alarmDaysBefore?: number): void {
 export function buildIcs(json: CalendarJsonType): string {
   const now = new Date();
   const dtstamp = formatUtcStamp(now);
-  const yearAnchor = now.getUTCFullYear();
+  const defaultYearAnchor = now.getUTCFullYear();
 
   const lines: string[] = [];
   lines.push("BEGIN:VCALENDAR");
@@ -130,7 +130,10 @@ export function buildIcs(json: CalendarJsonType): string {
     lines.push(`X-WR-CALDESC:${sanitizeIcsText(json.calendarDesc)}`);
 
   json.events.forEach((ev, idx) => {
-    const start = resolveLeapDate(yearAnchor, ev.month, ev.day, ev.leapPolicy);
+    // If an event specifies fromYear, use it to anchor DTSTART for correct single-year or bounded recurrences
+    const anchorYear =
+      typeof ev.fromYear === "number" ? ev.fromYear : defaultYearAnchor;
+    const start = resolveLeapDate(anchorYear, ev.month, ev.day, ev.leapPolicy);
     if (!start) return; // skip non-leap years if policy says so
 
     const dtstart = formatValueDate(start);
@@ -151,8 +154,6 @@ export function buildIcs(json: CalendarJsonType): string {
     if (description) lines.push(`DESCRIPTION:${description}`);
     if (ev.location) lines.push(`LOCATION:${sanitizeIcsText(ev.location)}`);
     if (ev.url) lines.push(`URL:${sanitizeIcsText(ev.url)}`);
-    if (ev.tags && ev.tags.length > 0)
-      lines.push(`CATEGORIES:${ev.tags.map(sanitizeIcsText).join(",")}`);
 
     // Duration for all-day events: DTSTART is inclusive; DTEND is exclusive
     const durationDays = Math.max(1, Math.floor(ev.durationDays ?? 1));

@@ -8,7 +8,6 @@ export interface CalendarEventType {
   day: number; // 1-31
   location?: string;
   url?: string;
-  tags?: string[];
   durationDays?: number; // default: 1
   fromYear?: number; // optional anchor or lower bound
   toYear?: number; // optional upper bound for RRULE (UNTIL)

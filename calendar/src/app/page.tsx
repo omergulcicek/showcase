@@ -11,39 +11,39 @@ import { copyToClipboard } from "@/utils/copy-to-clipboard";
 export default function Home() {
   return (
     <section className="container mx-auto flex flex-col items-center gap-8 px-8 py-20">
-      <div className="max-w-2xl mx-auto text-center">
+      <div className="max-w-3xl mx-auto w-full flex flex-col items-start gap-4">
         <h1 className="text-3xl font-semibold text-slate-900">
           Takvim İndirme
         </h1>
-      </div>
-      <div className="max-w-3xl mx-auto flex flex-col items-center gap-4">
-        {CALENDAR_SOURCES.map((c) => {
-          const subscribeUrl = `${
-            typeof window !== "undefined" ? window.location.origin : ""
-          }/${c.slug}`;
-          return (
-            <div key={c.slug} className="flex items-center gap-2">
+        <p className="text-sm text-slate-500">
+          Abone olmak istediğiniz takvimi seçin.
+        </p>
+        <div className="flex flex-col gap-4">
+          {CALENDAR_SOURCES.map((c) => {
+            const subscribeUrl = `${
+              typeof window !== "undefined" ? window.location.origin : ""
+            }/${c.slug}`;
+            return (
               <Button
+                key={c.slug}
                 variant="outline"
-                aria-label={`${c.slug} subscribe url copy`}
+                aria-label={`${c.slug} takvimi kopyala`}
                 onClick={async () => {
                   const ok = await copyToClipboard(subscribeUrl);
 
                   if (ok) {
-                    toast.success(
-                      `${c.displayName} abonelik URL'i kopyalandı.`
-                    );
+                    toast.success(`${c.displayName} takvimi kopyalandı.`);
                   } else {
                     toast.error("URL kopyalanamadı.");
                   }
                 }}
               >
-                <span>{c.displayName} takvim abonelik URL kopyala</span>
+                <span>{c.displayName} takvimi</span>
                 <Copy className="w-4 h-4" />
               </Button>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
       <div className="mt-16">
         <h2 className="text-2xl font-semibold text-slate-900 mb-2">
