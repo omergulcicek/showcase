@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { useMaskedFormFields } from "@omergulcicek/forms";
 
+import { Github, GitBranch } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -24,7 +26,7 @@ const HeroSection = () => {
   return (
     <section>
       <div className="container mx-auto">
-        <div className="flex flex-col items-center justify-center gap-4 mt-40">
+        <div className="flex flex-col items-center justify-center gap-5 mt-40">
           <h1 className="text-3xl font-semibold">
             Masking and Validation for React Forms
           </h1>
@@ -42,14 +44,20 @@ const HeroSection = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button>GitHub Repository</Button>
+              <Button>
+                <Github className="w-4 h-4" />
+                <span>Star on Github</span>
+              </Button>
             </Link>
             <Link
               href="https://www.npmjs.com/package/@omergulcicek/forms"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant="ghost">NPM Package</Button>
+              <Button variant="ghost">
+                <GitBranch className="w-4 h-4" />
+                <span>npm Package</span>
+              </Button>
             </Link>
           </div>
         </div>
