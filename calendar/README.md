@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bilgi Takvimlerine Abone Olun
 
-## Getting Started
+**Savaşları, liderleri, doğayı ve kültürel tarihleri** ​​kapsayan özenle seçilmiş etkinlik takvimlerini keşfedin. Bir kez abone olun ve zengin, güvenilir tarihi ayrıntıları doğrudan **cihazınızın takviminde** görüntüleyin.
 
-First, run the development server:
+https://omergulcicek-calendar.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Takvim Aboneliği Nasıl Yapılır?
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### iOS (iPhone/iPad) için
+- Yukarıdan iOS butonuna tıklayarak takvim URL'ini kopyalayın.
+- Ayarlar > Takvim > Hesaplar > Hesap Ekle > Diğer > Takvim Aboneliği Ekle yolunu izleyin.
+- Kopyaladığınız URL'i yapıştırın ve "İleri" butonuna basın.
+- Takvime istediğiniz ismi verin, renk seçin ve ne sıklıkta güncelleneceğini ayarlayın.
+- "Kaydet" butonuna basarak işlemi tamamlayın.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Mac için
+- Yukarıdan iOS butonuna tıklayarak takvim URL'ini kopyalayın.
+- Takvim uygulamasını açın.
+- Dosya > Yeni Takvim Aboneliği menüsüne tıklayın.
+- Kopyaladığınız URL'i yapıştırın ve "Abone Ol" butonuna basın.
+- Takvim ayarlarını (isim, renk, güncelleme sıklığı) yapılandırın ve "Tamam" butonuna basın.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Android (Google Calendar) için
+- Yukarıdan Android butonuna tıklayarak takvim URL'ini kopyalayın.
+- Bilgisayarınızdan calendar.google.com adresine gidin.
+- Sol tarafta Diğer takvimler bölümünün yanındaki + butonuna tıklayın.
+- URL'den seçeneğini seçin.
+- Kopyaladığınız URL'i yapıştırın ve "Takvim ekle" butonuna basın.
+- Takvim otomatik olarak Google Calendar hesabınıza eklenecek ve Android cihazınızda senkronize olacaktır.

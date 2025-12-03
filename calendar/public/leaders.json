@@ -1,0 +1,387 @@
+{
+  "calendarName": "🤲🏻 Anma Günleri",
+  "calendarDesc": "Önemli liderlerin doğum ve vefat günleri",
+  "slug": "leaders",
+  "events": [
+    {
+      "id": "mehmet-akif-dogum",
+      "summary": "Doğum: Mehmet Âkif Ersoy",
+      "description": "20 Aralık 1873 – İstanbul\n\nİstiklâl Marşı’nın şairi ve 'Safahat' müellifi. Millî Mücadele yıllarında vaaz ve şiirleriyle toplumsal direnci diri tuttu; fazilet ve iman vurgusuyla örnek bir şahsiyetti.",
+      "month": 12,
+      "day": 20,
+      "location": "İstanbul",
+      "url": "https://tr.wikipedia.org/wiki/Mehmet_%C3%82kif_Ersoy",
+      "durationDays": 1
+    },
+    {
+      "id": "mehmet-akif-vefat",
+      "summary": "Vefat: Mehmet Âkif Ersoy",
+      "description": "27 Aralık 1936 – İstanbul\n\nİstiklâl Marşı’nın şairi ve 'Safahat' müellifi. Millî Mücadele yıllarında vaaz ve şiirleriyle toplumsal direnci diri tuttu; fazilet ve iman vurgusuyla örnek bir şahsiyetti.",
+      "month": 12,
+      "day": 27,
+      "location": "İstanbul",
+      "url": "https://tr.wikipedia.org/wiki/Mehmet_%C3%82kif_Ersoy",
+      "durationDays": 1
+    },
+    {
+      "id": "necip-fazil-dogum",
+      "summary": "Doğum: Necip Fazıl Kısakürek",
+      "description": "26 Mayıs 1904 – İstanbul\n\nBüyük Doğu hareketinin kurucusu; 'Çile', 'Kafa Kağıdı' ve 'Bir Adam Yaratmak' ile düşünce ve edebiyatı etkiledi. Metafizik arayışı ve keskin üslubuyla modern muhafazakâr düşüncenin polemik ustasıydı.",
+      "month": 5,
+      "day": 26,
+      "location": "İstanbul",
+      "url": "https://tr.wikipedia.org/wiki/Necip_Faz%C4%B1l_K%C4%B1sak%C3%BCrek",
+      "durationDays": 1
+    },
+    {
+      "id": "necip-fazil-vefat",
+      "summary": "Vefat: Necip Fazıl Kısakürek",
+      "description": "25 Mayıs 1983 – İstanbul\n\nBüyük Doğu hareketinin kurucusu; 'Çile', 'Kafa Kağıdı' ve 'Bir Adam Yaratmak' ile düşünce ve edebiyatı etkiledi. Metafizik arayışı ve keskin üslubuyla modern muhafazakâr düşüncenin polemik ustasıydı.",
+      "month": 5,
+      "day": 25,
+      "location": "İstanbul",
+      "url": "https://tr.wikipedia.org/wiki/Necip_Faz%C4%B1l_K%C4%B1sak%C3%BCrek",
+      "durationDays": 1
+    },
+    {
+      "id": "sezai-karakoc-dogum",
+      "summary": "Doğum: Sezai Karakoç",
+      "description": "22 Ocak 1933 – Diyarbakır\n\n'Diriliş' düşüncesinin mimarı; 'Mona Rosa' ve 'Diriliş Neslinin Amentüsü' ile nesilleri etkiledi. İnanç, medeniyet ve diriliş ekseninde şiir ve düşüncede özgün bir damar açtı.",
+      "month": 1,
+      "day": 22,
+      "location": "Diyarbakır",
+      "url": "https://tr.wikipedia.org/wiki/Sezai_Karako%C3%A7",
+      "durationDays": 1
+    },
+    {
+      "id": "sezai-karakoc-vefat",
+      "summary": "Vefat: Sezai Karakoç",
+      "description": "16 Kasım 2021 – İstanbul\n\n'Diriliş' düşüncesinin mimarı; 'Mona Rosa' ve 'Diriliş Neslinin Amentüsü' ile nesilleri etkiledi. İnanç, medeniyet ve diriliş ekseninde şiir ve düşüncede özgün bir damar açtı.",
+      "month": 11,
+      "day": 16,
+      "location": "İstanbul",
+      "url": "https://tr.wikipedia.org/wiki/Sezai_Karako%C3%A7",
+      "durationDays": 1
+    },
+    {
+      "id": "cahit-zarifoglu-dogum",
+      "summary": "Doğum: Cahit Zarifoğlu",
+      "description": "1 Temmuz 1940 – Ankara\n\n'Mavera' dergisinin kurucularından; 'Yedi Güzel Adam' kuşağının öncüsü. Şiirleri ve çocuk kitaplarıyla modern şiire yeni ufuklar açan özgün bir lirizm kurdu.",
+      "month": 7,
+      "day": 1,
+      "location": "Ankara",
+      "url": "https://tr.wikipedia.org/wiki/Cahit_Zarifo%C4%9Flu",
+      "durationDays": 1
+    },
+    {
+      "id": "cahit-zarifoglu-vefat",
+      "summary": "Vefat: Cahit Zarifoğlu",
+      "description": "7 Haziran 1987 – İstanbul\n\n'Mavera' dergisinin kurucularından; 'Yedi Güzel Adam' kuşağının öncüsü. Şiirleri ve çocuk kitaplarıyla modern şiire yeni ufuklar açan özgün bir lirizm kurdu.",
+      "month": 6,
+      "day": 7,
+      "location": "İstanbul",
+      "url": "https://tr.wikipedia.org/wiki/Cahit_Zarifo%C4%9Flu",
+      "durationDays": 1
+    },
+    {
+      "id": "rasim-ozdenoren-dogum",
+      "summary": "Doğum: Rasim Özdenören",
+      "description": "20 Mayıs 1940 – Kahramanmaraş\n\n'Yedi Güzel Adam' kuşağından öykü ve deneme yazarı. 'Hastalar ve Işıklar' ve 'Çözülme'de modern insanın çözülüşünü anlattı; sade ama derin anlatımıyla yeni bir dil kurdu.",
+      "month": 5,
+      "day": 20,
+      "location": "Kahramanmaraş",
+      "url": "https://tr.wikipedia.org/wiki/Rasim_%C3%96zden%C3%B6ren",
+      "durationDays": 1
+    },
+    {
+      "id": "rasim-ozdenoren-vefat",
+      "summary": "Vefat: Rasim Özdenören",
+      "description": "23 Temmuz 2022 – Ankara\n\n'Yedi Güzel Adam' kuşağından öykü ve deneme yazarı. 'Hastalar ve Işıklar' ve 'Çözülme'de modern insanın çözülüşünü anlattı; sade ama derin anlatımıyla yeni bir dil kurdu.",
+      "month": 7,
+      "day": 23,
+      "location": "Ankara",
+      "url": "https://tr.wikipedia.org/wiki/Rasim_%C3%96zden%C3%B6ren",
+      "durationDays": 1
+    },
+    {
+      "id": "kadir-misiroglu-dogum",
+      "summary": "Doğum: Kadir Mısıroğlu",
+      "description": "24 Ocak 1933 – Trabzon\n\nTarih yazıları ve konferanslarıyla tanındı; 'Lozan Zafer mi Hezimet mi?' ile tartışmaların odağında yer aldı. Cumhuriyet ve Atatürk karşıtı söylemleriyle tartışma yaratan bir yazardır.",
+      "month": 1,
+      "day": 24,
+      "location": "Trabzon",
+      "url": "https://tr.wikipedia.org/wiki/Kadir_M%C4%B1s%C4%B1ro%C4%9Flu",
+      "durationDays": 1
+    },
+    {
+      "id": "kadir-misiroglu-vefat",
+      "summary": "Vefat: Kadir Mısıroğlu",
+      "description": "5 Mayıs 2019 – İstanbul\n\nTarih yazıları ve konferanslarıyla tanındı; 'Lozan Zafer mi Hezimet mi?' ile tartışmaların odağında yer aldı. Cumhuriyet ve Atatürk karşıtı söylemleriyle tartışma yaratan bir yazardır.",
+      "month": 5,
+      "day": 5,
+      "location": "İstanbul",
+      "url": "https://tr.wikipedia.org/wiki/Kadir_M%C4%B1s%C4%B1ro%C4%9Flu",
+      "durationDays": 1
+    },
+    {
+      "id": "said-nursi-vefat",
+      "summary": "Vefat: Said Nursî",
+      "description": "23 Mart 1960 – Şanlıurfa\n\nÂlim ve mütefekkir; Risale-i Nur Külliyatı'nın müellifi. İman hizmeti için sürgün ve mahkemeler yaşadı; eserleri geniş bir hareketi besledi.",
+      "month": 3,
+      "day": 23,
+      "location": "Şanlıurfa",
+      "url": "https://tr.wikipedia.org/wiki/Said_Nurs%C3%AE",
+      "durationDays": 1
+    },
+    {
+      "id": "abdulhakim-arvasi-vefat",
+      "summary": "Vefat: Abdülhakim Arvâsî",
+      "description": "27 Kasım 1943 – Ankara\n\nÂlim ve mutasavvıf; irfan geleneğinin önemli temsilcisi.",
+      "month": 11,
+      "day": 27,
+      "location": "Ankara",
+      "url": "https://tr.wikipedia.org/wiki/Abd%C3%BClhakim_Arvasi",
+      "durationDays": 1
+    },
+    {
+      "id": "imam-gazali-vefat",
+      "summary": "Vefat: İmam Gazâlî",
+      "description": "19 Aralık 1111 – Tus\n\n'İhyâu Ulûmiddîn' ve 'Tehâfütü'l-Felâsife' ile düşünce tarihini etkiledi. Kelâm, tasavvuf ve felsefede derin izler bıraktı.",
+      "month": 12,
+      "day": 19,
+      "location": "Tus",
+      "url": "https://tr.wikipedia.org/wiki/Gazz%C3%A2l%C3%AE",
+      "durationDays": 1
+    },
+    {
+      "id": "mevlana-dogum",
+      "summary": "Doğum: Mevlânâ Celaleddin Rumi",
+      "description": "30 Eylül 1207 – Belh\n\nMesnevi’nin müellifi; aşk ve irfanın sembolü. Vefatı 'Şeb-i Arûs' (düğün gecesi) olarak anılır.",
+      "month": 9,
+      "day": 30,
+      "location": "Belh",
+      "url": "https://tr.wikipedia.org/wiki/Mevl%C3%A2n%C3%A2_Cel%C3%A2ledd%C3%AEn-i_R%C3%BBm%C3%AE",
+      "durationDays": 1
+    },
+    {
+      "id": "mevlana-vefat",
+      "summary": "Vefat: Mevlânâ Celaleddin Rumi",
+      "description": "17 Aralık 1273 – Konya\n\nMesnevi'nin müellifi; aşk ve irfanın sembolü. Vefatı 'Şeb-i Arûs' (düğün gecesi) olarak anılır.",
+      "month": 12,
+      "day": 17,
+      "location": "Konya",
+      "url": "https://tr.wikipedia.org/wiki/Mevl%C3%A2n%C3%A2_Cel%C3%A2ledd%C3%AEn-i_R%C3%BBm%C3%AE",
+      "durationDays": 1
+    },
+    {
+      "id": "imam-rabbani-dogum",
+      "summary": "Doğum: İmam Rabbani",
+      "description": "26 Mayıs 1564 – Serhend\n\nMüceddid-i Elf-i Sânî; Nakşibendî geleneğinin büyük âlimi. 'Mektûbât' ile itikad ve tasavvufta ıslah çizgisi oluşturdu.",
+      "month": 5,
+      "day": 26,
+      "location": "Serhend",
+      "url": "https://tr.wikipedia.org/wiki/Ahmad_Sirhindi",
+      "durationDays": 1
+    },
+    {
+      "id": "imam-rabbani-vefat",
+      "summary": "Vefat: İmam Rabbani",
+      "description": "10 Aralık 1624 – Serhend\n\nMüceddid-i Elf-i Sânî; Nakşibendî geleneğinin büyük âlimi. 'Mektûbât' ile itikad ve tasavvufta ıslah çizgisi oluşturdu.",
+      "month": 12,
+      "day": 10,
+      "location": "Serhend",
+      "url": "https://tr.wikipedia.org/wiki/Ahmad_Sirhindi",
+      "durationDays": 1
+    },
+    {
+      "id": "muhsin-yazicioglu-dogum",
+      "summary": "Doğum: Muhsin Yazıcıoğlu",
+      "description": "31 Aralık 1954 – Sivas\n\nBüyük Birlik Partisi'nin kurucusu ve lideri. Dürüst, mütevazı siyaset dili ve ilkeli duruşuyla benimsendi.",
+      "month": 12,
+      "day": 31,
+      "location": "Sivas",
+      "url": "https://tr.wikipedia.org/wiki/Muhsin_Yaz%C4%B1c%C4%B1o%C4%9Flu",
+      "durationDays": 1
+    },
+    {
+      "id": "muhsin-yazicioglu-vefat",
+      "summary": "Vefat: Muhsin Yazıcıoğlu",
+      "description": "25 Mart 2009 – Kahramanmaraş\n\nBüyük Birlik Partisi'nin kurucusu ve lideri. Dürüst, mütevazı siyaset dili ve ilkeli duruşuyla benimsendi.",
+      "month": 3,
+      "day": 25,
+      "location": "Kahramanmaraş",
+      "url": "https://tr.wikipedia.org/wiki/Muhsin_Yaz%C4%B1c%C4%B1o%C4%9Flu",
+      "durationDays": 1
+    },
+    {
+      "id": "aliya-izzetbegovic-dogum",
+      "summary": "Doğum: Aliya İzzetbegović",
+      "description": "8 Ağustos 1925 – Bosanski Şamac\n\nBosna-Hersek'in ilk Cumhurbaşkanı; 'İslam Deklarasyonu' yazarı. Savaş yıllarında bilge liderliğiyle halkına rehberlik etti.",
+      "month": 8,
+      "day": 8,
+      "location": "Bosanski Şamac",
+      "url": "https://tr.wikipedia.org/wiki/Alija_Izetbegovi%C4%87",
+      "durationDays": 1
+    },
+    {
+      "id": "aliya-izzetbegovic-vefat",
+      "summary": "Vefat: Aliya İzzetbegović",
+      "description": "19 Ekim 2003 – Saraybosna\n\nBosna-Hersek'in ilk Cumhurbaşkanı; bilge devlet adamı.",
+      "month": 10,
+      "day": 19,
+      "location": "Saraybosna",
+      "url": "https://tr.wikipedia.org/wiki/Alija_Izetbegovi%C4%87",
+      "durationDays": 1
+    },
+    {
+      "id": "malcolm-x-dogum",
+      "summary": "Doğum: Malcolm X",
+      "description": "19 Mayıs 1925 – Omaha\n\nSivil haklar mücadelesinin simge ismi; Nation of Islam’dan ayrılıp Hac sonrası evrensel birlik vurgusunu öne çıkardı. Etkili hitabetiyle geniş kitleleri dönüştürdü.",
+      "month": 5,
+      "day": 19,
+      "location": "Omaha",
+      "url": "https://tr.wikipedia.org/wiki/Malcolm_X",
+      "durationDays": 1
+    },
+    {
+      "id": "malcolm-x-vefat",
+      "summary": "Vefat: Malcolm X",
+      "description": "21 Şubat 1965 – New York\n\nSivil haklar mücadelesinin simge ismi; Nation of Islam’dan ayrılıp Hac sonrası evrensel birlik vurgusunu öne çıkardı. Etkili hitabetiyle geniş kitleleri dönüştürdü.",
+      "month": 2,
+      "day": 21,
+      "location": "New York",
+      "url": "https://tr.wikipedia.org/wiki/Malcolm_X",
+      "durationDays": 1
+    },
+    {
+      "id": "muhammad-ali-dogum",
+      "summary": "Doğum: Muhammad Ali",
+      "description": "17 Ocak 1942 – Louisville\n\n1960 Roma Olimpiyatları altın madalyalı, dünya ağır sıklet şampiyonu. Vicdani retle Vietnam Savaşı’na karşı durdu; ring dışında da adalet savunucusuydu.",
+      "month": 1,
+      "day": 17,
+      "location": "Louisville",
+      "url": "https://tr.wikipedia.org/wiki/Muhammed_Ali",
+      "durationDays": 1
+    },
+    {
+      "id": "muhammad-ali-vefat",
+      "summary": "Vefat: Muhammad Ali",
+      "description": "3 Haziran 2016 – Scottsdale\n\n1960 Roma Olimpiyatları altın madalyalı, dünya ağır sıklet şampiyonu. Vicdani retle Vietnam Savaşı’na karşı durdu; ring dışında da adalet savunucusuydu.",
+      "month": 6,
+      "day": 3,
+      "location": "Scottsdale",
+      "url": "https://tr.wikipedia.org/wiki/Muhammed_Ali",
+      "durationDays": 1
+    },
+    {
+      "id": "necmettin-erbakan-dogum",
+      "summary": "Doğum: Necmettin Erbakan",
+      "description": "29 Ekim 1926 – Sinop\n\nMillî Görüş lideri; ağır sanayi hamlesi ve D-8 girişimiyle vizyon koydu. Türkiye'nin 23. Başbakanı olarak siyaset ve düşünceye yön verdi.",
+      "month": 10,
+      "day": 29,
+      "location": "Sinop",
+      "url": "https://tr.wikipedia.org/wiki/Necmettin_Erbakan",
+      "durationDays": 1
+    },
+    {
+      "id": "necmettin-erbakan-vefat",
+      "summary": "Vefat: Necmettin Erbakan",
+      "description": "27 Şubat 2011 – Ankara\n\nMillî Görüş lideri; ağır sanayi hamlesi ve D-8 girişimiyle vizyon koydu. Türkiye'nin 23. Başbakanı olarak siyaset ve düşünceye yön verdi.",
+      "month": 2,
+      "day": 27,
+      "location": "Ankara",
+      "url": "https://tr.wikipedia.org/wiki/Necmettin_Erbakan",
+      "durationDays": 1
+    },
+    {
+      "id": "yavuz-sultan-selim-dogum",
+      "summary": "Doğum: Yavuz Sultan Selim",
+      "description": "10 Ekim 1470 – Amasya\n\nÇaldıran, Mercidabık ve Ridaniye zaferleriyle hilafeti Osmanlı'ya taşıdı. Kısa sürede devletin doğu ve güney sınırlarını genişletti.",
+      "month": 10,
+      "day": 10,
+      "location": "Amasya",
+      "url": "https://tr.wikipedia.org/wiki/I._Selim",
+      "durationDays": 1
+    },
+    {
+      "id": "yavuz-sultan-selim-vefat",
+      "summary": "Vefat: Yavuz Sultan Selim",
+      "description": "22 Eylül 1520 – Çorlu\n\nÇaldıran, Mercidabık ve Ridaniye zaferleriyle hilafeti Osmanlı'ya taşıdı. Kısa sürede devletin doğu ve güney sınırlarını genişletti.",
+      "month": 9,
+      "day": 22,
+      "location": "Çorlu",
+      "url": "https://tr.wikipedia.org/wiki/I._Selim",
+      "durationDays": 1
+    },
+    {
+      "id": "kanuni-sultan-suleyman-dogum",
+      "summary": "Doğum: Kanuni Sultan Süleyman",
+      "description": "6 Kasım 1494 – Trabzon\n\n46 yıllık saltanatında hukuk ve idareyi derledi; Süleymaniye gibi eserlerle şehir mimarisini taçlandırdı. Avrupa ve doğuda geniş cephelerde seferler yürüttü.",
+      "month": 11,
+      "day": 6,
+      "location": "Trabzon",
+      "url": "https://tr.wikipedia.org/wiki/I._S%C3%BCleyman",
+      "durationDays": 1
+    },
+    {
+      "id": "kanuni-sultan-suleyman-vefat",
+      "summary": "Vefat: Kanuni Sultan Süleyman",
+      "description": "6 Eylül 1566 – Zigetvar\n\n46 yıllık saltanatında hukuk ve idareyi derledi; Süleymaniye gibi eserlerle şehir mimarisini taçlandırdı. Avrupa ve doğuda geniş cephelerde seferler yürüttü.",
+      "month": 9,
+      "day": 6,
+      "location": "Zigetvar",
+      "url": "https://tr.wikipedia.org/wiki/I._S%C3%BCleyman",
+      "durationDays": 1
+    },
+    {
+      "id": "fatih-sultan-mehmed-dogum",
+      "summary": "Doğum: Fatih Sultan Mehmed",
+      "description": "30 Mart 1432 – Edirne\n\n1453’te İstanbul’u fethederek çağ açıp çağ kapattı; 1473’te Otlukbeli’nde Akkoyunluları yendi. Birçok dil bilen, 'Avnî' mahlasıyla şiir yazan entelektüel bir hükümdardı.",
+      "month": 3,
+      "day": 30,
+      "location": "Edirne",
+      "url": "https://tr.wikipedia.org/wiki/II._Mehmed",
+      "durationDays": 1
+    },
+    {
+      "id": "fatih-sultan-mehmed-vefat",
+      "summary": "Vefat: Fatih Sultan Mehmed",
+      "description": "3 Mayıs 1481 – Gebze\n\n1453’te İstanbul’u fethederek çağ açıp çağ kapattı; 1473’te Otlukbeli’nde Akkoyunluları yendi. Birçok dil bilen, 'Avnî' mahlasıyla şiir yazan entelektüel bir hükümdardı.",
+      "month": 5,
+      "day": 3,
+      "location": "Gebze",
+      "url": "https://tr.wikipedia.org/wiki/II._Mehmed",
+      "durationDays": 1
+    },
+    {
+      "id": "ii-abdulhamid-dogum",
+      "summary": "Doğum: II. Abdülhamid",
+      "description": "21 Eylül 1842 – İstanbul\n\nBazılarınca 'Kızıl Sultan', bazılarınca 'Ulu Hakan' olarak anıldı. Hicaz Demiryolu, modern eğitim ve güçlü istihbarat ağıyla devleti ayakta tutmaya çalıştı. Zor zamanların stratejik devlet adamı.",
+      "month": 9,
+      "day": 21,
+      "location": "İstanbul",
+      "url": "https://tr.wikipedia.org/wiki/II._Abd%C3%BClhamid",
+      "durationDays": 1
+    },
+    {
+      "id": "ii-abdulhamid-vefat",
+      "summary": "Vefat: II. Abdülhamid",
+      "description": "10 Şubat 1918 – İstanbul\n\nBazılarınca 'Kızıl Sultan', bazılarınca 'Ulu Hakan' olarak anıldı. Hicaz Demiryolu, modern eğitim ve güçlü istihbarat ağıyla devleti ayakta tutmaya çalıştı. Zor zamanların stratejik devlet adamı.",
+      "month": 2,
+      "day": 10,
+      "location": "İstanbul",
+      "url": "https://tr.wikipedia.org/wiki/II._Abd%C3%BClhamid",
+      "durationDays": 1
+    },
+    {
+      "id": "i-murad-vefat",
+      "summary": "Vefat: I. Murad (Murad-ı Hüdavendigâr)",
+      "description": "15 Haziran 1389 – Kosova Ovası\n\nOsmanlı padişahı; Kosova Meydan Muharebesi'nde şehit düştü.",
+      "month": 6,
+      "day": 15,
+      "location": "Kosova Ovası",
+      "url": "https://tr.wikipedia.org/wiki/I._Murad",
+      "durationDays": 1
+    }
+  ]
+}
