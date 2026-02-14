@@ -4,11 +4,11 @@ A collection of demos and small projects built with **Next.js**, **React**, and 
 
 ## Projects
 
-### [Calendar](/calendar)
+### [Rûznâme](/ruzname)
 
 Subscribe to curated event calendars (battles, leaders, nature, spiritual & cultural dates) and view them in your device’s calendar via ICS subscription.
 
-- **Live:** [omergulcicek-calendar.vercel.app](https://omergulcicek-calendar.vercel.app/)
+- **Live:** [omergulcicek-ruzname.vercel.app](https://omergulcicek-ruzname.vercel.app/)
 - **Stack:** Next.js, React, Tailwind CSS, Radix UI, Sonner
 
 ### [Forms](/forms)

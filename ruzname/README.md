@@ -2,7 +2,7 @@
 
 **Savaşları, liderleri, doğayı ve kültürel tarihleri** ​​kapsayan özenle seçilmiş etkinlik takvimlerini keşfedin. Bir kez abone olun ve zengin, güvenilir tarihi ayrıntıları doğrudan **cihazınızın takviminde** görüntüleyin.
 
-https://omergulcicek-calendar.vercel.app/
+https://omergulcicek-ruzname.vercel.app/
 
 ## Takvim Aboneliği Nasıl Yapılır?
 

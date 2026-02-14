@@ -178,5 +178,5 @@ export function buildIcs(json: CalendarJsonType): string {
 
 export function buildDownloadName(slug?: string, fallback?: string): string {
   const base = slug ? slugify(slug) : fallback ? slugify(fallback) : "calendar";
-  return `omergulcicek-calendars-${base}.ics`;
+  return `omergulcicek-ruzname-${base}.ics`;
 }

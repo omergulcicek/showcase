@@ -74,7 +74,7 @@ const HeroSection = () => {
           </p> */}
           <div className="flex gap-2">
             <Link
-              href="https://github.com/omergulcicek/calendar"
+              href="https://github.com/omergulcicek/ruzname"
               target="_blank"
               rel="noopener noreferrer"
             >
