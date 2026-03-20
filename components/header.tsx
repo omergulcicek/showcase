@@ -11,17 +11,17 @@ const data = {
     {
       name: "Next.js Boilerplate",
       url: "/nextjs-boilerplate",
-      textColor: "text-blue-400",
+      textColor: "text-blue-500",
     },
     {
       name: "AI Rules",
       url: "/ai",
-      textColor: "text-fuchsia-400",
+      textColor: "text-fuchsia-500",
     },
     {
       name: "Mask",
       url: "/mask",
-      textColor: "text-green-500",
+      textColor: "text-green-600",
     },
     {
       name: "Password",

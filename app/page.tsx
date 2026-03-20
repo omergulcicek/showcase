@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col gap-8 p-4">
+    <main className="flex min-h-screen flex-col gap-8 px-12 md:px-16 pb-8">
       <section className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-10">
         <div className="flex flex-col items-center justify-center col-span-1">
           <Image

@@ -1,11 +1,11 @@
 import "./globals.css";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import { GlobalRail } from "@/components/global-rail";
-import { Separator } from "@/components/ui/separator";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/header";
+import { CustomSidebarTrigger } from "@/components/custom-sidebar-trigger";
+import { DynamicBreadcrumb } from "@/components/dynamic-breadcrumb";
 
 export const metadata = {
   title: "ViraStack",
@@ -36,26 +36,15 @@ export default function RootLayout({
                 <GlobalRail />
                 <AppSidebar />
                 <main className="flex-1 overflow-auto relative flex flex-col">
-                  <div className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
-                    <div className="flex items-center gap-2 px-4">
-                      <SidebarTrigger className="-ml-1" />
-                      <Separator orientation="vertical" className="mr-2 h-4" />
-                      <Breadcrumb>
-                        <BreadcrumbList>
-                          <BreadcrumbItem className="hidden md:block">
-                            <BreadcrumbLink href="/">ViraStack</BreadcrumbLink>
-                          </BreadcrumbItem>
-                          <BreadcrumbSeparator className="hidden md:block" />
-                          <BreadcrumbItem>
-                            <BreadcrumbPage>Documentation</BreadcrumbPage>
-                          </BreadcrumbItem>
-                        </BreadcrumbList>
-                      </Breadcrumb>
+                  <div className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 ml-0 relative">
+                    <div className="absolute left-4 md:left-6 z-10 flex items-center justify-center">
+                      <CustomSidebarTrigger />
+                    </div>
+                    <div className="flex items-center gap-2 px-12 md:px-16 w-full">
+                      <DynamicBreadcrumb />
                     </div>
                   </div>
-                  <div className="flex-1 p-4 pt-0">
-                    {children}
-                  </div>
+                  <div className="flex-1">{children}</div>
                 </main>
               </SidebarProvider>
             </div>

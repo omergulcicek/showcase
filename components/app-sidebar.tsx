@@ -51,35 +51,31 @@ const data = {
       {
         name: "Next.js Boilerplate",
         url: "/nextjs-boilerplate",
-        color: "bg-blue-400",
-        textColor: "text-blue-400",
+        color: "bg-blue-500",
       },
       {
         name: "AI Rules",
         url: "/ai",
-        color: "bg-fuchsia-400",
-        textColor: "text-fuchsia-400",
+        color: "bg-fuchsia-300",
       },
       {
         name: "Mask",
         url: "/mask",
         color: "bg-green-500",
-        textColor: "text-green-500",
       },
       {
         name: "Password",
         url: "/password",
         color: "bg-red-500",
-        textColor: "text-red-500",
       },
       {
         name: "Modern Web in 3 Minutes",
         url: "/modern-web-in-3-minutes",
         color: "bg-amber-300",
-        textColor: "text-amber-500",
       },
     ],
     links: [
+      { name: "Support", url: "/support", icon: LifeBuoy },
       { name: "Maintainers", url: "/maintainers", icon: Users },
       {
         name: "GitHub",
@@ -192,7 +188,7 @@ const data = {
         title: "Examples",
         url: "/password/examples",
         icon: Component,
-        isActive: false,
+        isActive: true,
         items: [
           { title: "Overview", url: "/password/examples" },
           { title: "Basic", url: "/password/examples/basic" },
@@ -228,22 +224,26 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   if (activeProject) {
     if (activeProject.name === "Mask") context = "mask";
     else if (activeProject.name === "Password") context = "password";
+    else context = "none";
   }
+
+  if (context === "none") return null;
 
   // Effect to open sidebar when context changes (project changes)
   React.useEffect(() => {
     if (!isMobile) {
       setOpen(true);
     }
-  }, [context, setOpen, isMobile]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [context, isMobile]);
 
   return (
-    <Sidebar 
-      collapsible="icon" 
+    <Sidebar
+      collapsible="icon"
       className={cn(
         "top-16 h-[calc(100svh-4rem)]",
-        context !== "home" && "md:left-14"
-      )} 
+        activeProject && "md:left-14",
+      )}
       {...props}
     >
       <SidebarContent>
@@ -257,7 +257,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     <SidebarMenuButton asChild tooltip={item.name}>
                       <Link href={item.url}>
                         <div
-                          className={`size-3 min-w-3 rounded-full ${item.color}`}
+                          className={`size-3 min-w-3 rounded ${item.color}`}
                         />
                         <span>{item.name}</span>
                       </Link>
@@ -295,11 +295,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
         {(context === "mask" || context === "password") && (
           <SidebarGroup>
-            <SidebarMenu>
+            <SidebarMenu className="mt-2">
               {data[context].nav.map((item) =>
                 item.items ? (
                   <Collapsible
-                    key={item.title}
+                    key={`${context}-${item.title}`}
                     asChild
                     defaultOpen={
                       item.isActive ||
@@ -334,7 +334,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     </SidebarMenuItem>
                   </Collapsible>
                 ) : (
-                  <SidebarMenuItem key={item.title}>
+                  <SidebarMenuItem key={`${context}-${item.title}`}>
                     <SidebarMenuButton
                       asChild
                       isActive={pathname === item.url}
@@ -355,7 +355,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
       <SidebarFooter>
         <div className="p-4 text-xs text-muted-foreground group-data-[collapsible=icon]:hidden">
-          © {new Date().getFullYear()} ViraStack.
+          © {new Date().getFullYear()} ViraStack
         </div>
       </SidebarFooter>
       <SidebarRail />

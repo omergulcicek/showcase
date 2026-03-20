@@ -51,14 +51,15 @@ export default async function DocsLayout({
 }) {
   return (
     <>
-      <Head></Head>
       <Layout
         banner={banner}
         pageMap={await getPageMap()}
         docsRepositoryBase="https://github.com/virastack"
         footer={footer}
       >
-        {children}
+        <div className="px-4">
+          {children}
+        </div>
       </Layout>
     </>
   );
