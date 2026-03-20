@@ -35,12 +35,14 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
+  useSidebar,
 } from "@/components/ui/sidebar";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { cn } from "@/lib/utils";
 
 // Define the data for different contexts
 const data = {
@@ -211,11 +213,10 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname();
+  const { setOpen, isMobile } = useSidebar();
 
   // Determine context
   let context = "home";
-  let projectName = "";
-  let projectColor = "";
 
   const activeProject = data.home.projects.find(
     (p) =>
@@ -227,41 +228,24 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   if (activeProject) {
     if (activeProject.name === "Mask") context = "mask";
     else if (activeProject.name === "Password") context = "password";
-
-    if (activeProject.name === "Modern Web in 3 Minutes") projectName = "Guide";
-    else if (activeProject.name === "AI Rules") projectName = "AI";
-    else if (activeProject.name === "Next.js Boilerplate") projectName = "Next";
-    else projectName = activeProject.name;
-
-    projectColor = activeProject.textColor;
   }
 
-  return (
-    <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild tooltip="ViraStack">
-              <Link href="/" className="flex items-center gap-2 cursor-pointer">
-                <img
-                  src="/virastack.svg"
-                  alt="ViraStack"
-                  className="aspect-square size-10"
-                />
-                <h1 className="flex-1 text-lg font-bold">
-                  ViraStack
-                  {projectName && (
-                    <span className={`ml-1 ${projectColor}`}>
-                      {projectName}
-                    </span>
-                  )}
-                </h1>
-              </Link>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
-      </SidebarHeader>
+  // Effect to open sidebar when context changes (project changes)
+  React.useEffect(() => {
+    if (!isMobile) {
+      setOpen(true);
+    }
+  }, [context, setOpen, isMobile]);
 
+  return (
+    <Sidebar 
+      collapsible="icon" 
+      className={cn(
+        "top-16 h-[calc(100svh-4rem)]",
+        context !== "home" && "md:left-14"
+      )} 
+      {...props}
+    >
       <SidebarContent>
         {context === "home" && (
           <>
@@ -311,9 +295,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
         {(context === "mask" || context === "password") && (
           <SidebarGroup>
-            <SidebarGroupLabel>
-              Platform: {context === "mask" ? "Mask" : "Password"}
-            </SidebarGroupLabel>
             <SidebarMenu>
               {data[context].nav.map((item) =>
                 item.items ? (
