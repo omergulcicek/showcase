@@ -1,0 +1,44 @@
+# API Reference
+
+## `useViraMask`
+
+The primary hook for ViraMask.
+
+```tsx
+function useViraMask<TFieldValues, TSchema>(
+  props: UseViraMaskProps<TFieldValues, TSchema>
+): MaskFields<TSchema>
+```
+
+### Props
+
+| Prop | Type | Description |
+| :--- | :--- | :--- |
+| `form` | `UseFormReturn<TFieldValues>` | The object returned by RHF's `useForm`. |
+| `schema` | `MaskSchema<TFieldValues>` | Configuration object mapping field names to masks. |
+
+### Returns
+
+Returns an object where each key matches the schema keys. Each value is a `MaskField` object.
+
+## `MaskField`
+
+The object meant to be spread onto an `<input>` element.
+
+```tsx
+interface MaskField {
+  ref: RefCallback<HTMLInputElement>;
+  name: string;
+  value: string;         // Display value (masked)
+  rawValue: string;      // Clean value (unmasked)
+  onChange: (e: ChangeEvent) => void;
+  onBlur: (e: FocusEvent) => void;
+  onFocus: (e: FocusEvent) => void;
+  type?: string;
+  inputMode?: string;
+  autoComplete?: string;
+  'aria-invalid'?: boolean;
+  'aria-describedby'?: string;
+  title?: string;
+}
+```

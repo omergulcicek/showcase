@@ -1,0 +1,43 @@
+# Currency
+
+ViraMask provides robust currency formatting support.
+
+## Configuration
+
+Use the `currency` property in `MaskOptions`.
+
+```tsx
+interface CurrencyOptions {
+  precision?: number;        // Default: 2
+  decimalSeparator?: string; // Default: ','
+  thousandSeparator?: string;// Default: '.'
+  symbol?: string;           // Default: ''
+  symbolPosition?: 'prefix' | 'suffix'; // Default: 'prefix'
+}
+```
+
+## Usage
+
+```tsx
+const { price, salary } = useViraMask({
+  form,
+  schema: {
+    price: {
+      currency: {
+        precision: 2,
+        symbol: '$',
+        decimalSeparator: '.',
+        thousandSeparator: ',',
+      },
+      inputMode: 'decimal',
+    },
+    salary: 'currency', // Uses default currency preset
+  }
+});
+```
+
+## Behavior
+
+- **Raw Value:** The form state will contain the numeric value as a string (e.g., `"1234.50"`).
+- **Display Value:** The input will show the formatted string (e.g., `"$ 1,234.50"`).
+- **Typing:** Typing automatically formats the number, handling decimal insertion and thousand separators.

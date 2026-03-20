@@ -1,0 +1,101 @@
+# Mask Options
+
+When you need more control than presets offer, use the `MaskOptions` object.
+
+## Configuration Object
+
+```tsx
+interface MaskOptions {
+  mask?: string;
+  transform?: 'uppercase' | 'lowercase';
+  allowedChars?: RegExp;
+  forbiddenChars?: RegExp;
+  currency?: CurrencyOptions;
+  placeholderChar?: string;
+  inputMode?: 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
+  type?: HTMLInputTypeAttribute;
+  validate?: boolean;
+  validator?: ((value: string) => boolean) | 'luhn' | 'tckn' | 'email' | 'iban' | 'expiry' | 'date' | 'url' | 'vkn';
+  autoComplete?: string;
+  errorMessage?: string;
+  dateFormat?: 'DMY' | 'MDY' | 'YMD';
+  alphaFormat?: boolean;
+  usernameFormat?: boolean;
+  displayPrefix?: string;
+  preset?: MaskPreset;
+  onCardTypeChange?: (type: 'visa' | 'mastercard' | 'amex' | 'troy' | 'unknown') => void;
+  resolveMask?: (value: string, allValues?: any, schema?: MaskSchema<any>) => string | undefined;
+}
+```
+
+## Properties
+
+### `mask`
+The pattern string.
+- `9`: Numeric (0-9)
+- `a`: Alphabetic (a-z, A-Z)
+- `*`: Alphanumeric (0-9, a-z, A-Z)
+- Any other character is treated as a literal (e.g., `/`, `-`, `(`, `)`).
+
+### `resolveMask`
+A function to dynamically determine the mask based on the current input value or other form values.
+- **value**: The current value of the input.
+- **allValues**: All form values (from `getValues()`).
+- **schema**: The ViraMask schema definition.
+
+This is useful for cases like changing the CVV mask length based on the card number type (e.g., switching to 4 digits for Amex).
+
+### `transform`
+Automatically transforms input case.
+- `'uppercase'`: Converts to uppercase.
+- `'lowercase'`: Converts to lowercase.
+
+### `allowedChars`
+A RegExp defining allowed characters. If `mask` is provided, this is inferred from the mask characters (e.g., `9` implies `/[0-9]/`), but can be overridden.
+
+### `forbiddenChars`
+A RegExp defining characters to strip from the input.
+
+### `currency`
+Configuration for currency formatting. See [Currency](/currency) for details.
+
+### `dateFormat`
+Specifies the date format for date validation and masking.
+- `'DMY'`: Day-Month-Year (e.g., 31/12/2024)
+- `'MDY'`: Month-Day-Year (e.g., 12/31/2024)
+- `'YMD'`: Year-Month-Day (e.g., 2024/12/31)
+
+### `displayPrefix`
+A string to display at the beginning of the input that cannot be deleted by the user. Useful for things like country codes (e.g., `TR` for IBAN).
+
+### `alphaFormat`
+Boolean. If true, allows only alphabetic characters (including Turkish characters like ç, ğ, ü, etc.) and spaces.
+
+### `usernameFormat`
+Boolean. If true, formats the input as a slug/username (lowercase, spaces replaced by hyphens, only alphanumeric characters).
+
+### `inputMode`
+Hints to the browser which keyboard to display. Defaults to `'text'`. Presets often set this (e.g., `numeric` sets `'numeric'`).
+
+### `type`
+The HTML `type` attribute for the input (e.g., `'text'`, `'tel'`, `'password'`).
+
+### `validate` & `validator`
+Enables validation.
+- `validate`: Boolean to enable.
+- `validator`:
+  - `'luhn'`: Luhn algorithm (Credit Cards).
+  - `'tckn'`: Turkish Identity Number algorithm.
+  - `'email'`: Email validation.
+  - `'iban'`: IBAN validation.
+  - `'expiry'`: Credit card expiry date validation.
+  - `'date'`: Date format validation.
+  - `'url'`: URL validation.
+  - `'vkn'`: Tax Identification Number validation.
+  - `(value: string) => boolean`: Custom validation function.
+
+### `onCardTypeChange`
+Callback function that triggers when the credit card type is detected or changes.
+- **type**: `'visa' | 'mastercard' | 'amex' | 'troy' | 'unknown'`
+
+Useful for displaying the card logo dynamically.

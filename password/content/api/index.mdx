@@ -1,0 +1,29 @@
+# API Reference
+
+## useViraPassword(options?)
+
+The `useViraPassword` hook accepts an optional configuration object.
+
+### Options
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `defaultVisible` | `boolean` | `false` | Initial visibility state of the password. |
+| `icons` | `{ show: ReactNode, hide: ReactNode }` | `undefined` | Custom icons for show/hide states. |
+| `disabled` | `boolean` | `false` | Whether the input is disabled. |
+| `readOnly` | `boolean` | `false` | Whether the input is read-only. |
+| `id` | `string` | `undefined` | ID for the input element. If not provided, a random ID will be generated. |
+| `inputProps` | `React.InputHTMLAttributes` | `undefined` | Props to be merged with the generated input props. |
+| `btnProps` | `React.ButtonHTMLAttributes` | `undefined` | Props to be merged with the generated button props. |
+
+### Returns
+
+The hook returns an object with the following properties:
+
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| `inputProps` | `React.InputHTMLAttributes` | Props for the input element. |
+| `btnProps` | `React.ButtonHTMLAttributes` | Props for the toggle button. |
+| `isVisible` | `boolean` | Current visibility state. |
+| `toggle` | `() => void` | Function to toggle visibility. |
+| `setVisible` | `(visible: boolean) => void` | Function to set visibility explicitly. |

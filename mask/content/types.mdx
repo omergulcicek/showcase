@@ -1,0 +1,54 @@
+# Types
+
+Common TypeScript definitions used in ViraMask.
+
+## `MaskPreset`
+
+Union of all available preset names.
+
+```tsx
+type MaskPreset = 
+  | 'card' | 'expiry' | 'cvv' | 'tckn' | 'phone' 
+  | 'email' | 'url' | 'alpha' | 'password' | 'text' 
+  | 'currency' | 'iban' | 'numeric' 
+  | 'date' | 'taxNumber' | 'zipCode';
+```
+
+## `MaskOptions`
+
+Configuration object for a field mask.
+
+```tsx
+interface MaskOptions {
+  mask?: string;
+  transform?: 'uppercase' | 'lowercase';
+  allowedChars?: RegExp;
+  forbiddenChars?: RegExp;
+  currency?: CurrencyOptions;
+  placeholderChar?: string;
+  inputMode?: 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
+  type?: HTMLInputTypeAttribute;
+  validate?: boolean;
+  validator?: ((value: string) => boolean) | 'luhn' | 'tckn';
+}
+```
+
+## `CurrencyOptions`
+
+```tsx
+interface CurrencyOptions {
+  precision?: number;
+  decimalSeparator?: string;
+  thousandSeparator?: string;
+  symbol?: string;
+  symbolPosition?: 'prefix' | 'suffix';
+}
+```
+
+## `MaskSchema`
+
+```tsx
+type MaskSchema<TFieldValues extends FieldValues> = {
+  [K in keyof TFieldValues]?: MaskPreset | MaskOptions;
+};
+```

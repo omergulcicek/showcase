@@ -1,0 +1,22 @@
+export default {
+  index: "Overview",
+  "credit-card": "Credit Card",
+  card: "Card Number",
+  expiry: "Expiry",
+  cvv: "CVV",
+  iban: "IBAN",
+  currency: "Currency",
+  tckn: "TCKN",
+  "tax-number": "Tax Number",
+  phone: "Phone",
+  email: "Email",
+  "zip-code": "Zip Code",
+  date: "Date",
+  password: "Password",
+  url: "URL",
+  username: "Username",
+  alpha: "Alpha",
+  numeric: "Numeric",
+  text: "Text",
+  "custom-mask": "Custom Mask"
+};

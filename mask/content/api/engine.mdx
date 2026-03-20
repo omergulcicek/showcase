@@ -1,0 +1,39 @@
+# Engine
+
+Low-level functions exposed for advanced use cases or headless implementation.
+
+## `applyMask`
+
+Applies a mask pattern to a raw value.
+
+```tsx
+function applyMask(value: string, mask: string): string
+```
+
+## `cleanValue`
+
+Strips characters based on allowed/forbidden patterns.
+
+```tsx
+function cleanValue(
+  value: string, 
+  allowedChars?: RegExp, 
+  forbiddenChars?: RegExp
+): string
+```
+
+## `unmask`
+
+Removes mask characters from a value, returning the raw data.
+
+```tsx
+function unmask(value: string, mask: string): string
+```
+
+## `stripMask`
+
+Similar to `unmask` but strictly removes characters that match the mask literals at their specific positions.
+
+```tsx
+function stripMask(value: string, mask: string): string
+```

@@ -1,0 +1,33 @@
+# Currency Helpers
+
+Functions for handling currency formatting programmatically.
+
+## `formatCurrency`
+
+Formats a raw numeric string into a currency string based on options.
+
+```tsx
+function formatCurrency(value: string, options: CurrencyOptions): string
+```
+
+### Example
+
+```ts
+formatCurrency("1234.50", { symbol: "$", thousandSeparator: "," });
+// Output: "$1,234.50"
+```
+
+## `unformatCurrency`
+
+Strips formatting from a currency string, returning a clean numeric string (compatible with `parseFloat`).
+
+```tsx
+function unformatCurrency(value: string, options: CurrencyOptions): string
+```
+
+### Example
+
+```ts
+unformatCurrency("$1,234.50", { decimalSeparator: "." });
+// Output: "1234.50"
+```

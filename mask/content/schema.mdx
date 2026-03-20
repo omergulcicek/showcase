@@ -1,0 +1,57 @@
+# Schema & Presets
+
+The schema is the core configuration for ViraMask. It maps your form field names to mask definitions.
+
+## Schema Definition
+
+The schema type is `MaskSchema<TFieldValues>`, where keys match your form values. Values can be a **preset name** (string) or a **MaskOptions** object.
+
+```tsx
+const { taxId, customCode } = useViraMask({
+  form,
+  schema: {
+    // Using a preset
+    taxId: 'tckn',
+    
+    // Using custom options
+    customCode: {
+      mask: 'AA-999',
+      transform: 'uppercase',
+    },
+  },
+});
+```
+
+## Built-in Presets
+
+ViraMask includes presets for common use cases.
+
+| Preset | Mask / Pattern | Description |
+| :--- | :--- | :--- |
+| `card` | `9999 9999 9999 9999` | Credit card number (Luhn validation). Auto-detects Amex (4-6-5 format). |
+| `expiry` | `99/99` | Card expiry date |
+| `cvv` | `999` | Card security code |
+| `tckn` | `99999999999` | Turkish Identity Number (Algorithm validation) |
+| `phone` | `(999) 999 99 99` | Turkey phone format |
+| `email` | `/[a-zA-Z0-9@._-]/` | Email allowed chars |
+| `url` | `/[a-zA-Z0-9@:%._\+~#=/?&-]/` | URL allowed chars |
+| `alpha` | `/[a-zA-Z]/` | Alphabetic characters only |
+| `numeric` | `/[0-9]/` | Numeric characters only |
+| `currency` | Currency options | Currency formatting |
+| `iban` | `TR99 ...` | IBAN format |
+| `date` | `99/99/9999` | Date format |
+| `taxNumber` | `9999999999` | Tax number (VKN algorithm validation) |
+| `zipCode` | `99999` | Zip code |
+| `password` | - | Password input type |
+| `text` | - | Plain text |
+
+## Overriding Presets
+
+You can use a preset as a base and override specific options by spreading the preset configuration (if you access `PRESETS`) or simply defining the options you need manually.
+
+Currently, the schema accepts either a string key or the full object. To "extend" a preset, you would typically just define the full object with the desired properties, as presets are just shorthand for specific `MaskOptions`.
+
+## See Also
+
+- **[Mask Options](/mask-options):** Explore all available configuration options for customizing masks.
+- **[Examples](/examples):** View live demos of various presets and custom configurations.
