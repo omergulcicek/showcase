@@ -1,0 +1,48 @@
+# Validation
+
+> **Looking for Zod or Yup integration?** Check out the **[Schema Validation](/mask/integrations/validation)** guide.
+
+ViraMask handles validation at the masking level, which complements React Hook Form's validation.
+
+## Built-in Validators
+
+ViraMask includes algorithmic validators for specific formats.
+
+- **Luhn Algorithm:** Used for credit card numbers.
+- **TCKN Algorithm:** Used for Turkish Identity Numbers.
+- **VKN Algorithm:** Used for Turkish Tax Identification Numbers.
+- **IBAN Algorithm:** Used for International Bank Account Numbers (TR).
+
+Enable these by setting `validate: true` and specifying the `validator` string in your schema or using the corresponding preset (`card`, `tckn`, `taxNumber`, `iban`).
+
+## Accessing Validation State
+
+ViraMask integrates directly with React Hook Form's validation system. When a validation error occurs, ViraMask registers an error in RHF's `formState.errors` object.
+
+- `aria-invalid`: `boolean`. Automatically set based on RHF error state.
+
+```tsx
+const { id } = useViraMask({ form, schema: { id: 'tckn' } });
+
+return (
+  <div>
+    <input {...id} className={form.formState.errors.id ? 'error' : ''} />
+    {form.formState.errors.id && <span>Invalid ID</span>}
+  </div>
+);
+```
+
+## Integration with React Hook Form
+
+ViraMask updates the RHF form state. You can combine ViraMask's masking with RHF's rules.
+
+```tsx
+<input 
+  {...cc} 
+  {...form.register('cc', { required: true, minLength: 16 })} 
+/>
+```
+
+*Note: Since `useViraMask` already calls `register` internally and returns the props, you generally don't need to call `register` again unless you are adding extra RHF options. If you do, ensure you merge the refs correctly or pass the RHF options to `useViraMask` if supported in future versions (currently `useViraMask` handles registration).*
+
+**Best Practice:** Rely on `useViraMask` for the masking and immediate visual validation feedback (like red borders), and use RHF's `formState.errors` for form submission blocking and error messages.

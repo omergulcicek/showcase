@@ -1,0 +1,80 @@
+import { Button } from '@/components/ui/button'
+
+# Introduction
+
+**ViraMask** is a lightweight, zero-dependency masking library for React Hook Form.
+
+<div className="flex gap-2 mt-4 mb-8">
+  <Button asChild variant="outline">
+    <a href="/mask/getting-started" className="no-underline">
+      Getting Started
+    </a>
+  </Button>
+  <Button asChild>
+    <a href="https://github.com/virastack/input-mask" target="_blank" rel="noopener noreferrer" className="no-underline flex gap-1">
+      <span>⭐</span> <span>Star on GitHub</span>
+    </a>
+  </Button>
+</div>
+
+It provides a `useViraMask` hook that seamlessly integrates with React Hook Form to handle input masking, currency formatting, and validation.
+
+## Features
+
+- **Zero dependencies:** Lightweight and focused.
+- **React Hook Form integration:** Designed for RHF v7+.
+- **Declarative schema:** Define masks and validation rules in a simple object.
+- **Built-in presets:** Common patterns like Credit Card, IBAN, TCKN, Phone, Date, etc.
+- **Custom masks:** Flexible pattern definition (`9` for digits, `a` for letters, `*` for alphanumeric).
+- **Currency support:** Configurable precision, separators, and symbols.
+- **Validation:** Built-in Luhn, TCKN, and VKN algorithms, plus custom validators.
+- **TypeScript:** Fully typed.
+
+## Installation
+
+```bash
+npm install @virastack/input-mask
+```
+
+> **Note:** `react-hook-form` is a peer dependency.
+
+## Quick Start
+
+```tsx
+import { useViraMask } from '@virastack/input-mask';
+import { useForm } from 'react-hook-form';
+
+const App = () => {
+  const form = useForm({
+    defaultValues: {
+      cardNumber: '',
+      expiry: '',
+      cvv: '',
+    },
+  });
+
+  const { cardNumber, expiry, cvv } = useViraMask({
+    form,
+    schema: {
+      cardNumber: 'card',
+      expiry: 'expiry',
+      cvv: 'cvv',
+    },
+  });
+
+  const onSubmit = (data) => console.log(data);
+
+  return (
+    <form onSubmit={form.handleSubmit(onSubmit)}>
+      <input {...cardNumber} placeholder="Card Number" />
+      <input {...expiry} placeholder="MM/YY" />
+      <input {...cvv} placeholder="CVV" />
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+```
+
+## Examples
+
+See the [Examples](/mask/examples) page for live demos of each preset — credit card, phone, currency, date, and more.
