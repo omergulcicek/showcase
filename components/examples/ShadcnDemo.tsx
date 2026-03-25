@@ -9,7 +9,7 @@ export function ShadcnDemo() {
   const { inputProps, btnProps } = useViraPassword();
 
   return (
-    <div className="grid w-full max-w-sm items-center gap-1.5 p-4 border rounded-lg">
+    <div className="grid w-full max-w-sm items-center gap-1.5 p-4 border border-border rounded-lg">
       <Label htmlFor={inputProps.id}>Password</Label>
       <div className="flex w-full items-center space-x-2">
         <Input {...inputProps} placeholder="Enter your password" />

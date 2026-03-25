@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Users, Github, Twitter, LifeBuoy } from "lucide-react";
+import { Users, Github, Twitter, LifeBuoy, FlaskConical } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
@@ -25,9 +25,28 @@ const projects = [
     url: "/modern-web-in-3-minutes",
     color: "bg-amber-300",
   },
+  {
+    name: "CLI",
+    url: "/labs#cli",
+    color: "bg-muted-foreground/50",
+    soon: true,
+  },
+  {
+    name: "Config",
+    url: "/labs#config",
+    color: "bg-muted-foreground/50",
+    soon: true,
+  },
+  {
+    name: "Error Guard",
+    url: "/labs#error-guard",
+    color: "bg-muted-foreground/50",
+    soon: true,
+  },
 ];
 
 const links = [
+  { name: "Labs", url: "/labs", icon: FlaskConical },
   { name: "Support", url: "/support", icon: LifeBuoy },
   { name: "Maintainers", url: "/maintainers", icon: Users },
   {
@@ -51,68 +70,97 @@ export function GlobalRail() {
     (p) =>
       p.url !== "/" &&
       p.url.startsWith("/") &&
-      (pathname === p.url || pathname.startsWith(`${p.url}/`)),
+      (pathname === p.url || pathname.startsWith(p.url.split("#")[0])) &&
+      !p.soon,
   );
 
-  if (!activeProject) return null;
+  const hasSubMenu =
+    activeProject &&
+    ["Mask", "Password", "Modern Web in 3 Minutes"].includes(
+      activeProject.name,
+    );
+
+  if (!activeProject || !hasSubMenu) return null;
 
   return (
     <>
       <div className="hidden md:block w-14 shrink-0" />
       <div className="hidden md:flex flex-col items-center w-14 h-[calc(100svh-4rem)] fixed left-0 top-16 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] border-r border-border/40 bg-sidebar py-4 gap-2 z-20 shrink-0">
         {/* Projects */}
-      <div className="flex flex-col gap-1 w-full items-center">
-        <TooltipProvider delayDuration={0}>
-          {projects.map((item) => {
-            const isActive =
-              pathname === item.url || pathname.startsWith(`${item.url}/`);
-            return (
-              <Tooltip key={item.name}>
-                <TooltipTrigger asChild>
-                  <Link
-                    href={item.url}
-                    className={cn(
-                      "flex items-center justify-center size-8 rounded-lg transition-colors hover:bg-sidebar-accent",
-                      isActive && "bg-sidebar-accent",
+        <div className="flex flex-col gap-1 w-full items-center">
+          <TooltipProvider delayDuration={0}>
+            {projects.map((item) => {
+              const isActive =
+                pathname === item.url || pathname.startsWith(`${item.url}/`);
+              return (
+                <Tooltip key={item.name}>
+                  <TooltipTrigger asChild>
+                    {item.soon ? (
+                      <div
+                        className={cn(
+                          "flex items-center justify-center size-8 rounded-lg transition-colors hover:bg-sidebar-accent",
+                          isActive && "bg-sidebar-accent",
+                          "cursor-not-allowed"
+                        )}
+                      >
+                        <div className={cn(`size-3 rounded`, item.color)} />
+                      </div>
+                    ) : (
+                      <Link
+                        href={item.url}
+                        className={cn(
+                          "flex items-center justify-center size-8 rounded-lg transition-colors hover:bg-sidebar-accent",
+                          isActive && "bg-sidebar-accent"
+                        )}
+                      >
+                        <div className={cn(`size-3 rounded`, item.color)} />
+                      </Link>
                     )}
-                  >
-                    <div className={cn(`size-3 rounded`, item.color)} />
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent side="right" sideOffset={10}>
-                  {item.name}
-                </TooltipContent>
-              </Tooltip>
-            );
-          })}
-        </TooltipProvider>
-      </div>
+                  </TooltipTrigger>
+                  <TooltipContent side="right" sideOffset={10}>
+                    {item.name}{" "}
+                    {item.soon && (
+                      <span className="text-muted-foreground ml-1">(Soon)</span>
+                    )}
+                  </TooltipContent>
+                </Tooltip>
+              );
+            })}
+          </TooltipProvider>
+        </div>
 
-      {/* Separator */}
-      <div className="w-8 h-px bg-border/40 my-2" />
+        {/* Separator */}
+        <div className="w-8 h-px bg-border/40 my-2" />
 
-      {/* Links */}
-      <div className="flex flex-col gap-1 w-full items-center">
-        <TooltipProvider delayDuration={0}>
-          {links.map((item) => (
-            <Tooltip key={item.name}>
-              <TooltipTrigger asChild>
-                <Link
-                  href={item.url}
-                  target={item.external ? "_blank" : undefined}
-                  className="flex items-center justify-center size-8 rounded-lg text-sidebar-foreground/70 transition-colors hover:bg-sidebar-accent hover:text-sidebar-foreground"
-                >
-                  <item.icon className="size-4" />
-                </Link>
-              </TooltipTrigger>
-              <TooltipContent side="right" sideOffset={10}>
-                {item.name}
-              </TooltipContent>
-            </Tooltip>
-          ))}
-        </TooltipProvider>
+        {/* Links */}
+        <div className="flex flex-col gap-1 w-full items-center">
+          <TooltipProvider delayDuration={0}>
+            {links.map((item) => {
+              const isActive =
+                pathname === item.url || pathname.startsWith(`${item.url}/`);
+              return (
+                <Tooltip key={item.name}>
+                  <TooltipTrigger asChild>
+                    <Link
+                      href={item.url}
+                      target={item.external ? "_blank" : undefined}
+                      className={cn(
+                        "flex items-center justify-center size-8 rounded-lg text-sidebar-foreground/70 transition-colors hover:bg-sidebar-accent hover:text-sidebar-foreground",
+                        isActive && "bg-sidebar-accent text-sidebar-foreground",
+                      )}
+                    >
+                      <item.icon className="size-4" />
+                    </Link>
+                  </TooltipTrigger>
+                  <TooltipContent side="right" sideOffset={10}>
+                    {item.name}
+                  </TooltipContent>
+                </Tooltip>
+              );
+            })}
+          </TooltipProvider>
+        </div>
       </div>
-    </div>
     </>
   );
 }

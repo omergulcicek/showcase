@@ -24,7 +24,7 @@ export default function MaintainersPage() {
       <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-8">
         <UserCard
           name="Ömer Gülçiçek"
-          image="https://github.com/omergulcicek.png"
+          image="/profile.jpg"
           links={{
             website: "https://omergulcicek.com",
             twitter: "https://twitter.com/omergulcicek",

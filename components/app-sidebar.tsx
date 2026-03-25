@@ -7,6 +7,7 @@ import {
   BookOpen,
   Code2,
   Component,
+  FlaskConical,
   Github,
   Home,
   LayoutTemplate,
@@ -73,8 +74,27 @@ const data = {
         url: "/modern-web-in-3-minutes",
         color: "bg-amber-300",
       },
+      {
+        name: "CLI",
+        url: "/cli",
+        color: "bg-muted-foreground/50",
+        soon: true,
+      },
+      {
+        name: "Config",
+        url: "/config",
+        color: "bg-muted-foreground/50",
+        soon: true,
+      },
+      {
+        name: "Error Guard",
+        url: "/error-guard",
+        color: "bg-muted-foreground/50",
+        soon: true,
+      },
     ],
     links: [
+      { name: "Labs", url: "/labs", icon: FlaskConical },
       { name: "Support", url: "/support", icon: LifeBuoy },
       { name: "Maintainers", url: "/maintainers", icon: Users },
       {
@@ -218,13 +238,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     (p) =>
       p.url !== "/" &&
       p.url.startsWith("/") &&
-      (pathname === p.url || pathname.startsWith(`${p.url}/`)),
+      (pathname === p.url || pathname.startsWith(p.url.split("#")[0])) &&
+      !p.soon,
   );
 
   if (activeProject) {
     if (activeProject.name === "Mask") context = "mask";
     else if (activeProject.name === "Password") context = "password";
-    else context = "none";
+    else if (activeProject.name === "Modern Web in 3 Minutes") context = "none";
+    else context = "home";
   }
 
   if (context === "none") return null;
@@ -242,7 +264,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       collapsible="icon"
       className={cn(
         "top-16 h-[calc(100svh-4rem)]",
-        activeProject && "md:left-14",
+        (context === "mask" || context === "password") && "md:left-14",
       )}
       {...props}
     >
@@ -255,12 +277,31 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 {data.home.projects.map((item) => (
                   <SidebarMenuItem key={item.name}>
                     <SidebarMenuButton asChild tooltip={item.name}>
-                      <Link href={item.url}>
-                        <div
-                          className={`size-3 min-w-3 rounded ${item.color}`}
-                        />
-                        <span>{item.name}</span>
-                      </Link>
+                      {item.soon ? (
+                        <div className="cursor-not-allowed">
+                          <div
+                            className={`size-3 min-w-3 rounded ${item.color}`}
+                          />
+                          <span
+                            className={cn(
+                              "group-data-[collapsible=icon]:hidden",
+                              "text-muted-foreground"
+                            )}
+                          >
+                            {item.name}
+                          </span>
+                          <span className="ml-auto text-[10px] font-medium px-1.5 py-0.5 rounded-md bg-muted text-muted-foreground group-data-[collapsible=icon]:hidden">
+                            Soon
+                          </span>
+                        </div>
+                      ) : (
+                        <Link href={item.url}>
+                          <div
+                            className={`size-3 min-w-3 rounded ${item.color}`}
+                          />
+                          <span>{item.name}</span>
+                        </Link>
+                      )}
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 ))}
@@ -272,7 +313,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               <SidebarMenu>
                 {data.home.links.map((item) => (
                   <SidebarMenuItem key={item.name}>
-                    <SidebarMenuButton asChild tooltip={item.name}>
+                    <SidebarMenuButton
+                      asChild
+                      tooltip={item.name}
+                      isActive={pathname === item.url}
+                    >
                       <Link
                         href={item.url}
                         target={

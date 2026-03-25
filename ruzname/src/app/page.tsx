@@ -103,7 +103,7 @@ const CalendarExample = () => {
             return (
               <div
                 key={c.slug}
-                className="flex flex-col gap-2 border border-dashed p-4 rounded-lg relative"
+                className="flex flex-col gap-2 border border-dashed border-border p-4 rounded-lg relative"
               >
                 <div className="absolute -top-6 left-4">
                   <Button variant="outline" size="icon">
