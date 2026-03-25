@@ -76,7 +76,7 @@ export function GlobalRail() {
                       isActive && "bg-sidebar-accent",
                     )}
                   >
-                    <div className={cn(`size-3 rounded-full`, item.color)} />
+                    <div className={cn(`size-3 rounded`, item.color)} />
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent side="right" sideOffset={10}>

@@ -14,7 +14,7 @@ interface UserCardProps {
 
 export function UserCard({ name, image, links }: UserCardProps) {
   return (
-    <div className="group flex flex-col overflow-hidden rounded-md border bg-card text-card-foreground shadow transition-colors hover:bg-muted/50">
+    <div className="group flex flex-col overflow-hidden rounded-md border border-border bg-card text-card-foreground shadow transition-colors hover:bg-muted/50">
       <div className="relative h-64 w-full overflow-hidden border-b">
         <Image
           src={image}
