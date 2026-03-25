@@ -38,7 +38,7 @@ export default function Step7Final() {
   }, []);
 
   return (
-    <section className="space-y-4 mb-80">
+    <section className="space-y-4 mb-44">
       <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
         Congratulations! 🎉
       </h2>

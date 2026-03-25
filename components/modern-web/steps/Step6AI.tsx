@@ -99,7 +99,7 @@ export default function Step6AI({ onNext, isCompleted }: StepProps) {
   }, []);
 
   return (
-    <section className="space-y-4 mb-20" id="ai-section-header">
+    <section className="space-y-4 mb-32" id="ai-section-header">
       <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
         {"Artificial Intelligence"}
       </h2>
@@ -120,6 +120,7 @@ export default function Step6AI({ onNext, isCompleted }: StepProps) {
               onChange={(e) => setText(e.target.value)}
               value={text}
               placeholder={"Ask me anything..."}
+              className="min-h-[104px]"
             />
           </PromptInputBody>
           <PromptInputFooter>

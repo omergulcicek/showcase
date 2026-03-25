@@ -1,15 +1,17 @@
 import Image from "next/image";
+import { projects } from "@/data/projects";
+import { ProjectCard } from "@/components/project-card";
 
 export default function HomePage() {
   return (
     <main className="flex min-h-[calc(100vh-160px)] flex-col gap-8 px-12 md:px-16 pb-8">
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-10">
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="flex flex-col items-center justify-center col-span-1">
           <Image
             src="/virastack.svg"
             alt="ViraStack"
-            width={400}
-            height={400}
+            width={320}
+            height={320}
             className="drop-shadow-lg"
             priority
             quality={100}
@@ -25,6 +27,12 @@ export default function HomePage() {
             for modern software standards.
           </p>
         </div>
+      </section>
+
+      <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-8">
+        {projects.map((project) => (
+          <ProjectCard key={project.name} project={project} />
+        ))}
       </section>
     </main>
   );

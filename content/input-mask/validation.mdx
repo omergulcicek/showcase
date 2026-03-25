@@ -2,11 +2,11 @@
 
 > **Looking for Zod or Yup integration?** Check out the **[Schema Validation](/mask/integrations/validation)** guide.
 
-ViraMask handles validation at the masking level, which complements React Hook Form's validation.
+ViraStack Mask handles validation at the masking level, which complements React Hook Form's validation.
 
 ## Built-in Validators
 
-ViraMask includes algorithmic validators for specific formats.
+ViraStack Mask includes algorithmic validators for specific formats.
 
 - **Luhn Algorithm:** Used for credit card numbers.
 - **TCKN Algorithm:** Used for Turkish Identity Numbers.
@@ -17,7 +17,7 @@ Enable these by setting `validate: true` and specifying the `validator` string i
 
 ## Accessing Validation State
 
-ViraMask integrates directly with React Hook Form's validation system. When a validation error occurs, ViraMask registers an error in RHF's `formState.errors` object.
+ViraStack Mask integrates directly with React Hook Form's validation system. When a validation error occurs, ViraStack Mask registers an error in RHF's `formState.errors` object.
 
 - `aria-invalid`: `boolean`. Automatically set based on RHF error state.
 
@@ -34,7 +34,7 @@ return (
 
 ## Integration with React Hook Form
 
-ViraMask updates the RHF form state. You can combine ViraMask's masking with RHF's rules.
+ViraStack Mask updates the RHF form state. You can combine ViraStack Mask's masking with RHF's rules.
 
 ```tsx
 <input 

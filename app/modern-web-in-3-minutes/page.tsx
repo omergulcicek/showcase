@@ -71,7 +71,7 @@ export default function Home() {
     currentStep >= 2 ? "container mx-auto px-4 py-8 max-w-3xl" : "p-4";
 
   return (
-    <main className={`min-h-screen transition-all ${containerClass}`}>
+    <main className={`transition-all ${containerClass}`}>
       <div className="flex flex-col gap-6">
         <AnimatePresence>
           {steps.slice(0, currentStep + 1).map((step, index) => (

@@ -1,8 +1,8 @@
 # Validation
 
-ViraMask is designed to work seamlessly with popular validation libraries like **Zod** and **Yup**, as well as standard **React Hook Form** validation.
+ViraStack Mask is designed to work seamlessly with popular validation libraries like **Zod** and **Yup**, as well as standard **React Hook Form** validation.
 
-ViraMask exports its internal validator functions so you can use them directly in your schemas:
+ViraStack Mask exports its internal validator functions so you can use them directly in your schemas:
 
 - `validateTCKN(value)`
 - `validateLuhn(value)`
@@ -15,7 +15,7 @@ ViraMask exports its internal validator functions so you can use them directly i
 
 ## Zod
 
-Use Zod's `refine` method to apply ViraMask's validators.
+Use Zod's `refine` method to apply ViraStack Mask's validators.
 
 ```tsx
 import { useViraMask, validateTCKN, validateLuhn } from '@virastack/input-mask';
@@ -73,7 +73,7 @@ export default function ZodForm() {
 
 ## Yup
 
-Use Yup's `test` method to apply ViraMask's validators.
+Use Yup's `test` method to apply ViraStack Mask's validators.
 
 ```tsx
 import { useViraMask, validateTCKN } from '@virastack/input-mask';
@@ -114,7 +114,7 @@ export default function YupForm() {
 
 If you are not using a schema validation library, you can use React Hook Form's built-in `validate` rule.
 
-> **Note:** When using `useViraMask` without a resolver, ViraMask automatically injects its default validators into the `register` function. However, you can override or extend this behavior manually if needed.
+> **Note:** When using `useViraMask` without a resolver, ViraStack Mask automatically injects its default validators into the `register` function. However, you can override or extend this behavior manually if needed.
 
 ```tsx
 import { useViraMask, validateTCKN } from '@virastack/input-mask';
@@ -128,7 +128,7 @@ export default function StandardForm() {
     schema: {
       tckn: {
         preset: 'tckn',
-        // ViraMask handles this automatically, but here is how you'd do it manually:
+        // ViraStack Mask handles this automatically, but here is how you'd do it manually:
         // validator: validateTCKN 
       }
     }
