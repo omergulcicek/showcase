@@ -14,11 +14,10 @@ export async function generateMetadata(props: {
   const projectSlug = mdxPath[0];
   
   const PROJECT_NAMES: Record<string, string> = {
-    mask: "Mask",
-    password: "Password",
     "nextjs-boilerplate": "Next.js Boilerplate",
     "ai-rules": "AI Rules",
     "input-mask": "Input Mask",
+    "password-toggle": "Password Toggle",
     "modern-web-in-3-minutes": "Modern Web in 3 Minutes",
   };
 

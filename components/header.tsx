@@ -6,35 +6,7 @@ import { Github } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
 
-const data = {
-  projects: [
-    {
-      name: "Next.js Boilerplate",
-      url: "/nextjs-boilerplate",
-      textColor: "text-blue-500",
-    },
-    {
-      name: "AI Rules",
-      url: "/ai",
-      textColor: "text-fuchsia-500",
-    },
-    {
-      name: "Mask",
-      url: "/mask",
-      textColor: "text-green-600",
-    },
-    {
-      name: "Password",
-      url: "/password",
-      textColor: "text-red-500",
-    },
-    {
-      name: "Modern Web in 3 Minutes",
-      url: "/modern-web-in-3-minutes",
-      textColor: "text-amber-500",
-    },
-  ],
-};
+import { projects } from "@/data/projects";
 
 export function Header() {
   const pathname = usePathname();
@@ -42,7 +14,7 @@ export function Header() {
   let projectName = "";
   let projectColor = "";
 
-  const activeProject = data.projects.find(
+  const activeProject = projects.find(
     (p) =>
       p.url !== "/" &&
       p.url.startsWith("/") &&
@@ -53,9 +25,15 @@ export function Header() {
     if (activeProject.name === "Modern Web in 3 Minutes") projectName = "Guide";
     else if (activeProject.name === "AI Rules") projectName = "AI";
     else if (activeProject.name === "Next.js Boilerplate") projectName = "Next";
+    else if (activeProject.name === "TanStack Boilerplate") projectName = "TanStack";
+    else if (activeProject.name === "Start (CLI)") projectName = "Start";
+    else if (activeProject.name === "Standards") projectName = "Standards";
+    else if (activeProject.name === "Error Guard") projectName = "Guard";
+    else if (activeProject.name === "Input Mask") projectName = "Mask";
+    else if (activeProject.name === "Password Toggle") projectName = "Password";
     else projectName = activeProject.name;
 
-    projectColor = activeProject.textColor;
+    projectColor = activeProject.textColor || "";
   }
 
   return (

@@ -7,11 +7,10 @@ import "nextra-theme-docs/style.css";
 import type { Metadata } from "next";
 
 const PROJECT_NAMES: Record<string, string> = {
-  mask: "Mask",
-  password: "Password",
   "nextjs-boilerplate": "Next.js Boilerplate",
   "ai-rules": "AI Rules",
   "input-mask": "Input Mask",
+  "password-toggle": "Password Toggle",
   "modern-web-in-3-minutes": "Modern Web in 3 Minutes",
 };
 

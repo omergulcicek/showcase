@@ -1,46 +1,10 @@
 import { ProjectCard } from "@/components/project-card";
+import { projects } from "@/data/projects";
 
 export const metadata = {
   title: "Support",
   description: "Support ViraStack projects by starring them on GitHub.",
 };
-
-export const projects = [
-  {
-    name: "Next.js Boilerplate",
-    description:
-      "Production-ready Next.js 16+ starter template built with Tailwind CSS 4 and TypeScript.",
-    repo: "https://github.com/virastack/nextjs-boilerplate",
-    bgColor: "bg-blue-50 dark:bg-blue-500/10",
-  },
-  {
-    name: "AI Rules",
-    description:
-      "AI-native architecture kit and high-discipline protocols for modern React applications.",
-    repo: "https://github.com/virastack/ai-rules",
-    bgColor: "bg-fuchsia-50 dark:bg-fuchsia-500/10",
-  },
-  {
-    name: "Password Toggle",
-    description:
-      "Fully accessible and highly customizable password visibility hook for React.",
-    repo: "https://github.com/virastack/password-toggle",
-    bgColor: "bg-red-50 dark:bg-red-500/10",
-  },
-  {
-    name: "Input Mask",
-    description:
-      "Lightweight, zero-dependency input masking library optimized for React Hook Form.",
-    repo: "https://github.com/virastack/input-mask",
-    bgColor: "bg-green-50 dark:bg-green-500/10",
-  },
-  {
-    name: "Modern Web in 3 Minutes",
-    description: "Master modern web development standards in just 3 minutes.",
-    repo: "https://github.com/virastack/modern-web-in-3-minutes",
-    bgColor: "bg-amber-50 dark:bg-amber-500/10",
-  },
-];
 
 export default function SupportPage() {
   return (

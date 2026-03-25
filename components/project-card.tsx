@@ -1,13 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-export interface Project {
-  name: string;
-  description: string;
-  repo: string;
-  bgColor: string;
-}
+import type { Project } from "@/data/projects";
 
 interface ProjectCardProps {
   project: Project;
@@ -22,7 +16,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
       )}
     >
       <div>
-        <h3 className="font-semibold">{project.name}</h3>
+        <div className="flex items-center justify-between">
+          <h3 className="font-semibold">{project.name}</h3>
+          {project.soon && (
+            <span className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-muted text-muted-foreground">
+              Soon
+            </span>
+          )}
+        </div>
         <p className="text-sm text-muted-foreground mt-1">
           {project.description}
         </p>

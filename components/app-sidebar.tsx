@@ -45,54 +45,18 @@ import {
 } from "@/components/ui/collapsible";
 import { cn } from "@/lib/utils";
 
+import { projects } from "@/data/projects";
+
 // Define the data for different contexts
+const sortedProjects = [...projects].sort((a, b) => {
+  if (a.soon && !b.soon) return 1;
+  if (!a.soon && b.soon) return -1;
+  return 0;
+});
+
 const data = {
   home: {
-    projects: [
-      {
-        name: "Next.js Boilerplate",
-        url: "/nextjs-boilerplate",
-        color: "bg-blue-500",
-      },
-      {
-        name: "AI Rules",
-        url: "/ai",
-        color: "bg-fuchsia-300",
-      },
-      {
-        name: "Mask",
-        url: "/mask",
-        color: "bg-green-500",
-      },
-      {
-        name: "Password",
-        url: "/password",
-        color: "bg-red-500",
-      },
-      {
-        name: "Modern Web in 3 Minutes",
-        url: "/modern-web-in-3-minutes",
-        color: "bg-amber-300",
-      },
-      {
-        name: "CLI",
-        url: "/cli",
-        color: "bg-muted-foreground/50",
-        soon: true,
-      },
-      {
-        name: "Config",
-        url: "/config",
-        color: "bg-muted-foreground/50",
-        soon: true,
-      },
-      {
-        name: "Error Guard",
-        url: "/error-guard",
-        color: "bg-muted-foreground/50",
-        soon: true,
-      },
-    ],
+    projects: sortedProjects,
     links: [
       { name: "Labs", url: "/labs", icon: FlaskConical },
       { name: "Support", url: "/support", icon: LifeBuoy },
@@ -105,122 +69,131 @@ const data = {
       },
       {
         name: "X (Twitter)",
-        url: "https://twitter.com/omergulcicek",
+        url: "https://twitter.com/virastack",
         icon: Twitter,
         external: true,
       },
     ],
   },
-  mask: {
+  "input-mask": {
     nav: [
       {
         title: "Getting Started",
-        url: "/mask/getting-started",
+        url: "/input-mask/getting-started",
         icon: BookOpen,
       },
       {
         title: "Examples",
-        url: "/mask/examples",
+        url: "/input-mask/examples",
         icon: Component,
         isActive: false,
         items: [
-          { title: "Overview", url: "/mask/examples" },
-          { title: "Credit Card", url: "/mask/examples/credit-card" },
-          { title: "Card Number", url: "/mask/examples/card" },
-          { title: "Expiry", url: "/mask/examples/expiry" },
-          { title: "CVV", url: "/mask/examples/cvv" },
-          { title: "IBAN", url: "/mask/examples/iban" },
-          { title: "Currency", url: "/mask/examples/currency" },
-          { title: "TCKN", url: "/mask/examples/tckn" },
-          { title: "Tax Number", url: "/mask/examples/tax-number" },
-          { title: "Phone", url: "/mask/examples/phone" },
-          { title: "Email", url: "/mask/examples/email" },
-          { title: "Zip Code", url: "/mask/examples/zip-code" },
-          { title: "Date", url: "/mask/examples/date" },
-          { title: "Password", url: "/mask/examples/password" },
-          { title: "URL", url: "/mask/examples/url" },
-          { title: "Username", url: "/mask/examples/username" },
-          { title: "Alpha", url: "/mask/examples/alpha" },
-          { title: "Numeric", url: "/mask/examples/numeric" },
-          { title: "Text", url: "/mask/examples/text" },
-          { title: "Custom Mask", url: "/mask/examples/custom-mask" },
+          { title: "Overview", url: "/input-mask/examples" },
+          { title: "Credit Card", url: "/input-mask/examples/credit-card" },
+          { title: "Card Number", url: "/input-mask/examples/card" },
+          { title: "Expiry", url: "/input-mask/examples/expiry" },
+          { title: "CVV", url: "/input-mask/examples/cvv" },
+          { title: "IBAN", url: "/input-mask/examples/iban" },
+          { title: "Currency", url: "/input-mask/examples/currency" },
+          { title: "TCKN", url: "/input-mask/examples/tckn" },
+          { title: "Tax Number", url: "/input-mask/examples/tax-number" },
+          { title: "Phone", url: "/input-mask/examples/phone" },
+          { title: "Email", url: "/input-mask/examples/email" },
+          { title: "Zip Code", url: "/input-mask/examples/zip-code" },
+          { title: "Date", url: "/input-mask/examples/date" },
+          { title: "Password", url: "/input-mask/examples/password" },
+          { title: "URL", url: "/input-mask/examples/url" },
+          { title: "Username", url: "/input-mask/examples/username" },
+          { title: "Alpha", url: "/input-mask/examples/alpha" },
+          { title: "Numeric", url: "/input-mask/examples/numeric" },
+          { title: "Text", url: "/input-mask/examples/text" },
+          { title: "Custom Mask", url: "/input-mask/examples/custom-mask" },
         ],
       },
       {
         title: "Schema & Presets",
-        url: "/mask/schema",
+        url: "/input-mask/schema",
         icon: Code2,
       },
       {
         title: "Mask Options",
-        url: "/mask/mask-options",
+        url: "/input-mask/mask-options",
         icon: Settings2,
       },
       {
         title: "Custom Masks",
-        url: "/mask/custom-masks",
+        url: "/input-mask/custom-masks",
         icon: Terminal,
       },
       {
         title: "Currency",
-        url: "/mask/currency",
+        url: "/input-mask/currency",
         icon: Terminal,
       },
       {
         title: "Built-in Validation",
-        url: "/mask/validation",
+        url: "/input-mask/validation",
         icon: ShieldAlert,
       },
       {
         title: "Integrations",
-        url: "/mask/integrations",
+        url: "/input-mask/integrations",
         icon: LayoutTemplate,
         items: [
-          { title: "Libraries", url: "/mask/integrations/libraries" },
-          { title: "Validation", url: "/mask/integrations/validation" },
+          { title: "Libraries", url: "/input-mask/integrations/libraries" },
+          { title: "Validation", url: "/input-mask/integrations/validation" },
         ],
       },
       {
         title: "API Reference",
-        url: "/mask/api",
+        url: "/input-mask/api",
         icon: BookOpen,
         items: [
-          { title: "Engine", url: "/mask/api/engine" },
-          { title: "Currency", url: "/mask/api/currency" },
-          { title: "Utilities", url: "/mask/api/utilities" },
+          { title: "Engine", url: "/input-mask/api/engine" },
+          { title: "Currency", url: "/input-mask/api/currency" },
+          { title: "Utilities", url: "/input-mask/api/utilities" },
         ],
       },
       {
         title: "Types",
-        url: "/mask/types",
+        url: "/input-mask/types",
         icon: Code2,
       },
     ],
   },
-  password: {
+  "password-toggle": {
     nav: [
       {
         title: "Getting Started",
-        url: "/password/getting-started",
+        url: "/password-toggle/getting-started",
         icon: BookOpen,
       },
       {
         title: "Examples",
-        url: "/password/examples",
+        url: "/password-toggle/examples",
         icon: Component,
         isActive: true,
         items: [
-          { title: "Overview", url: "/password/examples" },
-          { title: "Basic", url: "/password/examples/basic" },
-          { title: "Custom Icons", url: "/password/examples/custom-icons" },
-          { title: "Custom Text", url: "/password/examples/custom-text" },
-          { title: "Self Closing", url: "/password/examples/self-closing" },
-          { title: "Shadcn UI", url: "/password/examples/shadcn" },
+          { title: "Overview", url: "/password-toggle/examples" },
+          { title: "Basic", url: "/password-toggle/examples/basic" },
+          {
+            title: "Custom Icons",
+            url: "/password-toggle/examples/custom-icons",
+          },
+          {
+            title: "Custom Text",
+            url: "/password-toggle/examples/custom-text",
+          },
+          {
+            title: "Self Closing",
+            url: "/password-toggle/examples/self-closing",
+          },
+          { title: "Shadcn UI", url: "/password-toggle/examples/shadcn" },
         ],
       },
       {
         title: "API Reference",
-        url: "/password/api",
+        url: "/password-toggle/api",
         icon: BookOpen,
       },
     ],
@@ -243,8 +216,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   );
 
   if (activeProject) {
-    if (activeProject.name === "Mask") context = "mask";
-    else if (activeProject.name === "Password") context = "password";
+    if (activeProject.name === "Input Mask") context = "input-mask";
+    else if (activeProject.name === "Password Toggle")
+      context = "password-toggle";
     else if (activeProject.name === "Modern Web in 3 Minutes") context = "none";
     else context = "home";
   }
@@ -264,7 +238,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       collapsible="icon"
       className={cn(
         "top-16 h-[calc(100svh-4rem)]",
-        (context === "mask" || context === "password") && "md:left-14",
+        (context === "input-mask" || context === "password-toggle") &&
+          "md:left-14",
       )}
       {...props}
     >
@@ -278,14 +253,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <SidebarMenuItem key={item.name}>
                     <SidebarMenuButton asChild tooltip={item.name}>
                       {item.soon ? (
-                        <div className="cursor-not-allowed">
+                        <Link href={item.url}>
                           <div
                             className={`size-3 min-w-3 rounded ${item.color}`}
                           />
                           <span
                             className={cn(
                               "group-data-[collapsible=icon]:hidden",
-                              "text-muted-foreground"
+                              "text-muted-foreground",
                             )}
                           >
                             {item.name}
@@ -293,7 +268,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                           <span className="ml-auto text-[10px] font-medium px-1.5 py-0.5 rounded-md bg-muted text-muted-foreground group-data-[collapsible=icon]:hidden">
                             Soon
                           </span>
-                        </div>
+                        </Link>
                       ) : (
                         <Link href={item.url}>
                           <div
@@ -338,7 +313,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </>
         )}
 
-        {(context === "mask" || context === "password") && (
+        {(context === "input-mask" || context === "password-toggle") && (
           <SidebarGroup>
             <SidebarMenu className="mt-2">
               {data[context].nav.map((item) =>

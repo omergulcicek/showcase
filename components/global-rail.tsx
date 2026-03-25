@@ -11,39 +11,7 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 
-const projects = [
-  {
-    name: "Next.js Boilerplate",
-    url: "/nextjs-boilerplate",
-    color: "bg-blue-400",
-  },
-  { name: "AI Rules", url: "/ai", color: "bg-fuchsia-400" },
-  { name: "Mask", url: "/mask", color: "bg-green-500" },
-  { name: "Password", url: "/password", color: "bg-red-500" },
-  {
-    name: "Modern Web in 3 Minutes",
-    url: "/modern-web-in-3-minutes",
-    color: "bg-amber-300",
-  },
-  {
-    name: "CLI",
-    url: "/labs#cli",
-    color: "bg-muted-foreground/50",
-    soon: true,
-  },
-  {
-    name: "Config",
-    url: "/labs#config",
-    color: "bg-muted-foreground/50",
-    soon: true,
-  },
-  {
-    name: "Error Guard",
-    url: "/labs#error-guard",
-    color: "bg-muted-foreground/50",
-    soon: true,
-  },
-];
+import { projects } from "@/data/projects";
 
 const links = [
   { name: "Labs", url: "/labs", icon: FlaskConical },
@@ -76,7 +44,7 @@ export function GlobalRail() {
 
   const hasSubMenu =
     activeProject &&
-    ["Mask", "Password", "Modern Web in 3 Minutes"].includes(
+    ["Input Mask", "Password Toggle", "Modern Web in 3 Minutes"].includes(
       activeProject.name,
     );
 
@@ -89,43 +57,39 @@ export function GlobalRail() {
         {/* Projects */}
         <div className="flex flex-col gap-1 w-full items-center">
           <TooltipProvider delayDuration={0}>
-            {projects.map((item) => {
-              const isActive =
-                pathname === item.url || pathname.startsWith(`${item.url}/`);
-              return (
-                <Tooltip key={item.name}>
-                  <TooltipTrigger asChild>
-                    {item.soon ? (
-                      <div
-                        className={cn(
-                          "flex items-center justify-center size-8 rounded-lg transition-colors hover:bg-sidebar-accent",
-                          isActive && "bg-sidebar-accent",
-                          "cursor-not-allowed"
-                        )}
-                      >
-                        <div className={cn(`size-3 rounded`, item.color)} />
-                      </div>
-                    ) : (
+            {[...projects]
+              .sort((a, b) => {
+                if (a.soon && !b.soon) return 1;
+                if (!a.soon && b.soon) return -1;
+                return 0;
+              })
+              .map((item) => {
+                const isActive =
+                  pathname === item.url || pathname.startsWith(`${item.url}/`);
+                return (
+                  <Tooltip key={item.name}>
+                    <TooltipTrigger asChild>
                       <Link
                         href={item.url}
                         className={cn(
                           "flex items-center justify-center size-8 rounded-lg transition-colors hover:bg-sidebar-accent",
-                          isActive && "bg-sidebar-accent"
+                          isActive && "bg-sidebar-accent",
                         )}
                       >
                         <div className={cn(`size-3 rounded`, item.color)} />
                       </Link>
-                    )}
-                  </TooltipTrigger>
-                  <TooltipContent side="right" sideOffset={10}>
-                    {item.name}{" "}
-                    {item.soon && (
-                      <span className="text-muted-foreground ml-1">(Soon)</span>
-                    )}
-                  </TooltipContent>
-                </Tooltip>
-              );
-            })}
+                    </TooltipTrigger>
+                    <TooltipContent side="right" sideOffset={10}>
+                      {item.name}{" "}
+                      {item.soon && (
+                        <span className="text-muted-foreground ml-1">
+                          (Soon)
+                        </span>
+                      )}
+                    </TooltipContent>
+                  </Tooltip>
+                );
+              })}
           </TooltipProvider>
         </div>
 

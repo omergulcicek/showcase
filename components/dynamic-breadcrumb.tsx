@@ -17,6 +17,7 @@ const projectNames: Record<string, string> = {
   "nextjs-boilerplate": "Next.js Boilerplate",
   mask: "Mask",
   password: "Password",
+  cli: "Start (CLI)",
 };
 
 function formatSegment(segment: string, index: number) {

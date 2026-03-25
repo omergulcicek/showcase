@@ -4,6 +4,7 @@ import { Github, Globe, Twitter } from "lucide-react";
 
 interface UserCardProps {
   name: string;
+  description?: string;
   image: string;
   links: {
     website?: string;
@@ -12,21 +13,24 @@ interface UserCardProps {
   };
 }
 
-export function UserCard({ name, image, links }: UserCardProps) {
+export function UserCard({ name, description, image, links }: UserCardProps) {
   return (
     <div className="group flex flex-col overflow-hidden rounded-md border border-border bg-card text-card-foreground shadow transition-colors hover:bg-muted/50">
-      <div className="relative h-64 w-full overflow-hidden border-b border-border">
+      <div className="relative h-72 w-full overflow-hidden border-b border-border">
         <Image
           src={image}
           alt={name}
           fill
           unoptimized
-          className="object-cover transition-transform duration-300 group-hover:scale-110"
+          className="object-cover object-top transition-transform duration-300 group-hover:scale-110"
         />
       </div>
       <div className="flex flex-col gap-4 p-4">
         <div className="text-left">
           <h3 className="text-base font-bold">{name}</h3>
+          {description && (
+            <p className="text-sm text-muted-foreground">{description}</p>
+          )}
         </div>
         <div className="flex items-center gap-5">
           {links.website && (
