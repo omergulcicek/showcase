@@ -7,8 +7,14 @@ import { Header } from "@/components/header";
 import { CustomSidebarTrigger } from "@/components/custom-sidebar-trigger";
 import { DynamicBreadcrumb } from "@/components/dynamic-breadcrumb";
 
-export const metadata = {
-  title: "ViraStack",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    template: "%s | ViraStack",
+    default:
+      "ViraStack | High-performance Frontend architectures and developer-centric tools for modern software standards.",
+  },
   description: "ViraStack Open Source Projects",
   icons: {
     icon: "/virastack.svg",

@@ -1,8 +1,93 @@
-export default function ModernWebIn3MinutesPage() {
+"use client";
+
+import { useState } from "react";
+import { useTheme } from "next-themes";
+import { motion, AnimatePresence } from "framer-motion";
+import { useFont } from "./providers";
+import Step0Content from "@/components/modern-web/steps/Step0Content";
+import Step1Engine from "@/components/modern-web/steps/Step1Engine";
+import Step2Foundation from "@/components/modern-web/steps/Step2Foundation";
+import Step3Typography from "@/components/modern-web/steps/Step3Typography";
+import Step4UIComponents from "@/components/modern-web/steps/Step4UIComponents";
+import Step5Atmosphere from "@/components/modern-web/steps/Step5Atmosphere";
+import Step6AI from "@/components/modern-web/steps/Step6AI";
+import Step7Final from "@/components/modern-web/steps/Step7Final";
+
+export default function Home() {
+  const [currentStep, setCurrentStep] = useState(0);
+  const { setFont } = useFont();
+  const { setTheme } = useTheme();
+
+  const nextStep = () => {
+    if (currentStep < 7) {
+      const next = currentStep + 1;
+      setCurrentStep(next);
+
+      if (next === 3) {
+        setFont("geist");
+      }
+      if (next === 5) {
+        setTimeout(() => {
+          setTheme("dark");
+        }, 1000);
+      }
+
+      setTimeout(() => {
+        const element = document.getElementById(`step-${next}`);
+        if (element) {
+          const y = element.getBoundingClientRect().top + window.scrollY - 100;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      }, 100);
+    }
+  };
+
+  const steps = [
+    <Step0Content
+      key="0"
+      onNext={nextStep}
+      isCompleted={currentStep > 0}
+      isStyled={currentStep >= 2}
+    />,
+    <Step1Engine
+      key="1"
+      onNext={nextStep}
+      isCompleted={currentStep > 1}
+      isStyled={currentStep >= 2}
+    />,
+    <Step2Foundation key="2" onNext={nextStep} isCompleted={currentStep > 2} />,
+    <Step3Typography key="3" onNext={nextStep} isCompleted={currentStep > 3} />,
+    <Step4UIComponents
+      key="4"
+      onNext={nextStep}
+      isCompleted={currentStep > 4}
+    />,
+    <Step5Atmosphere key="5" onNext={nextStep} isCompleted={currentStep > 5} />,
+    <Step6AI key="6" onNext={nextStep} isCompleted={currentStep > 6} />,
+    <Step7Final key="7" />,
+  ];
+
+  const containerClass =
+    currentStep >= 2 ? "container mx-auto px-4 py-8 max-w-3xl" : "p-4";
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-[50vh] text-center px-12 md:px-16">
-      <h1 className="text-4xl font-bold mb-4">Modern Web in 3 Minutes</h1>
-      <p className="text-muted-foreground">Coming soon...</p>
-    </div>
+    <main className={`min-h-screen transition-all ${containerClass}`}>
+      <div className="flex flex-col gap-6">
+        <AnimatePresence>
+          {steps.slice(0, currentStep + 1).map((step, index) => (
+            <motion.div
+              key={index}
+              id={`step-${index}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="flex flex-col justify-center"
+            >
+              {step}
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </div>
+    </main>
   );
 }

@@ -4,13 +4,36 @@ import { getPageMap } from "nextra/page-map";
 import Link from "next/link";
 import "nextra-theme-docs/style.css";
 
-export const metadata = {
-  title: {
-    template: "ViraStack - %s",
-    default: "ViraStack",
-  },
-  description: "ViraStack Open Source Projects",
+import type { Metadata } from "next";
+
+const PROJECT_NAMES: Record<string, string> = {
+  mask: "Mask",
+  password: "Password",
+  "nextjs-boilerplate": "Next.js Boilerplate",
+  "ai-rules": "AI Rules",
+  "input-mask": "Input Mask",
+  "modern-web-in-3-minutes": "Modern Web in 3 Minutes",
 };
+
+export async function generateMetadata(props: {
+  params: Promise<{ mdxPath?: string[] }>;
+}): Promise<Metadata> {
+  const params = await props.params;
+  const mdxPath = params.mdxPath ?? [];
+  const projectSlug = mdxPath[0];
+  
+  let projectName = "";
+  if (projectSlug) {
+    projectName = PROJECT_NAMES[projectSlug] || projectSlug.charAt(0).toUpperCase() + projectSlug.slice(1);
+  }
+
+  // Nextra'nın kendi sayfa title'ını kullanması için template'i kaldırıyoruz
+  // Sayfa bazlı title'lar [...mdxPath]/page.tsx içindeki generateMetadata'da yönetilecek
+  return {
+    title: projectName ? `${projectName} | ViraStack` : "ViraStack",
+    description: "ViraStack Open Source Projects",
+  };
+}
 
 const banner = <></>;
 const navbar = <></>;
