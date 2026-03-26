@@ -53,7 +53,7 @@ export function GlobalRail() {
   return (
     <>
       <div className="hidden md:block w-14 shrink-0" />
-      <div className="hidden md:flex flex-col items-center w-14 h-[calc(100svh-4rem)] fixed left-0 top-16 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] border-r border-border/40 bg-sidebar py-4 gap-2 z-20 shrink-0">
+      <div className="hidden md:flex flex-col items-center w-14 h-[calc(100svh-4rem)] fixed left-0 top-12 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] border-r border-border/40 bg-sidebar py-4 gap-2 z-20 shrink-0">
         {/* Projects */}
         <div className="flex flex-col gap-1 w-full items-center">
           <TooltipProvider delayDuration={0}>

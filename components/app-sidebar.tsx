@@ -237,7 +237,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     <Sidebar
       collapsible="icon"
       className={cn(
-        "top-16 h-[calc(100svh-4rem)]",
+        "top-12 h-[calc(100svh-4rem)]",
         (context === "input-mask" || context === "password-toggle") &&
           "md:left-14",
       )}

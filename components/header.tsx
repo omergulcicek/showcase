@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Github } from "lucide-react";
+import { Github, Twitter } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
 
 import { projects } from "@/data/projects";
+import { Separator } from "./ui/separator";
 
 export function Header() {
   const pathname = usePathname();
@@ -39,8 +40,8 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="flex h-16 items-center px-4 md:px-6">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
+      <div className="flex h-12 items-center px-4">
         <Link href="/" className="flex items-center gap-2 cursor-pointer mr-6">
           <img
             src="/virastack.svg"
@@ -55,17 +56,30 @@ export function Header() {
           </span>
         </Link>
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <nav className="flex items-center gap-2">
-            <Button variant="ghost" size="icon" asChild>
-              <a
-                href="https://github.com/virastack"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Github className="h-[1.2rem] w-[1.2rem]" />
-                <span className="sr-only">GitHub</span>
-              </a>
-            </Button>
+          <nav className="flex items-center gap-2 h-6">
+            <div className="flex items-center">
+              <Button variant="ghost" size="icon" asChild>
+                <a
+                  href="https://github.com/virastack"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Github />
+                  <span className="sr-only">GitHub</span>
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" asChild>
+                <a
+                  href="https://x.com/virastack"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Twitter />
+                  <span className="sr-only">X (Twitter)</span>
+                </a>
+              </Button>
+            </div>
+            <Separator orientation="vertical" />
             <ThemeToggle />
           </nav>
         </div>

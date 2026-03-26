@@ -52,7 +52,7 @@ export function Header() {
                 className="flex items-center gap-2 font-bold text-xl px-2 py-1"
               >
                 <Image
-                  src="/virastack.svg"
+                  src="/virastack.png"
                   alt="ViraStack Logo"
                   width={32}
                   height={32}

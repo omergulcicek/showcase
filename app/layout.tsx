@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: {
     template: "%s | ViraStack",
     default:
-      "ViraStack | High-performance Frontend architectures and developer-centric tools for modern software standards.",
+      "ViraStack | High Performance Frontend Architectures and Developer-Centric Tools for Modern Software Standards.",
   },
   description: "ViraStack Open Source Projects",
   icons: {
