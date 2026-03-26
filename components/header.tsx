@@ -24,8 +24,10 @@ export function Header() {
   if (activeProject) {
     if (activeProject.name === "Modern Web in 3 Minutes") projectName = "Guide";
     else if (activeProject.name === "AI Rules") projectName = "AI";
-    else if (activeProject.name === "Next.js Boilerplate") projectName = "Next";
-    else if (activeProject.name === "TanStack Boilerplate") projectName = "TanStack";
+    else if (activeProject.name === "Next.js Boilerplate")
+      projectName = "Next.js";
+    else if (activeProject.name === "TanStack Boilerplate")
+      projectName = "TanStack";
     else if (activeProject.name === "Start (CLI)") projectName = "Start";
     else if (activeProject.name === "Standards") projectName = "Standards";
     else if (activeProject.name === "Error Guard") projectName = "Guard";
