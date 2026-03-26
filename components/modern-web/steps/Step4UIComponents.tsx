@@ -31,7 +31,7 @@ interface StepProps {
 
 export default function Step4UIComponents({ onNext, isCompleted }: StepProps) {
   const [date, setDate] = useState<Date>();
-      const dateLocale = enUS;
+  const dateLocale = enUS;
 
   return (
     <section className="space-y-4 mb-20">
@@ -49,13 +49,17 @@ export default function Step4UIComponents({ onNext, isCompleted }: StepProps) {
         >
           shadcn/ui
         </a>{" "}
-        {", you can include accessible, stylish, and fully customizable components into your project in seconds."}
+        {
+          ", you can include accessible, stylish, and fully customizable components into your project in seconds."
+        }
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
         {/* Standart HTML */}
         <div className="p-6 border border-border rounded-lg bg-gray-50 dark:bg-gray-900 flex flex-col gap-4">
-          <p className="text-sm text-gray-500 font-medium">{"Standard HTML Form:"}</p>
+          <p className="text-sm text-gray-500 font-medium">
+            {"Standard HTML Form:"}
+          </p>
 
           <div className="flex flex-col gap-4 p-4 border border-gray-300 bg-white text-black">
             <h3 className="font-bold m-0">{"Profile"}</h3>
@@ -149,7 +153,7 @@ export default function Step4UIComponents({ onNext, isCompleted }: StepProps) {
                 </Label>
               </div>
             </CardContent>
-            <CardFooter>
+            <CardFooter className="border-border">
               <Button className="w-full">{"Save"}</Button>
             </CardFooter>
           </Card>
@@ -157,7 +161,9 @@ export default function Step4UIComponents({ onNext, isCompleted }: StepProps) {
       </div>
 
       <p className="text-lg text-muted-foreground mt-6 whitespace-pre-wrap">
-        {"The difference is obvious! Plus, accessibility (a11y) and keyboard navigation are a bonus. Now let's add some "}{" "}
+        {
+          "The difference is obvious! Plus, accessibility (a11y) and keyboard navigation are a bonus. Now let's add some "
+        }{" "}
         <span
           onClick={!isCompleted ? onNext : undefined}
           className={cn(

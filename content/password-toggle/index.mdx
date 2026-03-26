@@ -1,21 +1,47 @@
 import { Button } from '@/components/ui/button'
+import { CodeBlockCommand } from '@/components/code-block-command/code-block-command'
+import { convertNpmCommand } from '@/components/code-block-command/utils'
+import { Github } from 'lucide-react'
 
 # Introduction
 
 **Password Toggle** is a professional React hook for password visibility toggle with accessibility and customization support. It handles only behavior and accessibility—styling is entirely up to you.
 
 <div className="flex gap-2 mt-4 mb-8">
-  <Button asChild variant="outline">
+  <Button asChild>
     <a href="/password-toggle/getting-started" className="no-underline">
       Getting Started
     </a>
   </Button>
-  <Button asChild>
-    <a href="https://github.com/virastack/password-toggle" target="_blank" rel="noopener noreferrer" className="no-underline flex gap-1">
-      <span>⭐</span> <span>Star on GitHub</span>
+  <Button asChild variant="outline">
+    <a href="https://github.com/virastack/password-toggle" target="_blank" rel="noopener noreferrer" className="no-underline flex gap-1 items-center">
+      <Github className="w-4 h-4" /> <span>Star on GitHub</span>
     </a>
   </Button>
 </div>
+
+## Installation
+
+<CodeBlockCommand {...convertNpmCommand("npm install @virastack/password-toggle")} />
+
+## Quick Start
+
+```tsx
+import { useViraPassword } from '@virastack/password-toggle';
+
+function PasswordInput() {
+  const { inputProps, btnProps } = useViraPassword();
+
+  return (
+    <div>
+      <input {...inputProps} />
+      <button {...btnProps}>
+        {btnProps.children}
+      </button>
+    </div>
+  );
+}
+```
 
 ## Features
 
@@ -24,9 +50,3 @@ import { Button } from '@/components/ui/button'
 - 🎨 **Customizable**: Use custom icons or text for the toggle button.
 - 📦 **Lightweight**: Zero dependencies (except React).
 - 🧩 **Easy Integration**: Works seamlessly with any UI library (shadcn/ui, MUI, etc.).
-
-## Installation
-
-```bash
-npm install @virastack/password-toggle
-```

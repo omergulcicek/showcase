@@ -12,7 +12,7 @@ export function CustomTextDemo() {
   });
 
   return (
-    <div className="relative w-full max-w-xs">
+    <div className="relative w-full max-w-xs mt-4">
       <Input {...inputProps} className="pr-16" placeholder="Password" />
       <button
         {...btnProps}

@@ -9,9 +9,9 @@ export function ShadcnDemo() {
   const { inputProps, btnProps } = useViraPassword();
 
   return (
-    <div className="grid w-full max-w-sm items-center gap-1.5 p-4 border border-border rounded-lg">
+    <div className="grid w-full max-w-sm items-center gap-1.5 mt-4">
       <Label htmlFor={inputProps.id}>Password</Label>
-      <div className="flex w-full items-center space-x-2">
+      <div className="flex w-full items-center gap-2">
         <Input {...inputProps} placeholder="Enter your password" />
         <Button {...btnProps} variant="ghost" size="icon">
           {btnProps.children}

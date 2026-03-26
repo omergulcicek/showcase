@@ -8,7 +8,7 @@ export function SelfClosingDemo() {
   const { inputProps, btnProps } = useViraPassword();
 
   return (
-    <div className="relative w-full max-w-sm">
+    <div className="relative w-full max-w-sm mt-4">
       <Input {...inputProps} className="pr-10" placeholder="Password" />
       <Button
         {...btnProps}

@@ -14,7 +14,7 @@ export function CustomIconsDemo() {
   });
 
   return (
-    <div className="flex w-full max-w-sm items-center space-x-2 p-4 border border-border rounded-lg">
+    <div className="flex w-full max-w-sm items-center gap-2 mt-4">
       <Input {...inputProps} placeholder="Password" />
       <Button {...btnProps} variant="outline" size="icon">
         {btnProps.children}

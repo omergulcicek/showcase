@@ -1,12 +1,13 @@
+import { CodeBlockCommand } from '@/components/code-block-command/code-block-command'
+import { convertNpmCommand } from '@/components/code-block-command/utils'
+
 # Getting Started
 
 ViraStack Mask simplifies input masking by abstracting the logic into a hook that returns spreadable props for your inputs.
 
 ## Installation
 
-```bash
-npm install @virastack/input-mask
-```
+<CodeBlockCommand {...convertNpmCommand("npm install @virastack/input-mask")} />
 
 ## Basic Usage
 
