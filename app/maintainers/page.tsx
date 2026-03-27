@@ -12,12 +12,15 @@ export default function MaintainersPage() {
       <div className="flex flex-col gap-4">
         <h1 className="text-4xl font-black">Maintainers</h1>
         <p className="text-lg text-muted-foreground max-w-3xl">
-          The developers ensuring the continuity of ViraStack projects and
-          contributing to the open-source ecosystem.
+          The developers who ensure the continuity of ViraStack projects, uphold
+          high-discipline standards, and contribute to the open-source ecosystem.
         </p>
         <p className="text-lg text-muted-foreground max-w-3xl">
-          To contribute to the projects or offer support, you can get in touch
-          through our community channels.
+          To join our vision, contribute to our projects, or get technical
+          support, feel free to reach out through our community channels.
+        </p>
+        <p className="text-lg text-muted-foreground max-w-3xl">
+          We are building the future of frontend architectures together.
         </p>
       </div>
 

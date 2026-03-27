@@ -6,7 +6,7 @@ export type Project = {
   color: string;
   bgColor: string;
   textColor?: string;
-  soon?: boolean;
+  status?: "In Dev" | "Research" | "Coming Soon";
 };
 
 export const projects: Project[] = [
@@ -60,17 +60,6 @@ export const projects: Project[] = [
     textColor: "text-amber-500",
   },
   {
-    name: "Start (CLI)",
-    description:
-      "Automated scaffolding tool to initialize and scale high-discipline ViraStack architectures.",
-    url: "/cli",
-    repo: "https://github.com/virastack/cli",
-    color: "bg-teal-500",
-    bgColor: "bg-teal-50 dark:bg-teal-500/10",
-    textColor: "text-teal-500",
-    soon: true,
-  },
-  {
     name: "TanStack Boilerplate",
     description:
       "Production-ready TanStack Start starter template built with Tailwind CSS 4 and TypeScript.",
@@ -79,7 +68,18 @@ export const projects: Project[] = [
     color: "bg-cyan-500",
     bgColor: "bg-cyan-50 dark:bg-cyan-500/10",
     textColor: "text-cyan-500",
-    soon: true,
+    status: "In Dev",
+  },
+  {
+    name: "Start (CLI)",
+    description:
+      "Automated scaffolding tool to initialize and scale high-discipline ViraStack architectures.",
+    url: "/cli",
+    repo: "https://github.com/virastack/cli",
+    color: "bg-teal-500",
+    bgColor: "bg-teal-50 dark:bg-teal-500/10",
+    textColor: "text-teal-500",
+    status: "Research",
   },
   {
     name: "Standards",
@@ -90,7 +90,7 @@ export const projects: Project[] = [
     color: "bg-emerald-600",
     bgColor: "bg-emerald-50 dark:bg-emerald-600/10",
     textColor: "text-emerald-500",
-    soon: true,
+    status: "Coming Soon",
   },
   {
     name: "Error Guard",
@@ -101,6 +101,6 @@ export const projects: Project[] = [
     color: "bg-red-500",
     bgColor: "bg-red-50 dark:bg-red-500/10",
     textColor: "text-red-500",
-    soon: true,
+    status: "Coming Soon",
   },
 ];

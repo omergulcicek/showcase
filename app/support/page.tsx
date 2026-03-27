@@ -12,18 +12,17 @@ export default function SupportPage() {
       <div className="flex flex-col gap-4">
         <h1 className="text-4xl font-black">Support</h1>
         <p className="text-lg text-muted-foreground max-w-3xl">
-          The growth and reach of ViraStack projects rely directly on the
-          strength of our community. As we are at the beginning of this journey,
-          the most effective way to support this ecosystem is to increase our
-          visibility by starring our projects on GitHub. ⭐
+          The growth and reach of ViraStack depend directly on our community.
+          The most effective way to help us grow and keep this ecosystem
+          sustainable is by starring our projects on GitHub to increase our
+          visibility.
         </p>
         <p className="text-lg text-muted-foreground max-w-3xl">
-          Every star you provide is our greatest source of motivation to ensure
-          the sustainability of these open-source projects and to develop new
-          features.
+          Every star given to our upcoming projects serves as a great motivation
+          and helps us prioritize future features.
         </p>
         <p className="text-lg text-muted-foreground max-w-3xl">
-          Thank you for helping us grow ViraStack.
+          Thank you for building ViraStack with us.
         </p>
       </div>
 

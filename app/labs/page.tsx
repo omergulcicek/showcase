@@ -8,7 +8,7 @@ export const metadata = {
 };
 
 export default function LabsPage() {
-  const labsProjects = projects.filter((p) => p.soon);
+  const labsProjects = projects.filter((p) => p.status);
 
   return (
     <main className="flex min-h-[calc(100vh-160px)] flex-col gap-8 px-12 md:px-16 pb-8">

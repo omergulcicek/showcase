@@ -2,6 +2,7 @@ import Image from "next/image";
 import { projects } from "@/data/projects";
 import { ProjectCard } from "@/components/project-card";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
+import { AuroraText } from "@/components/ui/aurora-text";
 
 export default function HomePage() {
   return (
@@ -20,7 +21,6 @@ export default function HomePage() {
                   alt="ViraStack"
                   width={400}
                   height={400}
-                  className="drop-shadow-lg"
                   priority
                   quality={100}
                   unoptimized
@@ -30,10 +30,17 @@ export default function HomePage() {
           </CardContainer>
         </div>
         <div className="flex flex-col items-start justify-center col-span-2">
-          <h1 className="text-2xl md:text-4xl lg:text-8xl font-black mb-4">
-            VIRASTACK
+          <h1 className="text-2xl md:text-4xl lg:text-8xl font-black mb-4 text-shadow-lg">
+            <AuroraText
+              colors={["teal-500", "sky-500", "teal-500"].map(
+                (p) => `var(--color-${p})`,
+              )}
+            >
+              Vira
+            </AuroraText>
+            Stack
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl font-semibold">
+          <p className="text-lg md:text-xl lg:text-2xl font-semibold leading-snug">
             High-performance Frontend architectures and developer-centric tools
             for modern software standards.
           </p>

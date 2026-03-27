@@ -37,39 +37,41 @@ export function DynamicBreadcrumb() {
   if (pathname === "/") return null;
 
   return (
-    <Breadcrumb>
-      <BreadcrumbList>
-        <BreadcrumbItem className="hidden md:block">
-          {segments.length === 0 ? (
-            <BreadcrumbPage>ViraStack</BreadcrumbPage>
-          ) : (
-            <BreadcrumbLink href="/">ViraStack</BreadcrumbLink>
+    <div className="flex items-center gap-2 w-full px-12 md:px-16">
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem className="hidden md:block">
+            {segments.length === 0 ? (
+              <BreadcrumbPage>ViraStack</BreadcrumbPage>
+            ) : (
+              <BreadcrumbLink href="/">ViraStack</BreadcrumbLink>
+            )}
+          </BreadcrumbItem>
+
+          {segments.length > 0 && (
+            <BreadcrumbSeparator className="hidden md:block" />
           )}
-        </BreadcrumbItem>
 
-        {segments.length > 0 && (
-          <BreadcrumbSeparator className="hidden md:block" />
-        )}
+          {segments.map((segment, index) => {
+            const isLast = index === segments.length - 1;
+            const href = `/${segments.slice(0, index + 1).join("/")}`;
+            const title = formatSegment(segment, index);
 
-        {segments.map((segment, index) => {
-          const isLast = index === segments.length - 1;
-          const href = `/${segments.slice(0, index + 1).join("/")}`;
-          const title = formatSegment(segment, index);
-
-          return (
-            <React.Fragment key={href}>
-              <BreadcrumbItem>
-                {isLast ? (
-                  <BreadcrumbPage>{title}</BreadcrumbPage>
-                ) : (
-                  <BreadcrumbLink href={href}>{title}</BreadcrumbLink>
-                )}
-              </BreadcrumbItem>
-              {!isLast && <BreadcrumbSeparator />}
-            </React.Fragment>
-          );
-        })}
-      </BreadcrumbList>
-    </Breadcrumb>
+            return (
+              <React.Fragment key={href}>
+                <BreadcrumbItem>
+                  {isLast ? (
+                    <BreadcrumbPage>{title}</BreadcrumbPage>
+                  ) : (
+                    <BreadcrumbLink href={href}>{title}</BreadcrumbLink>
+                  )}
+                </BreadcrumbItem>
+                {!isLast && <BreadcrumbSeparator />}
+              </React.Fragment>
+            );
+          })}
+        </BreadcrumbList>
+      </Breadcrumb>
+    </div>
   );
 }

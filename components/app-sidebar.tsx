@@ -48,10 +48,16 @@ import { cn } from "@/lib/utils";
 import { projects } from "@/data/projects";
 
 // Define the data for different contexts
+const statusOrder = {
+  "In Dev": 1,
+  Research: 2,
+  "Coming Soon": 3,
+};
+
 const sortedProjects = [...projects].sort((a, b) => {
-  if (a.soon && !b.soon) return 1;
-  if (!a.soon && b.soon) return -1;
-  return 0;
+  const aStatus = a.status ? statusOrder[a.status] : 0;
+  const bStatus = b.status ? statusOrder[b.status] : 0;
+  return aStatus - bStatus;
 });
 
 const data = {
@@ -212,18 +218,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       p.url !== "/" &&
       p.url.startsWith("/") &&
       (pathname === p.url || pathname.startsWith(p.url.split("#")[0])) &&
-      !p.soon,
+      !p.status,
   );
 
   if (activeProject) {
     if (activeProject.name === "Input Mask") context = "input-mask";
     else if (activeProject.name === "Password Toggle")
       context = "password-toggle";
-    else if (activeProject.name === "Modern Web in 3 Minutes") context = "none";
     else context = "home";
   }
-
-  if (context === "none") return null;
 
   // Effect to open sidebar when context changes (project changes)
   React.useEffect(() => {
@@ -252,24 +255,25 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 {data.home.projects.map((item) => (
                   <SidebarMenuItem key={item.name}>
                     <SidebarMenuButton asChild tooltip={item.name}>
-                      {item.soon ? (
-                        <Link href={item.url}>
-                          <div
-                            className={`size-3 min-w-3 rounded ${item.color}`}
-                          />
-                          <span
-                            className={cn(
-                              "group-data-[collapsible=icon]:hidden",
-                              "text-muted-foreground",
-                            )}
-                          >
-                            {item.name}
-                          </span>
-                          <span className="ml-auto text-[10px] font-medium px-1.5 py-0.5 rounded-md bg-muted text-muted-foreground group-data-[collapsible=icon]:hidden">
-                            Soon
-                          </span>
-                        </Link>
+                      {item.status ? (
+                        <></>
                       ) : (
+                        // <Link href={item.url}>
+                        //   <div
+                        //     className={`size-3 min-w-3 rounded ${item.color}`}
+                        //   />
+                        //   <span
+                        //     className={cn(
+                        //       "group-data-[collapsible=icon]:hidden",
+                        //       "text-muted-foreground",
+                        //     )}
+                        //   >
+                        //     {item.name}
+                        //   </span>
+                        //   <span className="ml-auto text-[10px] font-medium px-1.5 py-0.5 rounded-md bg-muted text-muted-foreground group-data-[collapsible=icon]:hidden">
+                        //     Soon
+                        //   </span>
+                        // </Link>
                         <Link href={item.url}>
                           <div
                             className={`size-3 min-w-3 rounded ${item.color}`}
@@ -371,6 +375,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarMenu>
           </SidebarGroup>
         )}
+        {/* {context === "ai-rules" && (
+          <SidebarGroup>
+            <SidebarMenu className="mt-2">
+            </SidebarMenu>
+          </SidebarGroup>
+        )} */}
       </SidebarContent>
 
       <SidebarFooter>

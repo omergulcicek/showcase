@@ -41,10 +41,10 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
-      <div className="flex h-12 items-center px-4">
-        <Link href="/" className="flex items-center gap-2 cursor-pointer mr-6">
+      <div className="flex h-12 items-center gap-2 px-4">
+        <Link href="/" className="flex items-center gap-1 cursor-pointer">
           <img
-            src="/virastack.svg"
+            src="/virastack.png"
             alt="ViraStack"
             className="aspect-square size-8"
           />

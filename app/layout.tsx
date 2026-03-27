@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   description: "ViraStack Open Source Projects",
   icons: {
-    icon: "/virastack.svg",
+    icon: "/virastack.png",
   },
 };
 
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="tr" dir="ltr" suppressHydrationWarning>
+    <html lang="tr" dir="ltr" suppressHydrationWarning className="group/body">
       <body>
         <ThemeProvider
           attribute="class"
@@ -46,9 +46,7 @@ export default function RootLayout({
                     <div className="absolute left-4 md:left-6 z-10 flex items-center justify-center">
                       <CustomSidebarTrigger />
                     </div>
-                    <div className="flex items-center gap-2 px-12 md:px-16 w-full">
-                      <DynamicBreadcrumb />
-                    </div>
+                    <DynamicBreadcrumb />
                   </div>
                   <div className="flex-1">{children}</div>
                 </main>

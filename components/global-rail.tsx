@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Users, Github, Twitter, LifeBuoy, FlaskConical } from "lucide-react";
@@ -34,36 +35,34 @@ const links = [
 export function GlobalRail() {
   const pathname = usePathname();
 
-  const activeProject = projects.find(
-    (p) =>
-      p.url !== "/" &&
-      p.url.startsWith("/") &&
-      (pathname === p.url || pathname.startsWith(p.url.split("#")[0])) &&
-      !p.soon,
-  );
+  const isMask = pathname.startsWith("/input-mask");
+  const isPassword = pathname.startsWith("/password-toggle");
 
-  const hasSubMenu =
-    activeProject &&
-    ["Input Mask", "Password Toggle", "Modern Web in 3 Minutes"].includes(
-      activeProject.name,
-    );
-
-  if (!activeProject || !hasSubMenu) return null;
+  if (!isMask && !isPassword) return null;
 
   return (
     <>
-      <div className="hidden md:block w-14 shrink-0" />
-      <div className="hidden md:flex flex-col items-center w-14 h-[calc(100svh-4rem)] fixed left-0 top-12 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] border-r border-border/40 bg-sidebar py-4 gap-2 z-20 shrink-0">
+      <div className="hidden md:block w-14 shrink-0 transition-all duration-300 group-[.hide-mini-sidebar]/body:w-0 group-[.hide-mini-sidebar]/body:opacity-0" />
+      <div className="hidden md:flex flex-col items-center w-14 h-[calc(100svh-4rem)] fixed left-0 top-12 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] border-r border-border/40 bg-sidebar py-4 gap-2 z-20 shrink-0 transition-transform duration-300 group-[.hide-mini-sidebar]/body:-translate-x-full">
         {/* Projects */}
         <div className="flex flex-col gap-1 w-full items-center">
           <TooltipProvider delayDuration={0}>
             {[...projects]
               .sort((a, b) => {
-                if (a.soon && !b.soon) return 1;
-                if (!a.soon && b.soon) return -1;
-                return 0;
+                const statusOrder = {
+                  "In Dev": 1,
+                  Research: 2,
+                  "Coming Soon": 3,
+                };
+                const aStatus = a.status ? statusOrder[a.status] : 0;
+                const bStatus = b.status ? statusOrder[b.status] : 0;
+                return aStatus - bStatus;
               })
               .map((item) => {
+                if (item.status) {
+                  return <React.Fragment key={item.name}></React.Fragment>;
+                }
+
                 const isActive =
                   pathname === item.url || pathname.startsWith(`${item.url}/`);
                 return (
@@ -81,9 +80,9 @@ export function GlobalRail() {
                     </TooltipTrigger>
                     <TooltipContent side="right" sideOffset={10}>
                       {item.name}{" "}
-                      {item.soon && (
+                      {item.status && (
                         <span className="text-muted-foreground ml-1">
-                          (Soon)
+                          ({item.status})
                         </span>
                       )}
                     </TooltipContent>
