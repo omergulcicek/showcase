@@ -19,12 +19,12 @@ Interactive documentation and demo for the [@omergulcicek/forms](https://www.npm
 - **Package:** [npm](https://www.npmjs.com/package/@omergulcicek/forms) · [GitHub](https://github.com/omergulcicek/forms)
 - **Stack:** Next.js, React Hook Form, @omergulcicek/forms, Motion, Tailwind CSS
 
-### [Password Input](/password-input)
+### [Password Toggle](/password-toggle)
 
-Interactive documentation and demo for the [@omergulcicek/password-input](https://www.npmjs.com/package/@omergulcicek/password-input) npm package — a React hook that adds a show/hide toggle to password inputs.
+Interactive documentation and demo for the [@virastack/password-toggle](https://www.npmjs.com/package/@virastack/password-toggle) npm package — a React hook that adds a show/hide toggle to password inputs.
 
-- **Live:** [omergulcicek-password-input.vercel.app](https://omergulcicek-password-input.vercel.app/)
-- **Package:** [npm](https://www.npmjs.com/package/@omergulcicek/password-input) · [GitHub](https://github.com/omergulcicek/password-input)
-- **Stack:** Next.js, @omergulcicek/password-input, Radix UI, Tailwind CSS
+- **Live:** [virastack.com/password-toggle](https://virastack.com/password-toggle)
+- **Package:** [npm](https://www.npmjs.com/package/@virastack/password-toggle) · [GitHub](https://github.com/virastack/password-toggle)
+- **Stack:** Next.js, @virastack/password-toggle, Radix UI, Tailwind CSS
 
 Created by [Ömer Gülçiçek](https://omergulcicek.com/)

@@ -37,8 +37,14 @@
     "react-dom": "19.2.3",
     "react-hook-form": "^7.54.0",
     "recharts": "3.8.0",
+    "rehype-pretty-code": "^0.14.3",
+    "rehype-stringify": "^10.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "shiki": "^4.0.2",
     "tailwind-merge": "^3.5.0",
-    "tailwind-variants": "^3.2.2"
+    "tailwind-variants": "^3.2.2",
+    "unified": "^11.0.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

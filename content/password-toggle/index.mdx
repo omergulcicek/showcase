@@ -1,9 +1,10 @@
 import { Button } from '@/components/ui/button'
 import { CodeBlockCommand } from '@/components/code-block-command/code-block-command'
 import { convertNpmCommand } from '@/components/code-block-command/utils'
-import { Github } from 'lucide-react'
 
-# Password Input
+import { GithubStarButton } from '@/components/github-star-button'
+
+# Password Toggle
 
 Fully accessible and customizable password visibility hook for React.
 
@@ -13,11 +14,7 @@ Fully accessible and customizable password visibility hook for React.
       Getting Started
     </a>
   </Button>
-  <Button asChild variant="outline">
-    <a href="https://github.com/virastack/password-toggle" target="_blank" rel="noopener noreferrer" className="no-underline flex gap-1 items-center">
-      <Github className="w-4 h-4" /> <span>Star on GitHub</span>
-    </a>
-  </Button>
+  <GithubStarButton href="https://github.com/virastack/password-toggle" />
 </div>
 
 ## Installation

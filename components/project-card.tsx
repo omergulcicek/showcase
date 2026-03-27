@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Star } from "lucide-react";
+import { GithubStarButton } from "@/components/github-star-button";
 import { cn } from "@/lib/utils";
 import type { Project } from "@/data/projects";
 import { Badge } from "./ui/badge";
@@ -31,12 +30,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </p>
       </div>
       <div className="mt-auto pt-3 flex justify-end">
-        <Button asChild variant="link">
-          <a href={project.repo} target="_blank" rel="noreferrer">
-            <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
-            Star on GitHub
-          </a>
-        </Button>
+        <GithubStarButton href={project.repo} />
       </div>
     </div>
   );

@@ -4,7 +4,8 @@ import { useEffect } from "react";
 import confetti from "canvas-confetti";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Github } from "lucide-react";
+import { GithubStarButton } from "@/components/github-star-button";
+import { ChevronRight } from "lucide-react";
 
 export default function Step7Final() {
   useEffect(() => {
@@ -66,16 +67,7 @@ export default function Step7Final() {
               <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
-          <Button variant="outline" asChild>
-            <Link
-              href="https://github.com/virastack"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Github className="w-4 h-4" />
-              Star on GitHub
-            </Link>
-          </Button>
+          <GithubStarButton href="https://github.com/virastack" />
         </div>
       </div>
     </section>

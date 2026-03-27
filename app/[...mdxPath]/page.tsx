@@ -9,10 +9,9 @@ export async function generateMetadata(props: {
   const params = await props.params;
   const { metadata } = await importPage(params.mdxPath ?? []);
 
-  // Proje adını bul (örn: mdxPath = ['mask', 'getting-started'] ise projectSlug = 'mask')
   const mdxPath = params.mdxPath ?? [];
   const projectSlug = mdxPath[0];
-  
+
   const PROJECT_NAMES: Record<string, string> = {
     "nextjs-boilerplate": "Next.js Boilerplate",
     "ai-rules": "AI Rules",
@@ -23,16 +22,27 @@ export async function generateMetadata(props: {
 
   let projectName = "";
   if (projectSlug) {
-    projectName = PROJECT_NAMES[projectSlug] || projectSlug.charAt(0).toUpperCase() + projectSlug.slice(1);
+    projectName =
+      PROJECT_NAMES[projectSlug] ||
+      projectSlug.charAt(0).toUpperCase() + projectSlug.slice(1);
   }
 
-  // Eğer metadata.title varsa ve bir string ise (örn: "Getting Started")
-  // Bunu "{Sayfa Adı} | ViraStack {Proje Adı}" formatına dönüştür
-  if (metadata?.title && typeof metadata.title === 'string') {
+  if (metadata?.title && typeof metadata.title === "string") {
+    const isIndexPage = mdxPath.length === 1;
+
+    let absoluteTitle = `${metadata.title} | ViraStack`;
+    if (projectName) {
+      if (isIndexPage) {
+        absoluteTitle = `${projectName} | ViraStack`;
+      } else {
+        absoluteTitle = `${metadata.title} | ViraStack ${projectName}`;
+      }
+    }
+
     return {
       ...metadata,
       title: {
-        absolute: projectName ? `${metadata.title} | ViraStack ${projectName}` : `${metadata.title} | ViraStack`,
+        absolute: absoluteTitle,
       },
     };
   }
