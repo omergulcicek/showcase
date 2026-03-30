@@ -1,0 +1,52 @@
+# Özel Maskeler
+
+Hazır ayarların kapsamadığı belirli veri formatları için özel maskeler tanımlayabilirsiniz.
+
+## Özel Desenler
+
+Sayılar için `9`, harfler için `a` ve alfasayısal karakterler için `*` kullanın. Sabit karakterler korunur.
+
+```tsx
+const { productCode, serial } = useViraMask({
+  form,
+  schema: {
+    // Ürün Kodu: 2 harf, tire, 4 sayı
+    productCode: {
+      mask: 'aa-9999',
+      transform: 'uppercase',
+    },
+    
+    // Seri Numarası: 3 alfasayısal, eğik çizgi, 3 sayı
+    serial: {
+      mask: '***-999',
+    }
+  }
+});
+```
+
+## Özel Doğrulama
+
+Özel bir doğrulayıcı (validator) işlevi sağlayabilirsiniz. Bu işlev *ham* (maskelenmemiş) değeri alır.
+
+```tsx
+const { specialId } = useViraMask({
+  form,
+  schema: {
+    specialId: {
+      mask: '99-99',
+      validate: true,
+      validator: (value) => {
+        // Örnek: Rakamların toplamı çift olmalıdır
+        const sum = value.split('').reduce((acc, curr) => acc + Number(curr), 0);
+        return sum % 2 === 0;
+      }
+    }
+  }
+});
+```
+
+Doğrulama sonucu React Hook Form'un `formState.errors` nesnesine kaydedilir.
+
+## Advanced Usage
+
+For low-level masking functions (like `applyMask` or `cleanValue`) that you can use outside of the hook, refer to the **[Core Functions](/mask/api/engine)** documentation.

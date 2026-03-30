@@ -1,0 +1,440 @@
+{
+  "Home": {
+    "title": "ViraStack",
+    "description": "Modern yazılım standartları için yüksek performanslı Frontend mimarileri ve geliştirici odaklı araçlar."
+  },
+  "Labs": {
+    "title": "Laboratuvar",
+    "description": "ViraStack ekosistemini karmaşıklığı otomatikleştirmek için tasarlanmış yüksek disiplinli geliştirici araçlarıyla genişletiyoruz. Akıllı CLI iş akışları ve dayanıklı hata yönetimi mimarilerinden birleştirilmiş yapılandırma standartlarına kadar, tavizsiz yazılım kalitesi için DX odaklı altyapının yeni neslini inşa ediyoruz."
+  },
+  "Support": {
+    "title": "Destek",
+    "description1": "ViraStack'in büyümesi ve ulaşılabilirliği doğrudan topluluğumuza bağlıdır. Büyümemize yardımcı olmanın ve bu ekosistemi sürdürülebilir kılmanın en etkili yolu, görünürlüğümüzü artırmak için projelerimizi GitHub'da yıldızlamaktır.",
+    "description2": "Gelecek projelerimize verilen her yıldız büyük bir motivasyon kaynağıdır ve gelecekteki özellikleri önceliklendirmemize yardımcı olur.",
+    "description3": "ViraStack'i bizimle birlikte inşa ettiğiniz için teşekkür ederiz."
+  },
+  "Maintainers": {
+    "title": "Geliştiriciler",
+    "description1": "ViraStack projelerinin sürekliliğini sağlayan, yüksek disiplin standartlarını koruyan ve açık kaynak ekosistemine katkıda bulunan geliştiriciler.",
+    "description2": "Vizyonumuza katılmak, projelerimize katkıda bulunmak veya teknik destek almak için topluluk kanallarımız aracılığıyla iletişime geçmekten çekinmeyin.",
+    "description3": "Frontend mimarilerinin geleceğini birlikte inşa ediyoruz.",
+    "roles": {
+      "founder": "Kurucu, Frontend Mühendisi"
+    }
+  },
+  "Common": {
+    "Error": {
+      "title": "Hata",
+      "message": "Bir şeyler yanlış gitti!",
+      "retry": "Yeniden dene",
+      "goHome": "Ana sayfaya dön"
+    },
+    "Navigation": {
+      "projects": "Projeler",
+      "community": "Topluluk",
+      "labs": "Laboratuvar",
+      "support": "Destek",
+      "maintainers": "Geliştiriciler"
+    },
+    "Action": {
+      "starOnGithub": "GitHub'da Destekle"
+    },
+    "Nextra": {
+      "editLink": "Bu sayfayı GitHub'da düzenle",
+      "feedback": "Soru? Bize geri bildirim verin",
+      "tocTitle": "Bu Sayfada",
+      "backToTop": "Başa dön",
+      "themeDark": "Karanlık",
+      "themeLight": "Aydınlık",
+      "themeSystem": "Sistem",
+      "lastUpdated": "Son güncelleme",
+      "search": "Ara...",
+      "navigationPrev": "Önceki",
+      "navigationNext": "Sonraki"
+    }
+  },
+  "Projects": {
+    "nextjsBoilerplate": "Tailwind CSS 4 ve TypeScript ile oluşturulmuş, üretime hazır Next.js 16+ başlangıç şablonu.",
+    "aiRules": "Modern React uygulamaları için yapay zeka odaklı mimari kiti ve yüksek disiplinli protokoller.",
+    "inputMask": "React Hook Form için optimize edilmiş, hafif ve bağımlılıksız input maskeleme kütüphanesi.",
+    "passwordToggle": "React için tam erişilebilir ve son derece özelleştirilebilir şifre görünürlük hook'u.",
+    "modernWeb": "Sadece 3 dakika içinde modern web geliştirme standartlarında ustalaşın.",
+    "tanstackBoilerplate": "Tailwind CSS 4 ve TypeScript ile oluşturulmuş, üretime hazır TanStack Start başlangıç şablonu.",
+    "cli": "Yüksek disiplinli ViraStack mimarilerini başlatmak ve ölçeklendirmek için otomatik iskelet oluşturma aracı.",
+    "standards": "Her projede mutlak kod bütünlüğünü sağlayan, yapılandırma gerektirmeyen ESLint ve Prettier paketi.",
+    "errorGuard": "Sıfır sürtünmeli React ortamları için profesyonel düzeyde hata yönetimi ve akıllı kurtarma protokolleri.",
+    "status": {
+      "In Dev": "Geliştiriliyor",
+      "Research": "Araştırma",
+      "Coming Soon": "Yakında"
+    }
+  },
+  "NextjsBoilerplate": {
+    "Dashboard": {
+      "title": "ViraStack Next.js Boilerplate",
+      "description": "Modern Next.js projeleri için açık kaynak bir başlangıç şablonu. <react>React</react>, <typescript>TypeScript</typescript>, <tailwind>Tailwind CSS</tailwind> ve <tanstack>TanStack Query</tanstack> ile gelir; yeniden kullanılabilir bileşenler ve yardımcı araçlarla geliştirmeyi hızlandırır.",
+      "starOnGithub": "GitHub'da Yıldızla",
+      "deployToVercel": "Vercel'e Deploy Et",
+      "useTemplate": "Şablonu Kullan",
+      "projectBy": "Geliştirici"
+    },
+    "UserList": {
+      "title": "Kullanıcı Listesi",
+      "description": "Kullanıcıların listesi",
+      "error": "Hata",
+      "loading": "Yükleniyor...",
+      "id": "ID",
+      "name": "Ad",
+      "email": "E-posta",
+      "searchPlaceholder": "Kullanıcı ara...",
+      "noResults": "Sonuç bulunamadı."
+    },
+    "AuthForm": {
+      "usernameLabel": "Kullanıcı Adı",
+      "usernamePlaceholder": "omergulcicek",
+      "passwordLabel": "Şifre",
+      "passwordPlaceholder": "••••••••",
+      "forgotPassword": "Şifremi unuttum",
+      "submit": "Giriş Yap"
+    },
+    "AuthSchema": {
+      "usernameMin": "Kullanıcı adı en az 3 karakter olmalı",
+      "usernameRegex": "Sadece harf, rakam ve alt çizgi kullanılabilir",
+      "passwordMin": "Şifre en az 6 karakter olmalı"
+    },
+    "Features": {
+      "title": "Özellikler",
+      "description": "Modern teknolojiler ve en iyi pratikler, proje yapısına hazır entegre edildi.",
+      "appRouter": {
+        "title": "Next.js App Router",
+        "description": "Next.js 16 App Router ile dosya tabanlı yönlendirme ve server-first desenlerle sade, yüksek performanslı bir mimari."
+      },
+      "typeSafety": {
+        "title": "TypeScript & Tip Güvenli Env",
+        "description": "Uçtan uca TypeScript ve çalışma zamanında doğrulanan environment değişkenleri (Zod, @t3-oss/env-nextjs) ile daha güvenli kod ve dağıtımlar."
+      },
+      "query": {
+        "title": "TanStack Query",
+        "description": "Akıllı cache, arka planda yeniden doğrulama ve devtools ile güvenilir, reaktif veri akışı."
+      },
+      "i18n": {
+        "title": "Uluslararasılaştırma (i18n)",
+        "description": "next-intl ile tam yerelleştirilmiş yönlendirme ve mesajlaşma. Dahili Locale Switcher ile küresel ölçekte hazır."
+      },
+      "forms": {
+        "title": "React Hook Form & Zod",
+        "description": "Tip güvenli şemalar, erişilebilir girdiler ve yüksek performanslı form işlemleri."
+      },
+      "ui": {
+        "title": "Tailwind CSS & shadcn/ui",
+        "description": "Tailwind CSS ve shadcn/ui ile erişilebilir, modüler ve tekrar kullanılabilir bileşenler; hızlı geliştirme ve tutarlı tasarım."
+      }
+    },
+    "Showcase": {
+      "title": "Örnekler",
+      "description": "Projenin özelliklerini gösteren örnekler."
+    }
+  },
+  "AIRules": {
+    "title": "Yapay Zeka Kuralları",
+    "description": "Modern React uygulamaları için yapay zeka odaklı mimari kiti ve yüksek disiplinli protokoller.",
+    "hero": {
+      "title1": "Yapay Zeka Kuralları",
+      "title2": ": Mimari Disiplin.",
+      "description": "Yapay zekayı üretime hazır React koduna yönlendiren açık kaynaklı protokol. Sıfır yapılandırma, sıfır tembel kodlama."
+    },
+    "terminal": {
+      "loading": "[Yükleniyor...]",
+      "created": "✔ 16 oluşturuldu • 0 atlandı",
+      "generated": ".cursor/rules ve /docs oluşturuldu",
+      "ready": "✅ ViraStack Yapay Zeka Kuralları hazır.",
+      "try": "Dene: Yapay zekadan yeni bir özellik planlamasını iste."
+    },
+    "comparison": {
+      "promptLabel": "İstem:",
+      "promptText": "\"Bir kullanıcı profili bileşeni yaz\"",
+      "before": {
+        "badge": "Standart LLM Çıktısı",
+        "title": "Düzensiz ve Hataya Açık",
+        "description": "Sıkı yönergeler olmadan, yapay zeka işlevsel ancak üretim standartlarını karşılamayan disiplinsiz kod üretir.",
+        "list1": "Tip güvenliği veya şema doğrulaması yok",
+        "list2": "useEffect içinde doğrudan veri çekme",
+        "list3": "Sıfır hata yönetimi veya sınırları",
+        "list4": "İstek önbelleğe alma veya tekilleştirme yok",
+        "list5": "Yükleme iskeletleri olmayan zayıf UX"
+      },
+      "after": {
+        "badge": "ViraStack Yapay Zeka Çıktısı",
+        "title": "Üretime Hazır Kod",
+        "description": "ViraStack Yapay Zeka Kuralları, disiplinli, ölçeklenebilir kod için sıkı mimari kalıpları zorunlu kılar.",
+        "list1Highlight": "Sıkı tip güvenliği",
+        "list1Text": " API şemalarından türetilmiş",
+        "list2Highlight": "TanStack Query",
+        "list2Text": " önbelleğe alma ve durum için",
+        "list3Highlight": "Özellik odaklı",
+        "list3Text": " alan organizasyonu",
+        "list4Highlight": "Dahili",
+        "list4Text": " iskelet ve hata durumları",
+        "list5Highlight": "İptal sinyali",
+        "list5Text": " temizlik işlemleri için destek"
+      }
+    },
+    "principles": {
+      "title": "Temel Prensipler",
+      "description": "Yapay zekanızı yüksek kaliteli, ölçeklenebilir kod yazmaya zorlayan yerleşik kurallar.",
+      "card1": {
+        "title": "Mimari Zorlama",
+        "description": "Yapay zeka kısayolları kullanamaz. ViraStack'in önceden tanımlanmış mantık kalıplarını izlemelidir."
+      },
+      "card2": {
+        "title": "Özellik Odaklı Tasarım",
+        "description": "Maksimum ölçeklenebilirlik için sıkı alan tabanlı organizasyonu zorunlu kılar. Uygulama dizininizi temiz tutar."
+      },
+      "card3": {
+        "title": "Zod Odaklı Tip Güvenliği",
+        "description": "Şemalardan türetilen uçtan uca tip güvenliği sağlar. Yapay zeka her API yanıtını doğrulamalıdır."
+      },
+      "card4": {
+        "title": "Yeni Nesil UX Standartları",
+        "description": "Web Vitals (LCP, CLS) ve verimli durum yönetimi için en iyi pratikleri zorunlu kılar."
+      },
+      "card5": {
+        "title": "Evrensel Destek",
+        "description": "Cursor, Windsurf, Claude Code ve Copilot ile çalışır."
+      }
+    },
+    "workflow": {
+      "title": "ViraStack Protokolü",
+      "description": "Üretim standartlarını sağlamak için karmaşık özelliklere yönelik 3 adımlı bir iş akışı."
+    },
+    "interactive": {
+      "prompt": "Kullanıcılar için sunucu taraflı sayfalama, arama ve rol filtreleme özelliklerine sahip bir veri tablosu oluştur.",
+      "placeholder": "Bana bir şey sor...",
+      "generating": "Taslak oluşturuluyor...",
+      "steps": {
+        "step1": "Sorgu parametreleri ve API yanıtı için Zod şemalarını tanımla",
+        "step2": "Tip güvenli URL durum yönetimi için nuqs kurulumunu yap",
+        "step3": "Veri çekme ve önbelleğe alma için TanStack Query uygula",
+        "step4": "Yükleme durumu için iskelet tablo oluştur"
+      },
+      "approve": "Planı Onayla",
+      "searchPlaceholder": "Kullanıcı ara...",
+      "role": "Rol: Yönetici",
+      "table": {
+        "name": "Ad",
+        "email": "E-posta",
+        "role": "Rol",
+        "status": "Durum",
+        "admin": "Yönetici",
+        "active": "Aktif",
+        "offline": "Çevrimdışı"
+      },
+      "showing": "2 sonuçtan 1-2 arası gösteriliyor",
+      "previous": "Önceki",
+      "next": "Sonraki",
+      "generatedBy": "ViraStack AI tarafından oluşturuldu",
+      "replay": "İş Akışını Tekrarla"
+    }
+  },
+  "InputMask": {
+    "navigation": {
+      "gettingStarted": "Başlarken",
+      "examples": "Örnekler",
+      "overview": "Genel Bakış",
+      "creditCard": "Kredi Kartı",
+      "cardNumber": "Kart Numarası",
+      "expiry": "Son Kullanma Tarihi",
+      "cvv": "CVV",
+      "iban": "IBAN",
+      "currency": "Para Birimi",
+      "tckn": "TCKN",
+      "taxNumber": "Vergi Numarası",
+      "phone": "Telefon",
+      "email": "E-posta",
+      "zipCode": "Posta Kodu",
+      "date": "Tarih",
+      "password": "Şifre",
+      "url": "URL",
+      "username": "Kullanıcı Adı",
+      "alpha": "Alfabetik",
+      "numeric": "Sayısal",
+      "text": "Metin",
+      "customMask": "Özel Maske",
+      "schemaPresets": "Şema ve Hazır Ayarlar",
+      "maskOptions": "Maske Seçenekleri",
+      "customMasks": "Özel Maskeler",
+      "builtInValidation": "Dahili Doğrulama",
+      "integrations": "Entegrasyonlar",
+      "libraries": "Kütüphaneler",
+      "validation": "Doğrulama",
+      "apiReference": "API Referansı",
+      "engine": "Motor",
+      "utilities": "Araçlar",
+      "types": "Tipler"
+    },
+    "examples": {
+      "creditCard": {
+        "cardNumber": "Kredi Kartı Numarası",
+        "cardNumberPlaceholder": "4532 1234 5678 9012",
+        "invalidCardNumber": "Geçersiz kart numarası",
+        "expiry": "Son Kullanma Tarihi",
+        "expiryPlaceholder": "12/26",
+        "invalidDate": "Geçersiz tarih",
+        "cvv": "CVV",
+        "cvvPlaceholder": "123",
+        "invalidCvv": "Geçersiz CVV"
+      },
+      "maskedInput": {
+        "invalid": "Geçersiz {label}",
+        "rawValue": "Ham Değer",
+        "displayValue": "Görünen Değer"
+      },
+      "customMask": {
+        "evenNumber": "Çift Sayı",
+        "mustBeEven": "Çift sayı olmalıdır",
+        "rawValue": "Ham Değer",
+        "displayValue": "Görünen Değer"
+      },
+      "cardValidator": {
+        "visaCardOnly": "Sadece Visa Kart",
+        "invalidVisaCard": "Geçersiz Visa Kartı",
+        "rawValue": "Ham Değer",
+        "displayValue": "Görünen Değer"
+      },
+      "cardType": {
+        "cardNumber": "Kart Numarası",
+        "detectedType": "Tespit Edilen Tür"
+      },
+      "labels": {
+        "turkishIdNumber": "TC Kimlik Numarası",
+        "turkishIdNumberNoValidation": "TC Kimlik Numarası (Doğrulama Yok)",
+        "username": "Kullanıcı Adı",
+        "cardSecurityCode": "Kart Güvenlik Kodu (CVV)",
+        "amexCvv": "Amex CVV (4 hane)",
+        "firstName": "Ad",
+        "emailAddress": "E-posta Adresi",
+        "creditCardNumber": "Kredi Kartı Numarası",
+        "cardNumberNoValidation": "Kart Numarası (Doğrulama Yok)",
+        "taxIdentificationNumber": "Vergi Kimlik Numarası",
+        "fullName": "Ad Soyad",
+        "zipCode": "Posta Kodu",
+        "phoneNumberTr": "Telefon Numarası (TR)",
+        "phoneNumberUs": "Telefon Numarası (ABD)",
+        "amount": "Miktar",
+        "usDollar": "ABD Doları",
+        "quantity": "Miktar",
+        "dateDmy": "Tarih (GG/AA/YYYY)",
+        "dateMdy": "Tarih (AA/GG/YYYY)",
+        "iban": "IBAN",
+        "password": "Şifre",
+        "expirationDate": "Son Kullanma Tarihi (AA/YY)",
+        "websiteUrl": "Web Sitesi URL'si"
+      }
+    }
+  },
+    "PasswordToggle": {
+      "navigation": {
+        "gettingStarted": "Başlarken",
+        "examples": "Örnekler",
+        "overview": "Genel Bakış",
+        "basic": "Temel Kullanım",
+        "customIcons": "Özel İkonlar",
+        "customText": "Özel Metin",
+        "selfClosing": "Kendi Kendini Kapatan",
+        "shadcn": "Shadcn UI",
+        "apiReference": "API Referansı"
+      }
+    },
+  "ModernWeb": {
+    "Step0": {
+      "title": "İçerik Her Şeydir",
+      "description1": "Her şey içerikle başlar. İster bir ürün olsun ister bir portfolyo; tasarımın tek amacı içeriği en iyi şekilde sunmaktır.",
+      "description2": "Web'in %90'ından fazlası metindir. Bu ham metni güzelleştirmek için üzerinde çalışılacak ",
+      "action": "ilk şey nedir?"
+    },
+    "Step1": {
+      "title": "Motor",
+      "description1": "Eskiden web sadece HTML ve CSS'ten ibaretti. Bugün modern web'in temelini ",
+      "and": "ve",
+      "alternatively": "Alternatif olarak, ",
+      "greatChoice": "da harika bir seçimdir",
+      "description2": "Şu an bu sayfayı ham HTML olarak görseniz de arka planda güçlü bir motor çalışıyor. Şimdi bu gücü kullanarak, ",
+      "action": "sayfamızı biraz stillendirelim."
+    },
+    "Step2": {
+      "title": "CSS",
+      "description1": "CSS yazmak eskiden sıkıcıydı. Bugün, ",
+      "industryStandard": "endüstri standardıdır.",
+      "description2": "Az önce tıkladığınızda sayfayı ortaladık ve maksimum bir genişlik verdik. Okunabilirlik anında arttı!",
+      "codeComment": "İçerik buraya gelecek",
+      "description3": "Artık utility class'ların gücünü kullanıyoruz. Peki ya ",
+      "action": "tipografi?"
+    },
+    "Step3": {
+      "title": "Tipografi",
+      "description1": "Tarayıcının varsayılan serif fontu gözleri yorar. Next.js'in ",
+      "description2": "modülü ile sıfır performans kaybıyla modern fontlar ekleyebiliriz.",
+      "btn1": "Times New Roman: Varsayılan",
+      "btn2": "Geist: Modern ve temiz",
+      "btn3": "JetBrains Mono: Teknik",
+      "description3": "Farkı görmek için butonlara tıklayın. Modern tasarımlarda genellikle ",
+      "preferred": "tercih edilir. Peki ya ",
+      "action": "UI bileşenlerimiz?"
+    },
+    "Step4": {
+      "title": "UI Bileşenleri",
+      "description1": "Karmaşık bileşenleri sıfırdan tasarlamak zaman kaybıdır. ",
+      "description2": " ile erişilebilir, şık ve tamamen özelleştirilebilir bileşenleri saniyeler içinde projenize dahil edebilirsiniz.",
+      "htmlForm": "Standart HTML Formu:",
+      "profile": "Profil",
+      "fullName": "Ad Soyad",
+      "dob": "Doğum Tarihi",
+      "terms": "Şartları ve koşulları kabul ediyorum",
+      "save": "Kaydet",
+      "shadcnForm": "Shadcn/UI Formu:",
+      "userProfile": "Kullanıcı Profili",
+      "updateInfo": "Bilgilerinizi güncelleyin.",
+      "placeholderName": "Ömer Gülçiçek",
+      "pickDate": "Tarih seçin",
+      "description3": "Fark ortada! Ayrıca erişilebilirlik (a11y) ve klavye navigasyonu da cabası. Şimdi biraz ",
+      "action": "atmosfer ekleyelim."
+    },
+    "Step5": {
+      "title": "Tema",
+      "description1": "Karanlık Mod artık bir lüks değil, bir standart. Sisteme entegre etmek ",
+      "description2": "ile sadece birkaç satır kod alır.",
+      "toggleTheme": "Temayı Değiştir",
+      "currentTheme": "Mevcut tema:",
+      "dark": "Karanlık",
+      "light": "Aydınlık",
+      "description3": "Geriye sadece geleceğe ufak bir ",
+      "action": "dokunuş kaldı."
+    },
+    "Step6": {
+      "title": "Yapay Zeka",
+      "description1": "Kodlama alışkanlıklarımız değişiyor; artık her satırı manuel girmek yerine, yapay zekaya doğru direktifleri vererek yaşayan arayüzler tasarlıyoruz.",
+      "placeholder": "Bana bir şey sor...",
+      "prompt": "Wiggle UI tasarım felsefesini içeren ve shadcn/ui ile Tailwind CSS kullanan bir 'Modern Web' panosu için 3 minimalist mikro widget oluştur: 1. Yeşil fiyat grafiğine sahip NVIDIA ($NVDA) için bir hisse senedi takipçisi. 2. 'Canlı' göstergeli Türkiye - İspanya (2026 Dünya Kupası) için canlı maç takipçisi. 3. Basit bir hava durumu widget'ı.",
+      "description2": "Geleceğin arayüzleri artık statik değil, akıllı ve etkileşimli. Her şey harika görünüyor! ",
+      "action": "Sonucu kontrol edelim."
+    },
+    "Step7": {
+      "title": "Tebrikler! 🎉",
+      "description1": "Statik bir yapıdan; Next.js'in gücü, Tailwind 4'ün hızı ve AI-Native bir mimari ile yaşayan, modern bir deneyime ulaştık.",
+      "whatIs": "ViraStack Nedir?",
+      "description2": "ViraStack, modern yazılım standartlarını yükseltmek için tasarlanmış kapsamlı bir Frontend Ekosistemidir. Karmaşık mimariler ile kusursuz Geliştirici Deneyimi (DX) arasındaki boşluğu dolduruyoruz. Üretime hazır başlangıç şablonları, yüksek disiplinli AI protokolleri ve bağımlılıksız yardımcı araçlar sunarak, geliştiricilerin tavizsiz kalitede yüksek performanslı, erişilebilir ve ölçeklenebilir web uygulamaları oluşturmasını sağlıyoruz.",
+      "explore": "Projelerimizi Keşfedin"
+    },
+    "Header": {
+      "personalBlog": "Kişisel Blog"
+    },
+    "Metadata": {
+      "title": "3 Dakikada Modern Web | ViraStack",
+      "description": "Modern web tasarımının temellerini adım adım öğrenin."
+    }
+  },
+  "TanStackBoilerplate": {},
+  "CLI": {},
+  "Standards": {},
+  "ErrorGuard": {}
+}

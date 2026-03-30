@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { Github, Twitter } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
+import { LocaleSwitcher } from "./locale-switcher";
 import { Button } from "./ui/button";
 
 import { projects } from "@/data/projects";
@@ -80,6 +80,7 @@ export function Header() {
               </Button>
             </div>
             <Separator orientation="vertical" />
+            <LocaleSwitcher />
             <ThemeToggle />
           </nav>
         </div>

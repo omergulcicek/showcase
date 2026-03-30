@@ -1,0 +1,440 @@
+{
+  "Home": {
+    "title": "ViraStack",
+    "description": "High-performance Frontend architectures and developer-centric tools for modern software standards."
+  },
+  "Labs": {
+    "title": "Laboratory",
+    "description": "We are expanding the ViraStack ecosystem with high-discipline developer tools designed to automate complexity. From intelligent CLI workflows and resilient error-handling architectures to unified configuration standards, we are building the next generation of DX-focused infrastructure for uncompromising software quality."
+  },
+  "Support": {
+    "title": "Support",
+    "description1": "The growth and reach of ViraStack depend directly on our community. The most effective way to help us grow and keep this ecosystem sustainable is by starring our projects on GitHub to increase our visibility.",
+    "description2": "Every star given to our upcoming projects serves as a great motivation and helps us prioritize future features.",
+    "description3": "Thank you for building ViraStack with us."
+  },
+  "Maintainers": {
+    "title": "Maintainers",
+    "description1": "The developers who ensure the continuity of ViraStack projects, uphold high-discipline standards, and contribute to the open-source ecosystem.",
+    "description2": "To join our vision, contribute to our projects, or get technical support, feel free to reach out through our community channels.",
+    "description3": "We are building the future of frontend architectures together.",
+    "roles": {
+      "founder": "Founder, Frontend Engineer"
+    }
+  },
+  "Common": {
+    "Error": {
+      "title": "Error",
+      "message": "Something went wrong!",
+      "retry": "Try again",
+      "goHome": "Go to home"
+    },
+    "Navigation": {
+      "projects": "Projects",
+      "community": "Community",
+      "labs": "Laboratory",
+      "support": "Support",
+      "maintainers": "Maintainers"
+    },
+    "Action": {
+      "starOnGithub": "Star on GitHub"
+    },
+    "Nextra": {
+      "editLink": "Edit this page on GitHub",
+      "feedback": "Question? Give us feedback",
+      "tocTitle": "On This Page",
+      "backToTop": "Scroll to top",
+      "themeDark": "Dark",
+      "themeLight": "Light",
+      "themeSystem": "System",
+      "lastUpdated": "Last updated on",
+      "search": "Search...",
+      "navigationPrev": "Previous",
+      "navigationNext": "Next"
+    }
+  },
+  "Projects": {
+    "nextjsBoilerplate": "Production-ready Next.js 16+ starter template built with Tailwind CSS 4 and TypeScript.",
+    "aiRules": "AI-native architecture kit and high-discipline protocols for modern React applications.",
+    "inputMask": "Lightweight, zero-dependency input masking library optimized for React Hook Form.",
+    "passwordToggle": "Fully accessible and highly customizable password visibility hook for React.",
+    "modernWeb": "Master modern web development standards in just 3 minutes.",
+    "tanstackBoilerplate": "Production-ready TanStack Start starter template built with Tailwind CSS 4 and TypeScript.",
+    "cli": "Automated scaffolding tool to initialize and scale high-discipline ViraStack architectures.",
+    "standards": "Zero-config ESLint and Prettier suite ensuring absolute code integrity across every project.",
+    "errorGuard": "Pro-grade error handling and smart recovery protocols for zero-friction React environments.",
+    "status": {
+      "In Dev": "In Dev",
+      "Research": "Research",
+      "Coming Soon": "Coming Soon"
+    }
+  },
+  "NextjsBoilerplate": {
+    "Dashboard": {
+      "title": "ViraStack Next.js Boilerplate",
+      "description": "Open-source boilerplate for modern Next.js applications, featuring <react>React</react>, <typescript>TypeScript</typescript>, <tailwind>Tailwind CSS</tailwind>, and <tanstack>TanStack Query</tanstack>. Includes reusable components, hooks, and utilities to speed up development.",
+      "starOnGithub": "Star on GitHub",
+      "deployToVercel": "Deploy to Vercel",
+      "useTemplate": "Use Template",
+      "projectBy": "Project by"
+    },
+    "UserList": {
+      "title": "User List",
+      "description": "A list of users",
+      "error": "Error",
+      "loading": "Loading...",
+      "id": "ID",
+      "name": "Name",
+      "email": "Email",
+      "searchPlaceholder": "Search users...",
+      "noResults": "No results."
+    },
+    "AuthForm": {
+      "usernameLabel": "Username",
+      "usernamePlaceholder": "johndoe",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "••••••••",
+      "forgotPassword": "Forgot your password",
+      "submit": "Sign In"
+    },
+    "AuthSchema": {
+      "usernameMin": "Username must be at least 3 characters",
+      "usernameRegex": "Only letters, numbers and underscores are allowed",
+      "passwordMin": "Password must be at least 6 characters"
+    },
+    "Features": {
+      "title": "Features",
+      "description": "Core technologies and best practices included out of the box.",
+      "appRouter": {
+        "title": "Next.js App Router",
+        "description": "Built on Next.js 16 App Router with file-based routing and server-first patterns for performance and simplicity."
+      },
+      "typeSafety": {
+        "title": "TypeScript & Type-Safe Env",
+        "description": "First-class TypeScript across the stack plus runtime-validated environment variables (Zod, @t3-oss/env-nextjs) for safer code and deployments."
+      },
+      "query": {
+        "title": "TanStack Query",
+        "description": "Smart caching, background revalidation, and devtools for reliable, reactive data flows—ready out of the box."
+      },
+      "i18n": {
+        "title": "Internationalization (i18n)",
+        "description": "Locale-aware routing and messages with next-intl, plus a built-in Locale Switcher for global-ready apps."
+      },
+      "forms": {
+        "title": "React Hook Form & Zod",
+        "description": "Type-safe schemas, accessible inputs, and high-performance forms."
+      },
+      "ui": {
+        "title": "Tailwind CSS & shadcn/ui",
+        "description": "Accessible, composable UI primitives built with Tailwind CSS and shadcn/ui for rapid development and consistent design."
+      }
+    },
+    "Showcase": {
+      "title": "Showcase",
+      "description": "A showcase of the features of the project."
+    }
+  },
+  "AIRules": {
+    "title": "AI Rules",
+    "description": "AI-native architecture kit and high-discipline protocols for modern React applications.",
+    "hero": {
+      "title1": "AI Rules",
+      "title2": ": Architectural Discipline.",
+      "description": "The open-source protocol for steering AI toward production-ready React code. Zero configuration, zero lazy-coding."
+    },
+    "terminal": {
+      "loading": "[Loading...]",
+      "created": "✔ 16 created • 0 skipped",
+      "generated": "Generated .cursor/rules and /docs",
+      "ready": "✅ ViraStack AI Rules is ready.",
+      "try": "Try: Ask AI to plan a new feature."
+    },
+    "comparison": {
+      "promptLabel": "Prompt:",
+      "promptText": "\"Write a user profile component\"",
+      "before": {
+        "badge": "Standard LLM Output",
+        "title": "Disorganized & Error-Prone",
+        "description": "Without strict guidelines, AI produces functional but undisciplined code that fails production standards.",
+        "list1": "No type safety or schema validation",
+        "list2": "Direct data fetching inside useEffect",
+        "list3": "Zero error handling or boundaries",
+        "list4": "No request caching or deduplication",
+        "list5": "Poor UX with no loading skeletons"
+      },
+      "after": {
+        "badge": "ViraStack AI Output",
+        "title": "Production-Ready Code",
+        "description": "ViraStack AI Rules enforces strict architectural patterns for disciplined, scalable code.",
+        "list1Highlight": "Strict type safety",
+        "list1Text": " derived from API schemas",
+        "list2Highlight": "TanStack Query",
+        "list2Text": " for caching and state",
+        "list3Highlight": "Feature-driven",
+        "list3Text": " domain organization",
+        "list4Highlight": "Built-in",
+        "list4Text": " skeleton & error states",
+        "list5Highlight": "Abort signal",
+        "list5Text": " support for cleanups"
+      }
+    },
+    "principles": {
+      "title": "Core Principles",
+      "description": "Built-in rules that force your AI to write high-quality, scalable code.",
+      "card1": {
+        "title": "Architectural Enforcement",
+        "description": "AI can't take shortcuts. It must follow ViraStack's predefined logic patterns."
+      },
+      "card2": {
+        "title": "Feature-Driven Design",
+        "description": "Enforces strict domain-based organization for maximum scalability. Keeps your app directory clean."
+      },
+      "card3": {
+        "title": "Zod-First Type Safety",
+        "description": "Ensures end-to-end type safety derived from schemas. AI must validate every API response."
+      },
+      "card4": {
+        "title": "Next-Gen UX Standards",
+        "description": "Enforces best practices for Web Vitals (LCP, CLS) and efficient state management."
+      },
+      "card5": {
+        "title": "Universal Support",
+        "description": "Works with Cursor, Windsurf, Claude Code, and Copilot."
+      }
+    },
+    "workflow": {
+      "title": "The ViraStack Protocol",
+      "description": "A 3-step workflow for complex features to ensure production standards."
+    },
+    "interactive": {
+      "prompt": "Build a data table for users with server-side pagination, search, and role filtering.",
+      "placeholder": "Ask me anything...",
+      "generating": "Generating blueprint...",
+      "steps": {
+        "step1": "Define Zod schemas for query parameters and API response",
+        "step2": "Setup nuqs for type-safe URL state management",
+        "step3": "Implement TanStack Query for data fetching and caching",
+        "step4": "Create Skeleton table for loading state"
+      },
+      "approve": "Approve Plan",
+      "searchPlaceholder": "Search users...",
+      "role": "Role: Admin",
+      "table": {
+        "name": "Name",
+        "email": "Email",
+        "role": "Role",
+        "status": "Status",
+        "admin": "Admin",
+        "active": "Active",
+        "offline": "Offline"
+      },
+      "showing": "Showing 1-2 of 2 results",
+      "previous": "Previous",
+      "next": "Next",
+      "generatedBy": "Generated by ViraStack AI",
+      "replay": "Replay Workflow"
+    }
+  },
+  "InputMask": {
+    "navigation": {
+      "gettingStarted": "Getting Started",
+      "examples": "Examples",
+      "overview": "Overview",
+      "creditCard": "Credit Card",
+      "cardNumber": "Card Number",
+      "expiry": "Expiry",
+      "cvv": "CVV",
+      "iban": "IBAN",
+      "currency": "Currency",
+      "tckn": "TCKN",
+      "taxNumber": "Tax Number",
+      "phone": "Phone",
+      "email": "Email",
+      "zipCode": "Zip Code",
+      "date": "Date",
+      "password": "Password",
+      "url": "URL",
+      "username": "Username",
+      "alpha": "Alpha",
+      "numeric": "Numeric",
+      "text": "Text",
+      "customMask": "Custom Mask",
+      "schemaPresets": "Schema & Presets",
+      "maskOptions": "Mask Options",
+      "customMasks": "Custom Masks",
+      "builtInValidation": "Built-in Validation",
+      "integrations": "Integrations",
+      "libraries": "Libraries",
+      "validation": "Validation",
+      "apiReference": "API Reference",
+      "engine": "Engine",
+      "utilities": "Utilities",
+      "types": "Types"
+    },
+    "examples": {
+      "creditCard": {
+        "cardNumber": "Credit Card Number",
+        "cardNumberPlaceholder": "4532 1234 5678 9012",
+        "invalidCardNumber": "Invalid card number",
+        "expiry": "Expiration Date",
+        "expiryPlaceholder": "12/26",
+        "invalidDate": "Invalid date",
+        "cvv": "CVV",
+        "cvvPlaceholder": "123",
+        "invalidCvv": "Invalid CVV"
+      },
+      "maskedInput": {
+        "invalid": "Invalid {label}",
+        "rawValue": "Raw Value",
+        "displayValue": "Display Value"
+      },
+      "customMask": {
+        "evenNumber": "Even Number",
+        "mustBeEven": "Must be an even number",
+        "rawValue": "Raw Value",
+        "displayValue": "Display Value"
+      },
+      "cardValidator": {
+        "visaCardOnly": "Visa Card Only",
+        "invalidVisaCard": "Invalid Visa Card",
+        "rawValue": "Raw Value",
+        "displayValue": "Display Value"
+      },
+      "cardType": {
+        "cardNumber": "Card Number",
+        "detectedType": "Detected Type"
+      },
+      "labels": {
+        "turkishIdNumber": "Turkish ID Number",
+        "turkishIdNumberNoValidation": "Turkish ID Number (No Validation)",
+        "username": "Username",
+        "cardSecurityCode": "Card Security Code (CVV)",
+        "amexCvv": "Amex CVV (4 digits)",
+        "firstName": "First Name",
+        "emailAddress": "Email Address",
+        "creditCardNumber": "Credit Card Number",
+        "cardNumberNoValidation": "Card Number (No Validation)",
+        "taxIdentificationNumber": "Tax Identification Number",
+        "fullName": "Full Name",
+        "zipCode": "Zip Code",
+        "phoneNumberTr": "Phone Number (TR)",
+        "phoneNumberUs": "Phone Number (US)",
+        "amount": "Amount",
+        "usDollar": "US Dollar",
+        "quantity": "Quantity",
+        "dateDmy": "Date (DD/MM/YYYY)",
+        "dateMdy": "Date (MM/DD/YYYY)",
+        "iban": "IBAN",
+        "password": "Password",
+        "expirationDate": "Expiration Date (MM/YY)",
+        "websiteUrl": "Website URL"
+      }
+    }
+  },
+    "PasswordToggle": {
+      "navigation": {
+        "gettingStarted": "Getting Started",
+        "examples": "Examples",
+        "overview": "Overview",
+        "basic": "Basic Usage",
+        "customIcons": "Custom Icons",
+        "customText": "Custom Text",
+        "selfClosing": "Self Closing",
+        "shadcn": "Shadcn UI",
+        "apiReference": "API Reference"
+      }
+    },
+  "ModernWeb": {
+    "Step0": {
+      "title": "Content is Everything",
+      "description1": "Everything starts with content. Whether it's a product or a portfolio; the sole purpose of design is to present the content in the best possible way.",
+      "description2": "More than 90% of the web is text. So, to make this raw text beautiful, what is the ",
+      "action": "first thing to work on?"
+    },
+    "Step1": {
+      "title": "The Engine",
+      "description1": "In the past, the web was just HTML and CSS. Today, the foundation of the modern web is ",
+      "and": "and",
+      "alternatively": "Alternatively, ",
+      "greatChoice": "is also a great choice",
+      "description2": "Even though you see this page as raw HTML right now, there is a powerful engine running in the background. Now, using this power, ",
+      "action": "let's style our page a bit."
+    },
+    "Step2": {
+      "title": "CSS",
+      "description1": "Writing CSS used to be tedious. Today, ",
+      "industryStandard": "is the industry standard.",
+      "description2": "When you just clicked, we centered the page and gave it a maximum width. Readability increased instantly!",
+      "codeComment": "Content goes here",
+      "description3": "We are now using the power of utility classes. But what about ",
+      "action": "typography?"
+    },
+    "Step3": {
+      "title": "Typography",
+      "description1": "The browser's default serif font strains the eyes. With Next.js's ",
+      "description2": "module, we can add modern fonts with zero performance loss.",
+      "btn1": "Times New Roman: Default",
+      "btn2": "Geist: Modern and clean",
+      "btn3": "JetBrains Mono: Technical",
+      "description3": "Click the buttons to see the difference. In modern designs, ",
+      "preferred": "is usually preferred. What about our",
+      "action": "UI components?"
+    },
+    "Step4": {
+      "title": "UI Components",
+      "description1": "Designing complex components from scratch is a waste of time. With ",
+      "description2": ", you can include accessible, stylish, and fully customizable components into your project in seconds.",
+      "htmlForm": "Standard HTML Form:",
+      "profile": "Profile",
+      "fullName": "Full Name",
+      "dob": "Date of Birth",
+      "terms": "I accept the terms and conditions",
+      "save": "Save",
+      "shadcnForm": "Shadcn/UI Form:",
+      "userProfile": "User Profile",
+      "updateInfo": "Update your information.",
+      "placeholderName": "John Doe",
+      "pickDate": "Pick a date",
+      "description3": "The difference is obvious! Plus, accessibility (a11y) and keyboard navigation are a bonus. Now let's add some ",
+      "action": "atmosphere."
+    },
+    "Step5": {
+      "title": "Theme",
+      "description1": "Dark Mode is no longer a luxury, it's a standard. Integrating it into the system with ",
+      "description2": "takes only a few lines of code.",
+      "toggleTheme": "Toggle Theme",
+      "currentTheme": "Current theme:",
+      "dark": "Dark",
+      "light": "Light",
+      "description3": "All that's left is a little ",
+      "action": "touching the future."
+    },
+    "Step6": {
+      "title": "Artificial Intelligence",
+      "description1": "Our coding habits are changing; instead of entering every line manually, we now design living interfaces by giving the right directives to artificial intelligence.",
+      "placeholder": "Ask me anything...",
+      "prompt": "Generate 3 minimalist micro-widgets for a 'Modern Web' dashboard, incorporating the design ethos of Wiggle UI and utilizing shadcn/ui and Tailwind CSS: 1. A stock tracker for NVIDIA ($NVDA) with a green price chart. 2. A live match tracker for Turkey vs Spain (2026 World Cup) with a 'Live' indicator. 3. A sleek weather widget with a simple sun icon.",
+      "description2": "The interfaces of the future are no longer static, but smart and interactive. Everything looks great! ",
+      "action": "Let's check the result."
+    },
+    "Step7": {
+      "title": "Congratulations! 🎉",
+      "description1": "From a static structure; we have reached a living, modern experience with the power of Next.js, the speed of Tailwind 4, and an AI-Native architecture.",
+      "whatIs": "What is ViraStack?",
+      "description2": "ViraStack is a comprehensive Frontend Ecosystem designed to elevate modern software standards. We bridge the gap between complex architectures and seamless Developer Experience (DX). By providing production-ready boilerplates, high-discipline AI protocols, and zero-dependency utility tools, we empower developers to build high-performance, accessible, and scalable web applications with uncompromising quality.",
+      "explore": "Explore Our Projects"
+    },
+    "Header": {
+      "personalBlog": "Personal Blog"
+    },
+    "Metadata": {
+      "title": "Modern Web in 3 Minutes | ViraStack",
+      "description": "Learn the basics of modern web design step by step."
+    }
+  },
+  "TanStackBoilerplate": {},
+  "CLI": {},
+  "Standards": {},
+  "ErrorGuard": {}
+}

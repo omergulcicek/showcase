@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { Users, Github, Twitter, LifeBuoy, FlaskConical } from "lucide-react";
 import {
   Tooltip,

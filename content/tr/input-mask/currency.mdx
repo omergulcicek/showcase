@@ -1,0 +1,43 @@
+# Para Birimi
+
+ViraStack Mask, güçlü para birimi biçimlendirme desteği sağlar.
+
+## Yapılandırma
+
+`MaskOptions` içindeki `currency` özelliğini kullanın.
+
+```tsx
+interface CurrencyOptions {
+  precision?: number;        // Varsayılan: 2
+  decimalSeparator?: string; // Varsayılan: ','
+  thousandSeparator?: string;// Varsayılan: '.'
+  symbol?: string;           // Varsayılan: ''
+  symbolPosition?: 'prefix' | 'suffix'; // Varsayılan: 'prefix'
+}
+```
+
+## Kullanım
+
+```tsx
+const { price, salary } = useViraMask({
+  form,
+  schema: {
+    price: {
+      currency: {
+        precision: 2,
+        symbol: '$',
+        decimalSeparator: '.',
+        thousandSeparator: ',',
+      },
+      inputMode: 'decimal',
+    },
+    salary: 'currency', // Varsayılan para birimi hazır ayarını kullanır
+  }
+});
+```
+
+## Davranış
+
+- **Ham Değer:** Form durumu, sayısal değeri bir dize olarak içerecektir (örn. `"1234.50"`).
+- **Görünen Değer:** Giriş biçimlendirilmiş dizeyi gösterecektir (örn. `"$ 1,234.50"`).
+- **Yazma:** Yazma, ondalık ekleme ve binlik ayırıcıları işleyerek sayıyı otomatik olarak biçimlendirir.

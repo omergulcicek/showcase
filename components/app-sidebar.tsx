@@ -1,8 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
+import { usePathname, Link } from "@/i18n/navigation";
 import {
   BookOpen,
   Code2,
@@ -60,13 +59,13 @@ const sortedProjects = [...projects].sort((a, b) => {
   return aStatus - bStatus;
 });
 
-const data = {
+const data: Record<string, any> = {
   home: {
     projects: sortedProjects,
     links: [
-      { name: "Labs", url: "/labs", icon: FlaskConical },
-      { name: "Support", url: "/support", icon: LifeBuoy },
-      { name: "Maintainers", url: "/maintainers", icon: Users },
+      { name: "Labs", url: "/labs", icon: FlaskConical, translationKey: "Common.Navigation.labs" },
+      { name: "Support", url: "/support", icon: LifeBuoy, translationKey: "Common.Navigation.support" },
+      { name: "Maintainers", url: "/maintainers", icon: Users, translationKey: "Common.Navigation.maintainers" },
       {
         name: "GitHub",
         url: "https://github.com/virastack",
@@ -85,83 +84,93 @@ const data = {
     nav: [
       {
         title: "Getting Started",
+        translationKey: "InputMask.navigation.gettingStarted",
         url: "/input-mask/getting-started",
         icon: BookOpen,
       },
       {
         title: "Examples",
+        translationKey: "InputMask.navigation.examples",
         url: "/input-mask/examples",
         icon: Component,
         isActive: false,
         items: [
-          { title: "Overview", url: "/input-mask/examples" },
-          { title: "Credit Card", url: "/input-mask/examples/credit-card" },
-          { title: "Card Number", url: "/input-mask/examples/card" },
-          { title: "Expiry", url: "/input-mask/examples/expiry" },
-          { title: "CVV", url: "/input-mask/examples/cvv" },
-          { title: "IBAN", url: "/input-mask/examples/iban" },
-          { title: "Currency", url: "/input-mask/examples/currency" },
-          { title: "TCKN", url: "/input-mask/examples/tckn" },
-          { title: "Tax Number", url: "/input-mask/examples/tax-number" },
-          { title: "Phone", url: "/input-mask/examples/phone" },
-          { title: "Email", url: "/input-mask/examples/email" },
-          { title: "Zip Code", url: "/input-mask/examples/zip-code" },
-          { title: "Date", url: "/input-mask/examples/date" },
-          { title: "Password", url: "/input-mask/examples/password" },
-          { title: "URL", url: "/input-mask/examples/url" },
-          { title: "Username", url: "/input-mask/examples/username" },
-          { title: "Alpha", url: "/input-mask/examples/alpha" },
-          { title: "Numeric", url: "/input-mask/examples/numeric" },
-          { title: "Text", url: "/input-mask/examples/text" },
-          { title: "Custom Mask", url: "/input-mask/examples/custom-mask" },
+          { title: "Overview", translationKey: "InputMask.navigation.overview", url: "/input-mask/examples" },
+          { title: "Credit Card", translationKey: "InputMask.navigation.creditCard", url: "/input-mask/examples/credit-card" },
+          { title: "Card Number", translationKey: "InputMask.navigation.cardNumber", url: "/input-mask/examples/card" },
+          { title: "Expiry", translationKey: "InputMask.navigation.expiry", url: "/input-mask/examples/expiry" },
+          { title: "CVV", translationKey: "InputMask.navigation.cvv", url: "/input-mask/examples/cvv" },
+          { title: "IBAN", translationKey: "InputMask.navigation.iban", url: "/input-mask/examples/iban" },
+          { title: "Currency", translationKey: "InputMask.navigation.currency", url: "/input-mask/examples/currency" },
+          { title: "TCKN", translationKey: "InputMask.navigation.tckn", url: "/input-mask/examples/tckn" },
+          { title: "Tax Number", translationKey: "InputMask.navigation.taxNumber", url: "/input-mask/examples/tax-number" },
+          { title: "Phone", translationKey: "InputMask.navigation.phone", url: "/input-mask/examples/phone" },
+          { title: "Email", translationKey: "InputMask.navigation.email", url: "/input-mask/examples/email" },
+          { title: "Zip Code", translationKey: "InputMask.navigation.zipCode", url: "/input-mask/examples/zip-code" },
+          { title: "Date", translationKey: "InputMask.navigation.date", url: "/input-mask/examples/date" },
+          { title: "Password", translationKey: "InputMask.navigation.password", url: "/input-mask/examples/password" },
+          { title: "URL", translationKey: "InputMask.navigation.url", url: "/input-mask/examples/url" },
+          { title: "Username", translationKey: "InputMask.navigation.username", url: "/input-mask/examples/username" },
+          { title: "Alpha", translationKey: "InputMask.navigation.alpha", url: "/input-mask/examples/alpha" },
+          { title: "Numeric", translationKey: "InputMask.navigation.numeric", url: "/input-mask/examples/numeric" },
+          { title: "Text", translationKey: "InputMask.navigation.text", url: "/input-mask/examples/text" },
+          { title: "Custom Mask", translationKey: "InputMask.navigation.customMask", url: "/input-mask/examples/custom-mask" },
         ],
       },
       {
         title: "Schema & Presets",
+        translationKey: "InputMask.navigation.schemaPresets",
         url: "/input-mask/schema",
         icon: Code2,
       },
       {
         title: "Mask Options",
+        translationKey: "InputMask.navigation.maskOptions",
         url: "/input-mask/mask-options",
         icon: Settings2,
       },
       {
         title: "Custom Masks",
+        translationKey: "InputMask.navigation.customMasks",
         url: "/input-mask/custom-masks",
         icon: Terminal,
       },
       {
         title: "Currency",
+        translationKey: "InputMask.navigation.currency",
         url: "/input-mask/currency",
         icon: Terminal,
       },
       {
         title: "Built-in Validation",
+        translationKey: "InputMask.navigation.builtInValidation",
         url: "/input-mask/validation",
         icon: ShieldAlert,
       },
       {
         title: "Integrations",
+        translationKey: "InputMask.navigation.integrations",
         url: "/input-mask/integrations",
         icon: LayoutTemplate,
         items: [
-          { title: "Libraries", url: "/input-mask/integrations/libraries" },
-          { title: "Validation", url: "/input-mask/integrations/validation" },
+          { title: "Libraries", translationKey: "InputMask.navigation.libraries", url: "/input-mask/integrations/libraries" },
+          { title: "Validation", translationKey: "InputMask.navigation.validation", url: "/input-mask/integrations/validation" },
         ],
       },
       {
         title: "API Reference",
+        translationKey: "InputMask.navigation.apiReference",
         url: "/input-mask/api",
         icon: BookOpen,
         items: [
-          { title: "Engine", url: "/input-mask/api/engine" },
-          { title: "Currency", url: "/input-mask/api/currency" },
-          { title: "Utilities", url: "/input-mask/api/utilities" },
+          { title: "Engine", translationKey: "InputMask.navigation.engine", url: "/input-mask/api/engine" },
+          { title: "Currency", translationKey: "InputMask.navigation.currency", url: "/input-mask/api/currency" },
+          { title: "Utilities", translationKey: "InputMask.navigation.utilities", url: "/input-mask/api/utilities" },
         ],
       },
       {
         title: "Types",
+        translationKey: "InputMask.navigation.types",
         url: "/input-mask/types",
         icon: Code2,
       },
@@ -171,34 +180,40 @@ const data = {
     nav: [
       {
         title: "Getting Started",
+        translationKey: "PasswordToggle.navigation.gettingStarted",
         url: "/password-toggle/getting-started",
         icon: BookOpen,
       },
       {
         title: "Examples",
+        translationKey: "PasswordToggle.navigation.examples",
         url: "/password-toggle/examples",
         icon: Component,
         isActive: true,
         items: [
-          { title: "Overview", url: "/password-toggle/examples" },
-          { title: "Basic", url: "/password-toggle/examples/basic" },
+          { title: "Overview", translationKey: "PasswordToggle.navigation.overview", url: "/password-toggle/examples" },
+          { title: "Basic", translationKey: "PasswordToggle.navigation.basic", url: "/password-toggle/examples/basic" },
           {
             title: "Custom Icons",
+            translationKey: "PasswordToggle.navigation.customIcons",
             url: "/password-toggle/examples/custom-icons",
           },
           {
             title: "Custom Text",
+            translationKey: "PasswordToggle.navigation.customText",
             url: "/password-toggle/examples/custom-text",
           },
           {
             title: "Self Closing",
+            translationKey: "PasswordToggle.navigation.selfClosing",
             url: "/password-toggle/examples/self-closing",
           },
-          { title: "Shadcn UI", url: "/password-toggle/examples/shadcn" },
+          { title: "Shadcn UI", translationKey: "PasswordToggle.navigation.shadcn", url: "/password-toggle/examples/shadcn" },
         ],
       },
       {
         title: "API Reference",
+        translationKey: "PasswordToggle.navigation.apiReference",
         url: "/password-toggle/api",
         icon: BookOpen,
       },
@@ -206,15 +221,18 @@ const data = {
   },
 };
 
+import { useTranslations } from "next-intl";
+
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname();
   const { setOpen, isMobile } = useSidebar();
+  const t = useTranslations();
 
   // Determine context
   let context = "home";
 
   const activeProject = data.home.projects.find(
-    (p) =>
+    (p: any) =>
       p.url !== "/" &&
       p.url.startsWith("/") &&
       (pathname === p.url || pathname.startsWith(p.url.split("#")[0])) &&
@@ -250,9 +268,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         {context === "home" && (
           <>
             <SidebarGroup>
-              <SidebarGroupLabel>Projects</SidebarGroupLabel>
+              <SidebarGroupLabel>{t("Common.Navigation.projects")}</SidebarGroupLabel>
               <SidebarMenu>
-                {data.home.projects.map((item) => (
+                {data.home.projects.map((item: any) => (
                   <SidebarMenuItem key={item.name}>
                     <SidebarMenuButton asChild tooltip={item.name}>
                       {item.status ? (
@@ -288,30 +306,33 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarGroup>
 
             <SidebarGroup>
-              <SidebarGroupLabel>Community</SidebarGroupLabel>
+              <SidebarGroupLabel>{t("Common.Navigation.community")}</SidebarGroupLabel>
               <SidebarMenu>
-                {data.home.links.map((item) => (
-                  <SidebarMenuItem key={item.name}>
-                    <SidebarMenuButton
-                      asChild
-                      tooltip={item.name}
-                      isActive={pathname === item.url}
-                    >
-                      <Link
-                        href={item.url}
-                        target={
-                          item.url.startsWith("http") ? "_blank" : undefined
-                        }
+                {data.home.links.map((item: any) => {
+                  const displayName = item.translationKey ? t(item.translationKey) : item.name;
+                  return (
+                    <SidebarMenuItem key={item.name}>
+                      <SidebarMenuButton
+                        asChild
+                        tooltip={displayName}
+                        isActive={pathname === item.url}
                       >
-                        <item.icon />
-                        <span>{item.name}</span>
-                        {item.external && (
-                          <ExternalLink className="ml-auto size-3 text-muted-foreground" />
-                        )}
-                      </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
+                        <Link
+                          href={item.url}
+                          target={
+                            item.url.startsWith("http") ? "_blank" : undefined
+                          }
+                        >
+                          <item.icon />
+                          <span>{displayName}</span>
+                          {item.external && (
+                            <ExternalLink className="ml-auto size-3 text-muted-foreground" />
+                          )}
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  );
+                })}
               </SidebarMenu>
             </SidebarGroup>
           </>
@@ -320,8 +341,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         {(context === "input-mask" || context === "password-toggle") && (
           <SidebarGroup>
             <SidebarMenu className="mt-2">
-              {data[context].nav.map((item) =>
-                item.items ? (
+              {data[context].nav.map((item: any) => {
+                const itemTitle = item.translationKey ? t(item.translationKey) : item.title;
+                return item.items ? (
                   <Collapsible
                     key={`${context}-${item.title}`}
                     asChild
@@ -333,26 +355,29 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   >
                     <SidebarMenuItem>
                       <CollapsibleTrigger asChild>
-                        <SidebarMenuButton tooltip={item.title}>
+                        <SidebarMenuButton tooltip={itemTitle}>
                           {item.icon && <item.icon />}
-                          <span>{item.title}</span>
+                          <span>{itemTitle}</span>
                           <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
                         </SidebarMenuButton>
                       </CollapsibleTrigger>
                       <CollapsibleContent>
                         <SidebarMenuSub>
-                          {item.items.map((subItem) => (
-                            <SidebarMenuSubItem key={subItem.title}>
-                              <SidebarMenuSubButton
-                                asChild
-                                isActive={pathname === subItem.url}
-                              >
-                                <Link href={subItem.url}>
-                                  <span>{subItem.title}</span>
-                                </Link>
-                              </SidebarMenuSubButton>
-                            </SidebarMenuSubItem>
-                          ))}
+                          {item.items.map((subItem: any) => {
+                            const subItemTitle = subItem.translationKey ? t(subItem.translationKey) : subItem.title;
+                            return (
+                              <SidebarMenuSubItem key={subItem.title}>
+                                <SidebarMenuSubButton
+                                  asChild
+                                  isActive={pathname === subItem.url}
+                                >
+                                  <Link href={subItem.url}>
+                                    <span>{subItemTitle}</span>
+                                  </Link>
+                                </SidebarMenuSubButton>
+                              </SidebarMenuSubItem>
+                            );
+                          })}
                         </SidebarMenuSub>
                       </CollapsibleContent>
                     </SidebarMenuItem>
@@ -362,16 +387,16 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     <SidebarMenuButton
                       asChild
                       isActive={pathname === item.url}
-                      tooltip={item.title}
+                      tooltip={itemTitle}
                     >
                       <Link href={item.url}>
                         {item.icon && <item.icon />}
-                        <span>{item.title}</span>
+                        <span>{itemTitle}</span>
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
-                ),
-              )}
+                );
+              })}
             </SidebarMenu>
           </SidebarGroup>
         )}

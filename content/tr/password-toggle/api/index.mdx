@@ -1,0 +1,29 @@
+# API Referansı
+
+## useViraPassword(options?)
+
+`useViraPassword` hook'u isteğe bağlı bir yapılandırma nesnesi kabul eder.
+
+### Seçenekler
+
+| Prop | Tip | Varsayılan | Açıklama |
+| :--- | :--- | :--- | :--- |
+| `defaultVisible` | `boolean` | `false` | Şifrenin başlangıç görünürlük durumu. |
+| `icons` | `{ show: ReactNode, hide: ReactNode }` | `undefined` | Göster/gizle durumları için özel ikonlar. |
+| `disabled` | `boolean` | `false` | Girdinin devre dışı bırakılıp bırakılmadığı. |
+| `readOnly` | `boolean` | `false` | Girdinin salt okunur olup olmadığı. |
+| `id` | `string` | `undefined` | Girdi öğesi için ID. Sağlanmazsa, rastgele bir ID oluşturulur. |
+| `inputProps` | `React.InputHTMLAttributes` | `undefined` | Oluşturulan girdi propları ile birleştirilecek proplar. |
+| `btnProps` | `React.ButtonHTMLAttributes` | `undefined` | Oluşturulan buton propları ile birleştirilecek proplar. |
+
+### Döndürülenler
+
+Hook, aşağıdaki özelliklere sahip bir nesne döndürür:
+
+| Özellik | Tip | Açıklama |
+| :--- | :--- | :--- |
+| `inputProps` | `React.InputHTMLAttributes` | Girdi öğesi için proplar. |
+| `btnProps` | `React.ButtonHTMLAttributes` | Değiştirme butonu için proplar. |
+| `isVisible` | `boolean` | Geçerli görünürlük durumu. |
+| `toggle` | `() => void` | Görünürlüğü değiştirme işlevi. |
+| `setVisible` | `(visible: boolean) => void` | Görünürlüğü açıkça ayarlama işlevi. |

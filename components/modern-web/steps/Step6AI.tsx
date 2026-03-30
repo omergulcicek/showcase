@@ -6,6 +6,7 @@ import { MicIcon } from "lucide-react";
 import SportsWidget from "@/components/sports-sm-02";
 import StockWidget from "@/components/stock-sm-04";
 import WeatherWidget from "@/components/weather-sm-01";
+import { useTranslations } from "next-intl";
 
 import {
   PromptInput,
@@ -39,6 +40,7 @@ export default function Step6AI({ onNext, isCompleted }: StepProps) {
     "ready",
   );
   const [visibleWidgets, setVisibleWidgets] = useState(0);
+  const t = useTranslations("ModernWeb.Step6");
 
   const handleSubmit = (message: { text?: string; files?: unknown[] }) => {
     if (!message.text?.trim() && !message.files?.length) {
@@ -69,8 +71,7 @@ export default function Step6AI({ onNext, isCompleted }: StepProps) {
   };
 
   useEffect(() => {
-    const promptToType =
-      "Generate 3 minimalist micro-widgets for a 'Modern Web' dashboard, incorporating the design ethos of Wiggle UI and utilizing shadcn/ui and Tailwind CSS: 1. A stock tracker for NVIDIA ($NVDA) with a green price chart. 2. A live match tracker for Turkey vs Spain (2026 World Cup) with a 'Live' indicator. 3. A sleek weather widget with a simple sun icon.";
+    const promptToType = t("prompt");
     let currentIndex = 0;
     const interval = setInterval(() => {
       if (currentIndex <= promptToType.length) {
@@ -96,17 +97,15 @@ export default function Step6AI({ onNext, isCompleted }: StepProps) {
 
     return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [t]);
 
   return (
     <section className="space-y-4 mb-32" id="ai-section-header">
       <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-        {"Artificial Intelligence"}
+        {t("title")}
       </h2>
       <p className="text-lg text-muted-foreground">
-        {
-          "Our coding habits are changing; instead of entering every line manually, we now design living interfaces by giving the right directives to artificial intelligence."
-        }
+        {t("description1")}
       </p>
 
       <div className="my-6 p-6 border border-border rounded-lg overflow-hidden relative bg-card">
@@ -119,7 +118,7 @@ export default function Step6AI({ onNext, isCompleted }: StepProps) {
             <PromptInputTextarea
               onChange={(e) => setText(e.target.value)}
               value={text}
-              placeholder={"Ask me anything..."}
+              placeholder={t("placeholder")}
               className="min-h-[104px]"
             />
           </PromptInputBody>
@@ -190,9 +189,7 @@ export default function Step6AI({ onNext, isCompleted }: StepProps) {
       )}
 
       <p className="text-lg text-muted-foreground mt-6">
-        {
-          "The interfaces of the future are no longer static, but smart and interactive. Everything looks great! "
-        }
+        {t("description2")}
         <br />
         <span
           onClick={!isCompleted ? onNext : undefined}
@@ -202,7 +199,7 @@ export default function Step6AI({ onNext, isCompleted }: StepProps) {
               : "underline underline-offset-2 cursor-pointer text-blue-600 hover:text-blue-800",
           )}
         >
-          {"Let's check the result."}
+          {t("action")}
         </span>
       </p>
       <div id="ai-section-bottom" />

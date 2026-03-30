@@ -2,12 +2,15 @@ import { GithubStarButton } from "@/components/github-star-button";
 import { cn } from "@/lib/utils";
 import type { Project } from "@/data/projects";
 import { Badge } from "./ui/badge";
+import { useTranslations } from "next-intl";
 
 interface ProjectCardProps {
   project: Project;
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const t = useTranslations("Projects");
+
   return (
     <div
       className={cn(
@@ -21,16 +24,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <h3 className="font-semibold">{project.name}</h3>
           {project.status && (
             <Badge variant="outline" className="border-dashed">
-              {project.status}
+              {t(`status.${project.status}`)}
             </Badge>
           )}
         </div>
         <p className="text-sm text-muted-foreground mt-1">
-          {project.description}
+          {t(project.descriptionKey)}
         </p>
       </div>
       <div className="mt-auto pt-3 flex justify-end">
-        <GithubStarButton href={project.repo} />
+        {project.repo && <GithubStarButton href={project.repo} />}
       </div>
     </div>
   );

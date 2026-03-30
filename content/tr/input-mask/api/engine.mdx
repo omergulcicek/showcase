@@ -1,0 +1,39 @@
+# Motor
+
+Gelişmiş kullanım durumları veya headless uygulama için sunulan düşük seviyeli işlevler.
+
+## `applyMask`
+
+Ham bir değere maske deseni uygular.
+
+```tsx
+function applyMask(value: string, mask: string): string
+```
+
+## `cleanValue`
+
+İzin verilen/yasaklanan desenlere göre karakterleri çıkarır.
+
+```tsx
+function cleanValue(
+  value: string, 
+  allowedChars?: RegExp, 
+  forbiddenChars?: RegExp
+): string
+```
+
+## `unmask`
+
+Bir değerden maske karakterlerini kaldırarak ham veriyi döndürür.
+
+```tsx
+function unmask(value: string, mask: string): string
+```
+
+## `stripMask`
+
+`unmask`'a benzer, ancak belirli konumlarındaki maske sabitleriyle eşleşen karakterleri kesin olarak kaldırır.
+
+```tsx
+function stripMask(value: string, mask: string): string
+```

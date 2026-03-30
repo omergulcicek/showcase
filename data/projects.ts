@@ -1,6 +1,6 @@
 export type Project = {
   name: string;
-  description: string;
+  descriptionKey: string;
   url: string;
   repo?: string;
   color: string;
@@ -12,8 +12,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     name: "Next.js Boilerplate",
-    description:
-      "Production-ready Next.js 16+ starter template built with Tailwind CSS 4 and TypeScript.",
+    descriptionKey: "nextjsBoilerplate",
     url: "/nextjs-boilerplate",
     repo: "https://github.com/virastack/nextjs-boilerplate",
     color: "bg-sky-500",
@@ -22,8 +21,7 @@ export const projects: Project[] = [
   },
   {
     name: "AI Rules",
-    description:
-      "AI-native architecture kit and high-discipline protocols for modern React applications.",
+    descriptionKey: "aiRules",
     url: "/ai-rules",
     repo: "https://github.com/virastack/ai-rules",
     color: "bg-fuchsia-500",
@@ -32,8 +30,7 @@ export const projects: Project[] = [
   },
   {
     name: "Input Mask",
-    description:
-      "Lightweight, zero-dependency input masking library optimized for React Hook Form.",
+    descriptionKey: "inputMask",
     url: "/input-mask",
     repo: "https://github.com/virastack/input-mask",
     color: "bg-indigo-500",
@@ -42,8 +39,7 @@ export const projects: Project[] = [
   },
   {
     name: "Password Toggle",
-    description:
-      "Fully accessible and highly customizable password visibility hook for React.",
+    descriptionKey: "passwordToggle",
     url: "/password-toggle",
     repo: "https://github.com/virastack/password-toggle",
     color: "bg-rose-500",
@@ -52,7 +48,7 @@ export const projects: Project[] = [
   },
   {
     name: "Modern Web in 3 Minutes",
-    description: "Master modern web development standards in just 3 minutes.",
+    descriptionKey: "modernWeb",
     url: "/modern-web-in-3-minutes",
     repo: "https://github.com/virastack/modern-web-in-3-minutes",
     color: "bg-amber-400",
@@ -61,8 +57,7 @@ export const projects: Project[] = [
   },
   {
     name: "TanStack Boilerplate",
-    description:
-      "Production-ready TanStack Start starter template built with Tailwind CSS 4 and TypeScript.",
+    descriptionKey: "tanstackBoilerplate",
     url: "/tanstack-boilerplate",
     repo: "https://github.com/virastack/tanstack-boilerplate",
     color: "bg-cyan-500",
@@ -72,8 +67,7 @@ export const projects: Project[] = [
   },
   {
     name: "Start (CLI)",
-    description:
-      "Automated scaffolding tool to initialize and scale high-discipline ViraStack architectures.",
+    descriptionKey: "cli",
     url: "/cli",
     repo: "https://github.com/virastack/cli",
     color: "bg-teal-500",
@@ -83,8 +77,7 @@ export const projects: Project[] = [
   },
   {
     name: "Standards",
-    description:
-      "Zero-config ESLint and Prettier suite ensuring absolute code integrity across every project.",
+    descriptionKey: "standards",
     url: "/standards",
     repo: "https://github.com/virastack/standards",
     color: "bg-emerald-600",
@@ -94,8 +87,7 @@ export const projects: Project[] = [
   },
   {
     name: "Error Guard",
-    description:
-      "Pro-grade error handling and smart recovery protocols for zero-friction React environments.",
+    descriptionKey: "errorGuard",
     url: "/error-guard",
     repo: "https://github.com/virastack/error-guard",
     color: "bg-red-500",

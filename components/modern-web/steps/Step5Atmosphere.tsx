@@ -3,6 +3,7 @@ import { Button } from "@/components/modern-web/ui/button";
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 interface StepProps {
   onNext: () => void;
@@ -12,6 +13,7 @@ interface StepProps {
 export default function Step5Atmosphere({ onNext, isCompleted }: StepProps) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const t = useTranslations("ModernWeb.Step5");
   
   useEffect(() => {
     setMounted(true);
@@ -20,10 +22,10 @@ export default function Step5Atmosphere({ onNext, isCompleted }: StepProps) {
   return (
     <section className="space-y-4 mb-20">
       <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-        {"Theme"}
+        {t("title")}
       </h2>
       <p className="text-lg text-muted-foreground">
-        {"Dark Mode is no longer a luxury, it's a standard. Integrating it into the system with "}{" "}
+        {t("description1")}{" "}
         <a
           href="https://github.com/pacocoursey/next-themes"
           target="_blank"
@@ -32,15 +34,15 @@ export default function Step5Atmosphere({ onNext, isCompleted }: StepProps) {
         >
           next-themes
         </a>{" "}
-        {"takes only a few lines of code."}
+        {t("description2")}
       </p>
 
       {mounted && (
         <div className="my-6 p-6 border border-border rounded-lg flex items-center justify-between bg-card text-card-foreground">
           <div>
-            <h3 className="text-xl font-semibold">{"Toggle Theme"}</h3>
+            <h3 className="text-xl font-semibold">{t("toggleTheme")}</h3>
             <p className="text-sm text-muted-foreground mt-1">
-              {"Current theme:"} {theme === "dark" ? "Dark" : "Light"}
+              {t("currentTheme")} {theme === "dark" ? t("dark") : t("light")}
             </p>
           </div>
           <Button
@@ -59,7 +61,7 @@ export default function Step5Atmosphere({ onNext, isCompleted }: StepProps) {
       )}
 
       <p className="text-lg text-muted-foreground mt-6">
-        {"All that's left is a little "}{" "}
+        {t("description3")}{" "}
         <span
           onClick={!isCompleted ? onNext : undefined}
           className={cn(
@@ -68,7 +70,7 @@ export default function Step5Atmosphere({ onNext, isCompleted }: StepProps) {
               : "underline underline-offset-2 cursor-pointer text-blue-600 hover:text-blue-800",
           )}
         >
-          {"touching the future."}
+          {t("action")}
         </span>
       </p>
     </section>

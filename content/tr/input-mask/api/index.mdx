@@ -1,0 +1,44 @@
+# API Referansı
+
+## `useViraMask`
+
+ViraStack Mask için birincil hook.
+
+```tsx
+function useViraMask<TFieldValues, TSchema>(
+  props: UseViraMaskProps<TFieldValues, TSchema>
+): MaskFields<TSchema>
+```
+
+### Proplar
+
+| Prop | Tür | Açıklama |
+| :--- | :--- | :--- |
+| `form` | `UseFormReturn<TFieldValues>` | RHF'nin `useForm` tarafından döndürülen nesne. |
+| `schema` | `MaskSchema<TFieldValues>` | Alan adlarını maskelere eşleyen yapılandırma nesnesi. |
+
+### Döndürülenler
+
+Her anahtarın şema anahtarlarıyla eşleştiği bir nesne döndürür. Her değer bir `MaskField` nesnesidir.
+
+## `MaskField`
+
+Bir `<input>` öğesine yayılması (spread) amaçlanan nesne.
+
+```tsx
+interface MaskField {
+  ref: RefCallback<HTMLInputElement>;
+  name: string;
+  value: string;         // Görünen değer (maskelenmiş)
+  rawValue: string;      // Temiz değer (maskelenmemiş)
+  onChange: (e: ChangeEvent) => void;
+  onBlur: (e: FocusEvent) => void;
+  onFocus: (e: FocusEvent) => void;
+  type?: string;
+  inputMode?: string;
+  autoComplete?: string;
+  'aria-invalid'?: boolean;
+  'aria-describedby'?: string;
+  title?: string;
+}
+```

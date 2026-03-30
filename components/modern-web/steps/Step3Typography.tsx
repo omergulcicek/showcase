@@ -1,6 +1,7 @@
-import { useFont } from "@/app/modern-web-in-3-minutes/providers";
+import { useFont } from "@/app/[locale]/modern-web-in-3-minutes/providers";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
+import { useTranslations } from "next-intl";
 
 interface StepProps {
   onNext: () => void;
@@ -9,15 +10,16 @@ interface StepProps {
 
 export default function Step3Typography({ onNext, isCompleted }: StepProps) {
   const { font, setFont } = useFont();
-  const p2Suffix = "is usually preferred. What about our".trim();
+  const t = useTranslations("ModernWeb.Step3");
+  const p2Suffix = t("preferred").trim();
 
   return (
     <section className="space-y-4 mb-20">
       <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-        {"Typography"}
+        {t("title")}
       </h2>
       <p className="text-lg text-muted-foreground">
-        {"The browser's default serif font strains the eyes. With Next.js's "}{" "}
+        {t("description1")}{" "}
         <a
           href="https://nextjs.org/docs/app/getting-started/fonts"
           target="_blank"
@@ -26,7 +28,7 @@ export default function Step3Typography({ onNext, isCompleted }: StepProps) {
         >
           next/font
         </a>{" "}
-        {"module, we can add modern fonts with zero performance loss."}
+        {t("description2")}
       </p>
 
       <div className="flex flex-wrap gap-2 my-6">
@@ -36,7 +38,7 @@ export default function Step3Typography({ onNext, isCompleted }: StepProps) {
           className="font-serif"
           onClick={() => setFont("serif")}
         >
-          {"Times New Roman: Default"}
+          {t("btn1")}
         </Button>
         <Button
           size="sm"
@@ -44,7 +46,7 @@ export default function Step3Typography({ onNext, isCompleted }: StepProps) {
           className="font-geist"
           onClick={() => setFont("geist")}
         >
-          {"Geist: Modern and clean"}
+          {t("btn2")}
         </Button>
         <Button
           size="sm"
@@ -52,17 +54,17 @@ export default function Step3Typography({ onNext, isCompleted }: StepProps) {
           className="font-mono"
           onClick={() => setFont("mono")}
         >
-          {"JetBrains Mono: Technical"}
+          {t("btn3")}
         </Button>
       </div>
 
       <p className="text-lg text-muted-foreground">
-        {"Click the buttons to see the difference. In modern designs, "}
+        {t("description3")}
         {p2Suffix ? (
           <>
             {" "}
             <strong>sans-serif</strong>{" "}
-            {"is usually preferred. What about our"}{" "}
+            {t("preferred")}{" "}
           </>
         ) : null}
         <span
@@ -73,7 +75,7 @@ export default function Step3Typography({ onNext, isCompleted }: StepProps) {
               : "underline underline-offset-2 cursor-pointer text-blue-600 hover:text-blue-800",
           )}
         >
-          {"UI components?"}
+          {t("action")}
         </span>
       </p>
     </section>

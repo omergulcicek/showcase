@@ -1,0 +1,22 @@
+export default {
+  index: "Genel Bakış",
+  "credit-card": "Kredi Kartı",
+  card: "Kart Numarası",
+  expiry: "Son Kullanma Tarihi",
+  cvv: "CVV",
+  iban: "IBAN",
+  currency: "Para Birimi",
+  tckn: "TCKN",
+  "tax-number": "Vergi Numarası",
+  phone: "Telefon",
+  email: "E-posta",
+  "zip-code": "Posta Kodu",
+  date: "Tarih",
+  password: "Şifre",
+  url: "URL",
+  username: "Kullanıcı Adı",
+  alpha: "Alfabetik",
+  numeric: "Sayısal",
+  text: "Metin",
+  "custom-mask": "Özel Maske"
+};

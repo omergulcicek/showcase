@@ -2,12 +2,15 @@
 
 import { useEffect } from "react";
 import confetti from "canvas-confetti";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { GithubStarButton } from "@/components/github-star-button";
 import { ChevronRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function Step7Final() {
+  const t = useTranslations("ModernWeb.Step7");
+
   useEffect(() => {
     const end = Date.now() + 1 * 2000;
     const colors = ["#a786ff", "#fd8bbc", "#eca184", "#f8deb1"];
@@ -41,29 +44,21 @@ export default function Step7Final() {
   return (
     <section className="space-y-4 mb-44">
       <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-        Congratulations! 🎉
+        {t("title")}
       </h2>
       <p className="text-lg text-muted-foreground">
-        From a static structure; we have reached a living, modern experience
-        with the power of Next.js, the speed of Tailwind 4, and an AI-Native
-        architecture.
+        {t("description1")}
       </p>
 
       <div className="mt-20 text-card-foreground">
-        <h3 className="text-2xl font-semibold mb-3">What is ViraStack?</h3>
+        <h3 className="text-2xl font-semibold mb-3">{t("whatIs")}</h3>
         <p className="text-muted-foreground mb-6 text-base">
-          ViraStack is a comprehensive Frontend Ecosystem designed to elevate
-          modern software standards. We bridge the gap between complex
-          architectures and seamless Developer Experience (DX). By providing
-          production-ready boilerplates, high-discipline AI protocols, and
-          zero-dependency utility tools, we empower developers to build
-          high-performance, accessible, and scalable web applications with
-          uncompromising quality.
+          {t("description2")}
         </p>
         <div className="flex flex-wrap items-center gap-4">
           <Button asChild className="group">
             <Link href="/">
-              Explore Our Projects
+              {t("explore")}
               <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>

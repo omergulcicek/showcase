@@ -1,5 +1,6 @@
 import { TailwindCSS } from "@/components/modern-web/icons/tailwind";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 interface StepProps {
   onNext: () => void;
@@ -7,14 +8,15 @@ interface StepProps {
 }
 
 export default function Step2Foundation({ onNext, isCompleted }: StepProps) {
+  const t = useTranslations("ModernWeb.Step2");
   
   return (
     <section className="space-y-4 mb-20">
       <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-        {"CSS"} <TailwindCSS className="w-10 h-10" />
+        {t("title")} <TailwindCSS className="w-10 h-10" />
       </h2>
       <p className="text-lg text-muted-foreground">
-        {"Writing CSS used to be tedious. Today, "}{" "}
+        {t("description1")}{" "}
         <a
           href="https://tailwindcss.com"
           target="_blank"
@@ -23,20 +25,20 @@ export default function Step2Foundation({ onNext, isCompleted }: StepProps) {
         >
           Tailwind CSS
         </a>{" "}
-        {"is the industry standard."}
+        {t("industryStandard")}
       </p>
-      <p className="text-lg text-muted-foreground">{"When you just clicked, we centered the page and gave it a maximum width. Readability increased instantly!"}</p>
+      <p className="text-lg text-muted-foreground">{t("description2")}</p>
 
       <div className="my-6 p-4 bg-gray-100 dark:bg-gray-900 rounded-lg overflow-x-auto font-mono text-sm">
         <pre>
           <code>{`<main className="container mx-auto px-4 py-8 max-w-3xl">
-  {/* ${"Content goes here"} */}
+  {/* ${t("codeComment")} */}
 </main>`}</code>
         </pre>
       </div>
 
       <p className="text-lg text-muted-foreground">
-        {"We are now using the power of utility classes. But what about "}{" "}
+        {t("description3")}{" "}
         <span
           onClick={!isCompleted ? onNext : undefined}
           className={cn(
@@ -45,7 +47,7 @@ export default function Step2Foundation({ onNext, isCompleted }: StepProps) {
               : "underline underline-offset-2 cursor-pointer text-blue-600 hover:text-blue-800",
           )}
         >
-          {"typography?"}
+          {t("action")}
         </span>
       </p>
     </section>

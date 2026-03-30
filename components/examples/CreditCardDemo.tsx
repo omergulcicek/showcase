@@ -4,8 +4,10 @@ import { useViraMask } from "@virastack/input-mask";
 import { useForm } from "react-hook-form";
 import { Field, FieldError, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
+import { useTranslations } from "next-intl";
 
 export function CreditCardDemo() {
+  const t = useTranslations("InputMask.examples.creditCard");
   const form = useForm({
     mode: "onChange",
     defaultValues: { cardNumber: "", expiry: "", cvv: "" },
@@ -19,15 +21,15 @@ export function CreditCardDemo() {
     schema: {
       cardNumber: {
         preset: "card",
-        errorMessage: "Invalid card number",
+        errorMessage: t("invalidCardNumber"),
       },
       expiry: {
         preset: "expiry",
-        errorMessage: "Invalid date",
+        errorMessage: t("invalidDate"),
       },
       cvv: {
         preset: "cvv",
-        errorMessage: "Invalid CVV",
+        errorMessage: t("invalidCvv"),
       },
     },
   });
@@ -35,23 +37,23 @@ export function CreditCardDemo() {
   return (
     <Field className="md:w-64 mt-4">
       <div>
-        <FieldLabel htmlFor="cardNumber">Credit Card Number</FieldLabel>
+        <FieldLabel htmlFor="cardNumber">{t("cardNumber")}</FieldLabel>
         <Input
           id="cardNumber"
           {...mask.cardNumber}
-          placeholder="4532 1234 5678 9012"
+          placeholder={t("cardNumberPlaceholder")}
         />
         <FieldError>{errors.cardNumber?.message as string}</FieldError>
       </div>
       <div className="flex gap-4">
         <div>
-          <FieldLabel htmlFor="expiry">Expiration Date</FieldLabel>
-          <Input id="expiry" {...mask.expiry} placeholder="12/26" />
+          <FieldLabel htmlFor="expiry">{t("expiry")}</FieldLabel>
+          <Input id="expiry" {...mask.expiry} placeholder={t("expiryPlaceholder")} />
           <FieldError>{errors.expiry?.message as string}</FieldError>
         </div>
         <div>
-          <FieldLabel htmlFor="cvv">CVV</FieldLabel>
-          <Input id="cvv" {...mask.cvv} placeholder="123" />
+          <FieldLabel htmlFor="cvv">{t("cvv")}</FieldLabel>
+          <Input id="cvv" {...mask.cvv} placeholder={t("cvvPlaceholder")} />
           <FieldError>{errors.cvv?.message as string}</FieldError>
         </div>
       </div>

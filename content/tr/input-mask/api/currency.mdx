@@ -1,0 +1,33 @@
+# Para Birimi Araçları
+
+Para birimi biçimlendirmesini programlı olarak işlemek için işlevler.
+
+## `formatCurrency`
+
+Ham bir sayısal dizeyi seçeneklere göre bir para birimi dizesine biçimlendirir.
+
+```tsx
+function formatCurrency(value: string, options: CurrencyOptions): string
+```
+
+### Örnek
+
+```ts
+formatCurrency("1234.50", { symbol: "$", thousandSeparator: "," });
+// Çıktı: "$1,234.50"
+```
+
+## `unformatCurrency`
+
+Bir para birimi dizesinden biçimlendirmeyi çıkararak temiz bir sayısal dize (`parseFloat` ile uyumlu) döndürür.
+
+```tsx
+function unformatCurrency(value: string, options: CurrencyOptions): string
+```
+
+### Örnek
+
+```ts
+unformatCurrency("$1,234.50", { decimalSeparator: "." });
+// Çıktı: "1234.50"
+```

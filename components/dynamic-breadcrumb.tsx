@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, Link } from "@/i18n/navigation";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -44,7 +44,9 @@ export function DynamicBreadcrumb() {
             {segments.length === 0 ? (
               <BreadcrumbPage>ViraStack</BreadcrumbPage>
             ) : (
-              <BreadcrumbLink href="/">ViraStack</BreadcrumbLink>
+              <BreadcrumbLink asChild>
+                <Link href="/">ViraStack</Link>
+              </BreadcrumbLink>
             )}
           </BreadcrumbItem>
 
@@ -63,7 +65,9 @@ export function DynamicBreadcrumb() {
                   {isLast ? (
                     <BreadcrumbPage>{title}</BreadcrumbPage>
                   ) : (
-                    <BreadcrumbLink href={href}>{title}</BreadcrumbLink>
+                    <BreadcrumbLink asChild>
+                      <Link href={href}>{title}</Link>
+                    </BreadcrumbLink>
                   )}
                 </BreadcrumbItem>
                 {!isLast && <BreadcrumbSeparator />}

@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { useHeader } from "@/app/modern-web-in-3-minutes/providers";
+import { useHeader } from "@/app/[locale]/modern-web-in-3-minutes/providers";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -26,9 +26,11 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/modern-web/ui/navigation-menu";
 import { Button } from "@/components/modern-web/ui/button";
+import { useTranslations } from "next-intl";
 
 export function Header() {
   const { showHeader } = useHeader();
+  const t = useTranslations("ModernWeb.Header");
 
   return (
     <AnimatePresence>
@@ -88,7 +90,7 @@ export function Header() {
                       <ul className="flex flex-col w-[200px] gap-1 p-2">
                         <ListItem
                           href="https://omergulcicek.com"
-                          title="Kişisel Blog"
+                          title={t("personalBlog")}
                         />
                         <ListItem
                           href="https://github.com/omergulcicek"
