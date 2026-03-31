@@ -6,7 +6,7 @@ Helper functions and constants exported by the package.
 
 A record of built-in mask configurations.
 
-```tsx
+```text
 import { PRESETS } from '@virastack/input-mask';
 // Access PRESETS.card, PRESETS.phone, etc.
 ```
@@ -15,7 +15,7 @@ import { PRESETS } from '@virastack/input-mask';
 
 A record of built-in validator functions.
 
-```tsx
+```text
 import { VALIDATORS } from '@virastack/input-mask';
 // VALIDATORS.luhn(value)
 // VALIDATORS.tckn(value)
@@ -27,7 +27,7 @@ import { VALIDATORS } from '@virastack/input-mask';
 
 Standalone TCKN validation function.
 
-```tsx
+```text
 function validateTCKN(value: string): boolean
 ```
 
@@ -35,7 +35,7 @@ function validateTCKN(value: string): boolean
 
 Standalone Luhn algorithm validation function.
 
-```tsx
+```text
 function validateLuhn(value: string): boolean
 ```
 
@@ -47,7 +47,7 @@ These functions allow you to use ViraStack Mask's masking and formatting logic o
 
 Applies a mask pattern to a raw value.
 
-```tsx
+```text
 import { applyMask } from '@virastack/input-mask';
 
 const formatted = applyMask('5551234567', '(999) 999 99 99');
@@ -58,7 +58,7 @@ const formatted = applyMask('5551234567', '(999) 999 99 99');
 
 Removes mask characters from a value, returning only the raw characters defined by the mask type.
 
-```tsx
+```text
 import { unmask } from '@virastack/input-mask';
 
 const raw = unmask('(555) 123 45 67', '(999) 999 99 99');
@@ -69,7 +69,7 @@ const raw = unmask('(555) 123 45 67', '(999) 999 99 99');
 
 Removes all non-numeric characters from a string. Useful for cleaning inputs before processing.
 
-```tsx
+```text
 import { cleanValue } from '@virastack/input-mask';
 
 const clean = cleanValue('(555) 123-4567');
@@ -80,7 +80,7 @@ const clean = cleanValue('(555) 123-4567');
 
 Formats a number string as currency.
 
-```tsx
+```text
 import { formatCurrency } from '@virastack/input-mask';
 
 const price = formatCurrency('1234.50', {
@@ -96,7 +96,7 @@ const price = formatCurrency('1234.50', {
 
 Parses a formatted currency string back to a raw number string.
 
-```tsx
+```text
 import { unformatCurrency } from '@virastack/input-mask';
 
 const raw = unformatCurrency('$ 1,234.50', {
@@ -109,7 +109,7 @@ const raw = unformatCurrency('$ 1,234.50', {
 
 Detects the credit card type from a number.
 
-```tsx
+```text
 import { getCardType } from '@virastack/input-mask';
 
 const type = getCardType('4111');

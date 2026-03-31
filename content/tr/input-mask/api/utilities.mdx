@@ -6,7 +6,7 @@ Paket tarafından dışa aktarılan yardımcı işlevler ve sabitler.
 
 Dahili maske yapılandırmalarının bir kaydı.
 
-```tsx
+```text
 import { PRESETS } from '@virastack/input-mask';
 // PRESETS.card, PRESETS.phone vb. erişim
 ```
@@ -15,7 +15,7 @@ import { PRESETS } from '@virastack/input-mask';
 
 Dahili doğrulayıcı işlevlerinin bir kaydı.
 
-```tsx
+```text
 import { VALIDATORS } from '@virastack/input-mask';
 // VALIDATORS.luhn(value)
 // VALIDATORS.tckn(value)
@@ -27,7 +27,7 @@ import { VALIDATORS } from '@virastack/input-mask';
 
 Bağımsız TCKN doğrulama işlevi.
 
-```tsx
+```text
 function validateTCKN(value: string): boolean
 ```
 
@@ -35,7 +35,7 @@ function validateTCKN(value: string): boolean
 
 Bağımsız Luhn algoritması doğrulama işlevi.
 
-```tsx
+```text
 function validateLuhn(value: string): boolean
 ```
 
@@ -47,7 +47,7 @@ Bu işlevler, ViraStack Mask'ın maskeleme ve biçimlendirme mantığını `useV
 
 Ham bir değere maske deseni uygular.
 
-```tsx
+```text
 import { applyMask } from '@virastack/input-mask';
 
 const formatted = applyMask('5551234567', '(999) 999 99 99');
@@ -58,7 +58,7 @@ const formatted = applyMask('5551234567', '(999) 999 99 99');
 
 Bir değerden maske karakterlerini kaldırarak yalnızca maske türü tarafından tanımlanan ham karakterleri döndürür.
 
-```tsx
+```text
 import { unmask } from '@virastack/input-mask';
 
 const raw = unmask('(555) 123 45 67', '(999) 999 99 99');
@@ -69,7 +69,7 @@ const raw = unmask('(555) 123 45 67', '(999) 999 99 99');
 
 Bir dizeden sayısal olmayan tüm karakterleri kaldırır. İşlemeden önce girişleri temizlemek için yararlıdır.
 
-```tsx
+```text
 import { cleanValue } from '@virastack/input-mask';
 
 const clean = cleanValue('(555) 123-4567');
@@ -80,7 +80,7 @@ const clean = cleanValue('(555) 123-4567');
 
 Bir sayı dizesini para birimi olarak biçimlendirir.
 
-```tsx
+```text
 import { formatCurrency } from '@virastack/input-mask';
 
 const price = formatCurrency('1234.50', {
@@ -96,7 +96,7 @@ const price = formatCurrency('1234.50', {
 
 Biçimlendirilmiş bir para birimi dizesini tekrar ham bir sayı dizesine ayrıştırır.
 
-```tsx
+```text
 import { unformatCurrency } from '@virastack/input-mask';
 
 const raw = unformatCurrency('$ 1,234.50', {
@@ -109,7 +109,7 @@ const raw = unformatCurrency('$ 1,234.50', {
 
 Bir numaradan kredi kartı türünü algılar.
 
-```tsx
+```text
 import { getCardType } from '@virastack/input-mask';
 
 const type = getCardType('4111');
