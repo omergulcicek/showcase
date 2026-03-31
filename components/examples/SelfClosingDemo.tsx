@@ -9,7 +9,12 @@ export function SelfClosingDemo() {
 
   return (
     <div className="relative w-full max-w-sm mt-4">
-      <Input {...inputProps} className="pr-10" placeholder="Password" />
+      <Input
+        {...inputProps}
+        defaultValue="ViraStack"
+        className="pr-10"
+        placeholder="Password"
+      />
       <Button
         {...btnProps}
         variant="ghost"

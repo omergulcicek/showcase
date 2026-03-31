@@ -333,6 +333,13 @@
     }
   },
     "PasswordToggle": {
+      "examples": {
+        "customText": {
+          "show": "Show",
+          "hide": "Hide",
+          "placeholder": "Password"
+        }
+      },
       "navigation": {
         "gettingStarted": "Getting Started",
         "examples": "Examples",

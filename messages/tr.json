@@ -333,6 +333,13 @@
     }
   },
     "PasswordToggle": {
+      "examples": {
+        "customText": {
+          "show": "Goster",
+          "hide": "Gizle",
+          "placeholder": "Sifre"
+        }
+      },
       "navigation": {
         "gettingStarted": "Başlarken",
         "examples": "Örnekler",

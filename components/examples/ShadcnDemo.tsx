@@ -12,7 +12,11 @@ export function ShadcnDemo() {
     <div className="grid w-full max-w-sm items-center gap-1.5 mt-4">
       <Label htmlFor={inputProps.id}>Password</Label>
       <div className="flex w-full items-center gap-2">
-        <Input {...inputProps} placeholder="Enter your password" />
+        <Input
+          {...inputProps}
+          defaultValue="ViraStack"
+          placeholder="Enter your password"
+        />
         <Button {...btnProps} variant="ghost" size="icon">
           {btnProps.children}
         </Button>

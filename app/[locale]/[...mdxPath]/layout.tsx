@@ -1,11 +1,10 @@
 import { Layout, LastUpdated } from "nextra-theme-docs";
-import { Banner, Head } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
-import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import "nextra-theme-docs/style.css";
 
 import type { Metadata } from "next";
+import type { PageMapItem } from "nextra";
 
 const PROJECT_NAMES: Record<string, string> = {
   "nextjs-boilerplate": "Next.js Boilerplate",
@@ -34,7 +33,6 @@ export async function generateMetadata(props: {
 }
 
 const banner = <></>;
-const navbar = <></>;
 const footer = (
   <div className="w-full max-w-360 mx-auto flex flex-col items-center justify-between gap-4 py-8 md:flex-row px-6">
     <p className="text-sm text-gray-500">
@@ -65,19 +63,22 @@ const footer = (
   </div>
 );
 
-function resolveLocaleInPageMap(pageMap: any[], locale: string): any[] {
+function resolveLocaleInPageMap(
+  pageMap: PageMapItem[],
+  locale: string
+): PageMapItem[] {
   return pageMap.map((item) => {
-    const cloned = { ...item };
-    if (cloned.route) {
+    const cloned = { ...item } as PageMapItem & { href?: string };
+    if ("route" in cloned && cloned.route) {
       cloned.route = cloned.route.replace(/\[locale\]/g, locale);
     }
-    if (cloned.href) {
+    if ("href" in cloned && cloned.href) {
       cloned.href = cloned.href.replace(/\[locale\]/g, locale);
     }
-    if (cloned.children) {
+    if ("children" in cloned && cloned.children) {
       cloned.children = resolveLocaleInPageMap(cloned.children, locale);
     }
-    return cloned;
+    return cloned as PageMapItem;
   });
 }
 
@@ -93,7 +94,14 @@ export default async function DocsLayout({
   const pageMap = resolveLocaleInPageMap(rawPageMap, locale);
   
   const t = await getTranslations({ locale, namespace: "Common.Nextra" });
-  
+
+  const docsNavigation = {
+    prev: true,
+    next: true,
+    prevText: t("navigationPrev"),
+    nextText: t("navigationNext"),
+  };
+
   return (
     <>
       <Layout
@@ -118,12 +126,7 @@ export default async function DocsLayout({
         }}
         lastUpdated={<LastUpdated locale={locale}>{t("lastUpdated")}</LastUpdated>}
         search={t("search")}
-        navigation={{
-          prev: true,
-          next: true,
-          prevText: t("navigationPrev"),
-          nextText: t("navigationNext")
-        }}
+        navigation={docsNavigation}
         copyPageButton={false}
       >
         <div className="px-4">
