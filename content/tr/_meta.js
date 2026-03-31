@@ -4,7 +4,6 @@ export default {
       sidebar: false,
       navbar: false,
       breadcrumb: false,
-      timestamp: false,
     },
   },
   index: {
