@@ -4,7 +4,7 @@
 
 The primary hook for ViraStack Mask.
 
-```tsx
+```text
 function useViraMask<TFieldValues, TSchema>(
   props: UseViraMaskProps<TFieldValues, TSchema>
 ): MaskFields<TSchema>
@@ -25,7 +25,7 @@ Returns an object where each key matches the schema keys. Each value is a `MaskF
 
 The object meant to be spread onto an `<input>` element.
 
-```tsx
+```text
 interface MaskField {
   ref: RefCallback<HTMLInputElement>;
   name: string;
