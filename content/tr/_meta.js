@@ -3,7 +3,7 @@ export default {
     theme: {
       sidebar: false,
       navbar: false,
-      breadcrumb: false
+      breadcrumb: false,
     },
   },
   index: {
