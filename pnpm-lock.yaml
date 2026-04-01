@@ -27,10 +27,10 @@ importers:
         specifier: ^8.21.3
         version: 8.21.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@virastack/input-mask':
-        specifier: latest
+        specifier: 1.0.0
         version: 1.0.0(react-dom@19.2.3(react@19.2.3))(react-hook-form@7.71.2(react@19.2.3))(react@19.2.3)
       '@virastack/password-toggle':
-        specifier: latest
+        specifier: 1.0.0
         version: 1.0.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       ai:
         specifier: ^6.0.134

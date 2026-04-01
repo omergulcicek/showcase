@@ -92,8 +92,10 @@ export default async function Page(props: {
     sourceCode,
   } = await importPage(params.mdxPath ?? [], locale);
 
+  const safeToc = Array.isArray(toc) ? toc : [];
+
   return (
-    <Wrapper toc={toc} metadata={metadata} sourceCode={sourceCode}>
+    <Wrapper toc={safeToc} metadata={metadata} sourceCode={sourceCode}>
       <MDXContent {...props} params={params} />
     </Wrapper>
   );

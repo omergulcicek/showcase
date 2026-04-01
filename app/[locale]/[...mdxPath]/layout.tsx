@@ -108,11 +108,10 @@ export default async function DocsLayout({
   
   const t = await getTranslations({ locale, namespace: "Common.Nextra" });
 
+  // Theme schema only allows `prev` / `next` booleans (no prevText/nextText).
   const docsNavigation = {
     prev: true,
     next: true,
-    prevText: t("navigationPrev"),
-    nextText: t("navigationNext"),
   };
 
   return (
