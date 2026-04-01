@@ -13,7 +13,7 @@ export function GithubStarButton({ href }: GithubStarButtonProps) {
   const t = useTranslations("Common.Action");
 
   return (
-    <Button variant="outline" asChild>
+    <Button variant="outline" size="sm" asChild>
       <Link href={href} target="_blank" rel="noopener noreferrer">
         <Github />
         {t("starOnGithub")}

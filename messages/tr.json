@@ -69,10 +69,10 @@
       "inputMask": "Giriş Maskesi",
       "passwordToggle": "Şifre Göster/Gizle",
       "modernWeb": "3 Dakikada Modern Web",
-      "tanstackBoilerplate": "TanStack Başlangıç Şablonu",
+      "tanstackBoilerplate": "TanStack Boilerplate",
       "cli": "Start (CLI)",
-      "standards": "Standartlar",
-      "errorGuard": "Hata Koruması"
+      "standards": "Standards",
+      "errorGuard": "Error Guard"
     },
     "status": {
       "In Dev": "Geliştiriliyor",
@@ -85,15 +85,15 @@
     "workingOn": "Bu bölüm üzerinde aktif olarak çalışıyoruz. En güncel bilgileri GitHub deposumuzda bulabilir veya sürece katkıda bulunabilirsiniz."
   },
   "ErrorGuard": {
-    "title": "Hata Koruması",
+    "title": "Error Guard",
     "workingOn": "Bu bölüm üzerinde aktif olarak çalışıyoruz. En güncel bilgileri GitHub deposumuzda bulabilir veya sürece katkıda bulunabilirsiniz."
   },
   "Standards": {
-    "title": "Standartlar",
+    "title": "Standards",
     "workingOn": "Bu bölüm üzerinde aktif olarak çalışıyoruz. En güncel bilgileri GitHub deposumuzda bulabilir veya sürece katkıda bulunabilirsiniz."
   },
   "TanStackBoilerplate": {
-    "title": "TanStack Başlangıç Şablonu",
+    "title": "TanStack Boilerplate",
     "workingOn": "Bu bölüm üzerinde aktif olarak çalışıyoruz. En güncel bilgileri GitHub deposumuzda bulabilir veya sürece katkıda bulunabilirsiniz."
   },
   "NextjsBoilerplate": {
