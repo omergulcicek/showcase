@@ -12,6 +12,7 @@ export default withNextIntl(
     },
     trailingSlash: true,
     output: "standalone",
+    transpilePackages: ["nextra", "next-intl"],
     turbopack: {
       resolveAlias: {
         "next-mdx-import-source-file": "./mdx-components.js",
