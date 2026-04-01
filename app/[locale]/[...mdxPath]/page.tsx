@@ -6,6 +6,9 @@ import { useMDXComponents as getMDXComponents } from "@/mdx-components";
 
 import { routing } from "@/i18n/routing";
 
+/** Skip SSG prerender for MDX (avoids production-only Server Component errors on Vercel/Docker). */
+export const dynamic = "force-dynamic";
+
 function resolveLocale(params: { locale?: string }): string {
   const raw = params.locale;
   const locale =
