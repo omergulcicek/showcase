@@ -63,15 +63,42 @@
     "cli": "Yüksek disiplinli ViraStack mimarilerini başlatmak ve ölçeklendirmek için otomatik iskelet oluşturma aracı.",
     "standards": "Her projede mutlak kod bütünlüğünü sağlayan, yapılandırma gerektirmeyen ESLint ve Prettier paketi.",
     "errorGuard": "Sıfır sürtünmeli React ortamları için profesyonel düzeyde hata yönetimi ve akıllı kurtarma protokolleri.",
+    "titles": {
+      "nextjsBoilerplate": "Next.js Başlangıç Şablonu",
+      "aiRules": "AI Kuralları",
+      "inputMask": "Giriş Maskesi",
+      "passwordToggle": "Şifre Göster/Gizle",
+      "modernWeb": "3 Dakikada Modern Web",
+      "tanstackBoilerplate": "TanStack Başlangıç Şablonu",
+      "cli": "Start (CLI)",
+      "standards": "Standartlar",
+      "errorGuard": "Hata Koruması"
+    },
     "status": {
       "In Dev": "Geliştiriliyor",
       "Research": "Araştırma",
       "Coming Soon": "Yakında"
     }
   },
+  "Cli": {
+    "title": "Start (CLI)",
+    "workingOn": "Bu bölüm üzerinde aktif olarak çalışıyoruz. En güncel bilgileri GitHub deposumuzda bulabilir veya sürece katkıda bulunabilirsiniz."
+  },
+  "ErrorGuard": {
+    "title": "Hata Koruması",
+    "workingOn": "Bu bölüm üzerinde aktif olarak çalışıyoruz. En güncel bilgileri GitHub deposumuzda bulabilir veya sürece katkıda bulunabilirsiniz."
+  },
+  "Standards": {
+    "title": "Standartlar",
+    "workingOn": "Bu bölüm üzerinde aktif olarak çalışıyoruz. En güncel bilgileri GitHub deposumuzda bulabilir veya sürece katkıda bulunabilirsiniz."
+  },
+  "TanStackBoilerplate": {
+    "title": "TanStack Başlangıç Şablonu",
+    "workingOn": "Bu bölüm üzerinde aktif olarak çalışıyoruz. En güncel bilgileri GitHub deposumuzda bulabilir veya sürece katkıda bulunabilirsiniz."
+  },
   "NextjsBoilerplate": {
     "Dashboard": {
-      "title": "ViraStack Next.js Boilerplate",
+      "projectName": "Next.js",
       "description": "Modern Next.js projeleri için açık kaynak bir başlangıç şablonu. <react>React</react>, <typescript>TypeScript</typescript>, <tailwind>Tailwind CSS</tailwind> ve <tanstack>TanStack Query</tanstack> ile gelir; yeniden kullanılabilir bileşenler ve yardımcı araçlarla geliştirmeyi hızlandırır.",
       "starOnGithub": "GitHub'da Yıldızla",
       "deployToVercel": "Vercel'e Deploy Et",
@@ -136,18 +163,17 @@
     }
   },
   "AIRules": {
-    "title": "Yapay Zeka Kuralları",
-    "description": "Modern React uygulamaları için yapay zeka odaklı mimari kiti ve yüksek disiplinli protokoller.",
+    "title": "ViraStack AI",
+    "description": "Yapay zeka odaklı React geliştirme süreçleri için mimari disiplin. Yapay zekanın tembel kod yazmasını engelleyen üst düzey mühendislik protokolleri ve üretime hazır kısıtlamalar içerir.",
     "hero": {
-      "title1": "Yapay Zeka Kuralları",
-      "title2": ": Mimari Disiplin.",
-      "description": "Yapay zekayı üretime hazır React koduna yönlendiren açık kaynaklı protokol. Sıfır yapılandırma, sıfır tembel kodlama."
+      "projectName": "AI",
+      "description": "<ainative>Yapay zeka odaklı</ainative> <react>React</react> geliştirme süreçleri için <discipline>mimari disiplin</discipline> ve <mdc>.mdc</mdc> bağlam kuralları. Yapay zekanın tembel kod yazmasını engelleyen <protocols>üst düzey mühendislik protokolleri</protocols> ve <production>üretime hazır</production> kısıtlamalar içerir."
     },
     "terminal": {
       "loading": "[Yükleniyor...]",
       "created": "✔ 16 oluşturuldu • 0 atlandı",
       "generated": ".cursor/rules ve /docs oluşturuldu",
-      "ready": "✅ ViraStack Yapay Zeka Kuralları hazır.",
+      "ready": "✅ ViraStack AI hazır.",
       "try": "Dene: Yapay zekadan yeni bir özellik planlamasını iste."
     },
     "comparison": {
@@ -166,7 +192,7 @@
       "after": {
         "badge": "ViraStack Yapay Zeka Çıktısı",
         "title": "Üretime Hazır Kod",
-        "description": "ViraStack Yapay Zeka Kuralları, disiplinli, ölçeklenebilir kod için sıkı mimari kalıpları zorunlu kılar.",
+        "description": "ViraStack AI, disiplinli, ölçeklenebilir kod için sıkı mimari kalıpları zorunlu kılar.",
         "list1Highlight": "Sıkı tip güvenliği",
         "list1Text": " API şemalarından türetilmiş",
         "list2Highlight": "TanStack Query",
@@ -439,9 +465,5 @@
       "title": "3 Dakikada Modern Web | ViraStack",
       "description": "Modern web tasarımının temellerini adım adım öğrenin."
     }
-  },
-  "TanStackBoilerplate": {},
-  "CLI": {},
-  "Standards": {},
-  "ErrorGuard": {}
+  }
 }

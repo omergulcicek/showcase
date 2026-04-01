@@ -21,7 +21,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
     >
       <div>
         <div className="flex items-center justify-between">
-          <h3 className="font-semibold">{project.name}</h3>
+          <h3 className="font-semibold">
+            {t(`titles.${project.descriptionKey}`)}
+          </h3>
           {project.status && (
             <Badge variant="outline" className="border-dashed">
               {t(`status.${project.status}`)}

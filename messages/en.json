@@ -32,7 +32,7 @@
     "Navigation": {
       "projects": "Projects",
       "community": "Community",
-      "labs": "Laboratory",
+      "labs": "Labs",
       "support": "Support",
       "maintainers": "Maintainers"
     },
@@ -63,15 +63,42 @@
     "cli": "Automated scaffolding tool to initialize and scale high-discipline ViraStack architectures.",
     "standards": "Zero-config ESLint and Prettier suite ensuring absolute code integrity across every project.",
     "errorGuard": "Pro-grade error handling and smart recovery protocols for zero-friction React environments.",
+    "titles": {
+      "nextjsBoilerplate": "Next.js Boilerplate",
+      "aiRules": "AI Rules",
+      "inputMask": "Input Mask",
+      "passwordToggle": "Password Toggle",
+      "modernWeb": "Modern Web in 3 Minutes",
+      "tanstackBoilerplate": "TanStack Boilerplate",
+      "cli": "Start (CLI)",
+      "standards": "Standards",
+      "errorGuard": "Error Guard"
+    },
     "status": {
       "In Dev": "In Dev",
       "Research": "Research",
       "Coming Soon": "Coming Soon"
     }
   },
+  "Cli": {
+    "title": "Start (CLI)",
+    "workingOn": "We are actively working on this section. You can find the most up-to-date information on our GitHub repository or contribute to the process."
+  },
+  "ErrorGuard": {
+    "title": "Error Guard",
+    "workingOn": "We are actively working on this section. You can find the most up-to-date information on our GitHub repository or contribute to the process."
+  },
+  "Standards": {
+    "title": "Standards",
+    "workingOn": "We are actively working on this section. You can find the most up-to-date information on our GitHub repository or contribute to the process."
+  },
+  "TanStackBoilerplate": {
+    "title": "TanStack Boilerplate",
+    "workingOn": "We are actively working on this section. You can find the most up-to-date information on our GitHub repository or contribute to the process."
+  },
   "NextjsBoilerplate": {
     "Dashboard": {
-      "title": "ViraStack Next.js Boilerplate",
+      "projectName": "Next.js",
       "description": "Open-source boilerplate for modern Next.js applications, featuring <react>React</react>, <typescript>TypeScript</typescript>, <tailwind>Tailwind CSS</tailwind>, and <tanstack>TanStack Query</tanstack>. Includes reusable components, hooks, and utilities to speed up development.",
       "starOnGithub": "Star on GitHub",
       "deployToVercel": "Deploy to Vercel",
@@ -136,18 +163,17 @@
     }
   },
   "AIRules": {
-    "title": "AI Rules",
-    "description": "AI-native architecture kit and high-discipline protocols for modern React applications.",
+    "title": "ViraStack AI",
+    "description": "Architectural discipline and specialized .mdc context rules for AI-native React development. Features elite engineering protocols and production-ready constraints to stop AI from lazy-coding.",
     "hero": {
-      "title1": "AI Rules",
-      "title2": ": Architectural Discipline.",
-      "description": "The open-source protocol for steering AI toward production-ready React code. Zero configuration, zero lazy-coding."
+      "projectName": "AI",
+      "description": "<discipline>Architectural discipline</discipline> and specialized <mdc>.mdc</mdc> context rules for <ainative>AI-native</ainative> <react>React</react> development. Features <protocols>elite engineering protocols</protocols> and <production>production-ready</production> constraints to stop AI from lazy-coding."
     },
     "terminal": {
       "loading": "[Loading...]",
       "created": "✔ 16 created • 0 skipped",
       "generated": "Generated .cursor/rules and /docs",
-      "ready": "✅ ViraStack AI Rules is ready.",
+      "ready": "✅ ViraStack AI is ready.",
       "try": "Try: Ask AI to plan a new feature."
     },
     "comparison": {
@@ -166,7 +192,7 @@
       "after": {
         "badge": "ViraStack AI Output",
         "title": "Production-Ready Code",
-        "description": "ViraStack AI Rules enforces strict architectural patterns for disciplined, scalable code.",
+        "description": "ViraStack AI enforces strict architectural patterns for disciplined, scalable code.",
         "list1Highlight": "Strict type safety",
         "list1Text": " derived from API schemas",
         "list2Highlight": "TanStack Query",
@@ -439,9 +465,5 @@
       "title": "Modern Web in 3 Minutes | ViraStack",
       "description": "Learn the basics of modern web design step by step."
     }
-  },
-  "TanStackBoilerplate": {},
-  "CLI": {},
-  "Standards": {},
-  "ErrorGuard": {}
+  }
 }

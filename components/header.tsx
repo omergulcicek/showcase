@@ -48,10 +48,12 @@ export function Header() {
             alt="ViraStack"
             className="aspect-square size-8"
           />
-          <span className="text-lg font-bold hidden sm:inline-block">
+          <span className="text-lg font-black hidden sm:inline-block">
             ViraStack
             {projectName && (
-              <span className={`ml-1 ${projectColor}`}>{projectName}</span>
+              <span className={`ml-1 font-medium italic ${projectColor}`}>
+                {projectName}
+              </span>
             )}
           </span>
         </Link>

@@ -13,6 +13,7 @@ import { CustomIconsDemo } from "@/components/examples/CustomIconsDemo";
 import { CustomTextDemo } from "@/components/examples/CustomTextDemo";
 import { ShadcnDemo } from "@/components/examples/ShadcnDemo";
 import { SelfClosingDemo } from "@/components/examples/SelfClosingDemo";
+import { ViraStackProjectHeading } from "@/components/virastack-project-heading";
 
 const themeComponents = getThemeComponents();
 
@@ -29,6 +30,7 @@ export function useMDXComponents(components) {
     CustomTextDemo,
     ShadcnDemo,
     SelfClosingDemo,
+    ViraStackProjectHeading,
     ...components,
   };
 }

@@ -8,7 +8,7 @@ export const metadata = {
 };
 
 export default async function NextjsBoilerplatePage({
-  params
+  params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
@@ -16,7 +16,7 @@ export default async function NextjsBoilerplatePage({
   setRequestLocale(locale);
 
   return (
-    <main className="flex min-h-[calc(100vh-160px)] flex-col gap-8 px-12 md:px-16 pb-8">
+    <main className="flex min-h-[calc(100vh-160px)] flex-col gap-8 pb-8">
       <Dashboard />
       <FeaturesList />
       <Showcase />

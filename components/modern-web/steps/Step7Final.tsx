@@ -42,13 +42,11 @@ export default function Step7Final() {
   }, []);
 
   return (
-    <section className="space-y-4 mb-44">
+    <section className="space-y-4 mb-100">
       <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
         {t("title")}
       </h2>
-      <p className="text-lg text-muted-foreground">
-        {t("description1")}
-      </p>
+      <p className="text-lg text-muted-foreground">{t("description1")}</p>
 
       <div className="mt-20 text-card-foreground">
         <h3 className="text-2xl font-semibold mb-3">{t("whatIs")}</h3>

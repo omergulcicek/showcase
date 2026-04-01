@@ -10,7 +10,7 @@ import { routing } from "@/i18n/routing";
 
 const PROJECT_NAMES: Record<string, string> = {
   "nextjs-boilerplate": "Next.js Boilerplate",
-  "ai-rules": "AI Rules",
+  "ai-rules": "ViraStack AI",
   "input-mask": "Input Mask",
   "password-toggle": "Password Toggle",
   "modern-web-in-3-minutes": "Modern Web in 3 Minutes",

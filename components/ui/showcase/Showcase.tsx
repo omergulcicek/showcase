@@ -9,7 +9,7 @@ export function Showcase() {
   const t = useTranslations("NextjsBoilerplate.Showcase");
 
   return (
-    <section className="container w-full max-w-5xl py-16">
+    <section className="container w-full max-w-5xl py-16 px-12 md:px-16">
       <div className="mb-6 space-y-2 text-center">
         <h2 className="text-2xl font-semibold tracking-tight">{t("title")}</h2>
         <p className="text-muted-foreground">{t("description")}</p>

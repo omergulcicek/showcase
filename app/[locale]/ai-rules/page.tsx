@@ -1,3 +1,4 @@
+import { AiRulesHeroDescription } from "./hero-description";
 import {
   Terminal,
   TypingAnimation,
@@ -7,7 +8,7 @@ import { TypingAnimation as MagicTypingAnimation } from "@/components/ui/typing-
 import { X, Check } from "lucide-react";
 import { InteractiveWorkflowDemo } from "./interactive-workflow-demo";
 import { GithubStarButton } from "@/components/github-star-button";
-import { AuroraText } from "@/components/ui/aurora-text";
+import { ViraStackProjectHeading } from "@/components/virastack-project-heading";
 import { highlightCode } from "@/lib/utils/highlight";
 import { CopyButton } from "./copy-button";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -71,69 +72,53 @@ export function UserProfile({ userId }: { userId: string }) {
   const afterHtml = await highlightCode(afterCode, "github-dark");
 
   return (
-    <main className="flex min-h-[calc(100vh-160px)] flex-col gap-16 px-12 md:px-16 mb-20 md:mb-40">
-      <section className="grid grid-cols-1 md:grid-cols-2 items-start gap-20 py-6">
-        <div className="flex flex-col items-start gap-6 col-span-1">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
-            <AuroraText
-              colors={["fuchsia-500", "teal-500", "fuchsia-500"].map(
-                (p) => `var(--color-${p})`,
-              )}
-            >
-              {t("hero.title1")}
-            </AuroraText>
-            {t("hero.title2")}
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-            {t("hero.description")}
-          </p>
-          <div className="flex items-center gap-4 mt-2">
-            <GithubStarButton href="https://github.com/virastack/ai-rules" />
+    <main className="flex min-h-[calc(100vh-160px)] flex-col gap-16 mb-20 md:mb-40">
+      <section className="container py-16 px-12 md:px-16">
+        <div className="flex flex-col items-center justify-center gap-6">
+          <ViraStackProjectHeading
+            projectName={t("hero.projectName")}
+            accentClassName="text-fuchsia-500"
+            textCenter
+          />
+          <AiRulesHeroDescription />
+          <GithubStarButton href="https://github.com/virastack/ai-rules" />
+        </div>
+
+        <Terminal
+          sequence={false}
+          className="shadow-2xl text-left border-border mx-auto mt-10"
+        >
+          <div className="flex items-center justify-between w-full pr-4">
+            <TypingAnimation>&gt; npx @virastack/ai-rules init</TypingAnimation>
+            <CopyButton text="npx @virastack/ai-rules init" />
           </div>
-        </div>
 
-        <div className="w-full max-w-3xl mt-8 col-span-1 relative group">
-          <Terminal
-            sequence={false}
-            className="w-full shadow-2xl text-left border-border"
+          <AnimatedSpan delay={2000} className="text-muted-foreground">
+            {t("terminal.loading")}
+          </AnimatedSpan>
+
+          <AnimatedSpan delay={3500} className="text-green-500">
+            {t("terminal.created")}
+          </AnimatedSpan>
+
+          <AnimatedSpan delay={4000} className="text-green-500">
+            {t("terminal.generated")}
+          </AnimatedSpan>
+
+          <AnimatedSpan
+            delay={4500}
+            className="text-fuchsia-400 font-semibold mt-2"
           >
-            <div className="flex items-center justify-between w-full pr-4">
-              <TypingAnimation>
-                &gt; npx @virastack/ai-rules init
-              </TypingAnimation>
-              <CopyButton text="npx @virastack/ai-rules init" />
-            </div>
+            {t("terminal.ready")}
+          </AnimatedSpan>
 
-            <AnimatedSpan delay={2000} className="text-muted-foreground">
-              [Loading...]
-            </AnimatedSpan>
-
-            <AnimatedSpan delay={3500} className="text-green-500">
-              ✔ 16 created • 0 skipped
-            </AnimatedSpan>
-
-            <AnimatedSpan delay={4000} className="text-green-500">
-              Generated .cursor/rules and /docs
-            </AnimatedSpan>
-
-            <AnimatedSpan
-              delay={4500}
-              className="text-fuchsia-400 font-semibold mt-2"
-            >
-              ✅ ViraStack AI Rules is ready.
-            </AnimatedSpan>
-
-            <AnimatedSpan
-              delay={5000}
-              className="text-fuchsia-400 font-semibold"
-            >
-              Try: Ask AI to plan a new feature.
-            </AnimatedSpan>
-          </Terminal>
-        </div>
+          <AnimatedSpan delay={5000} className="text-fuchsia-400 font-semibold">
+            {t("terminal.try")}
+          </AnimatedSpan>
+        </Terminal>
       </section>
 
-      <section className="flex flex-col gap-12 mt-16 max-w-5xl mx-auto w-full">
+      <section className="flex flex-col gap-12 mt-16 max-w-5xl mx-auto w-full px-12 md:px-16">
         {/* Prompt Section */}
         <div className="flex flex-col items-center text-center gap-2 text-sm px-6 mt-10 md:w-1/2 mx-auto">
           <span className="text-muted-foreground font-mono">
@@ -264,7 +249,10 @@ export function UserProfile({ userId }: { userId: string }) {
         </div>
       </section>
 
-      <section id="features" className="flex flex-col gap-8 mt-12">
+      <section
+        id="features"
+        className="flex flex-col gap-8 mt-12 px-12 md:px-16"
+      >
         <div className="text-center max-w-3xl mx-auto mb-4">
           <h2 className="text-3xl font-bold mb-4">{t("principles.title")}</h2>
           <p className="text-muted-foreground text-lg">
@@ -323,7 +311,7 @@ export function UserProfile({ userId }: { userId: string }) {
 
       <section
         id="workflow"
-        className="flex flex-col gap-10 mt-20 max-w-4xl mx-auto w-full"
+        className="flex flex-col gap-10 mt-20 max-w-4xl mx-auto w-full px-12 md:px-16"
       >
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-3">{t("workflow.title")}</h2>

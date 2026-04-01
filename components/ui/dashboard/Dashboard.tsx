@@ -9,35 +9,39 @@ import { Balancer } from "react-wrap-balancer";
 import { Button } from "@/components/ui/button";
 import { StackList } from "@/components/ui/stack-list";
 import { stackData } from "@/data/stack-data";
+import { GithubStarButton } from "@/components/github-star-button";
+import { ViraStackProjectHeading } from "@/components/virastack-project-heading";
 
 export function Dashboard() {
   const t = useTranslations("NextjsBoilerplate.Dashboard");
 
   return (
-    <section className="container py-16">
+    <section className="container py-16 px-12 md:px-16">
       <div className="flex flex-col items-center justify-center gap-6">
-        <Balancer
-          as="h1"
-          className="text-center text-2xl font-bold text-black lg:text-5xl dark:text-white"
-        >
-          {t("title")}
-        </Balancer>
+        <ViraStackProjectHeading
+          projectName={t("projectName")}
+          accentClassName="text-sky-500"
+          textCenter
+        />
 
         <Balancer as="p" className="max-w-3xl px-3 text-center text-base">
           {t.rich("description", {
-            react: (chunks) => <strong className="font-semibold">{chunks}</strong>,
-            typescript: (chunks) => <strong className="font-semibold">{chunks}</strong>,
-            tailwind: (chunks) => <strong className="font-semibold">{chunks}</strong>,
-            tanstack: (chunks) => <strong className="font-semibold">{chunks}</strong>
+            react: (chunks) => (
+              <strong className="font-semibold">{chunks}</strong>
+            ),
+            typescript: (chunks) => (
+              <strong className="font-semibold">{chunks}</strong>
+            ),
+            tailwind: (chunks) => (
+              <strong className="font-semibold">{chunks}</strong>
+            ),
+            tanstack: (chunks) => (
+              <strong className="font-semibold">{chunks}</strong>
+            ),
           })}
         </Balancer>
 
-        <Button asChild>
-          <Link href="https://github.com/virastack/nextjs-boilerplate" target="_blank" rel="noopener noreferrer">
-            <Github className="h-4 w-4" aria-hidden="true" />
-            {t("starOnGithub")}
-          </Link>
-        </Button>
+        <GithubStarButton href="https://github.com/virastack/nextjs-boilerplate" />
       </div>
 
       <StackList data={stackData} />
