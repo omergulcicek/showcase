@@ -93,3 +93,4 @@ jspm_packages/
 tmp/
 temp/ 
 .vercel
+.env*.local
