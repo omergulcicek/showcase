@@ -1,11 +1,7 @@
 import nextra from "nextra";
 import createNextIntlPlugin from "next-intl/plugin";
 
-/** Keep in sync with `i18n` below (Nextra `getPageMap` / runtime). */
-const NEXTRA_I18N = {
-  locales: ["en", "tr"],
-  defaultLocale: "en",
-};
+import { NEXTRA_I18N } from "./nextra-i18n.shared.mjs";
 
 const withNextIntl = createNextIntlPlugin();
 const withNextra = nextra({});
