@@ -366,7 +366,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                           {item.items.map((subItem: any) => {
                             const subItemTitle = subItem.translationKey ? t(subItem.translationKey) : subItem.title;
                             return (
-                              <SidebarMenuSubItem key={subItem.title}>
+                              <SidebarMenuSubItem key={subItem.url}>
                                 <SidebarMenuSubButton
                                   asChild
                                   isActive={pathname === subItem.url}

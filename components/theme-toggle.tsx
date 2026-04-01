@@ -1,13 +1,22 @@
 "use client";
 
-import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/button";
+import { useIsClient } from "@/hooks/use-is-client";
 
 export function ThemeToggle() {
   const { setTheme, theme } = useTheme();
+  const isClient = useIsClient();
+
+  if (!isClient) {
+    return (
+      <Button variant="ghost" size="icon" aria-label="Toggle theme">
+        <Sun className="h-[1.2rem] w-[1.2rem] text-muted-foreground/35" />
+      </Button>
+    );
+  }
 
   return (
     <Button

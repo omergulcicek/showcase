@@ -3,6 +3,8 @@
 import { TerminalSquareIcon } from "lucide-react";
 import { useMemo } from "react";
 
+import { useIsClient } from "@/hooks/use-is-client";
+
 import {
   Tabs,
   TabsContent,
@@ -94,6 +96,7 @@ export function CodeBlockCommand({
   onCopyError,
 }: CodeBlockCommandProps) {
   const [packageManager, setPackageManager] = usePackageManager();
+  const isClient = useIsClient();
 
   const tabs = useMemo(() => {
     return {
@@ -103,6 +106,44 @@ export function CodeBlockCommand({
       bun: bun,
     };
   }, [pnpm, yarn, npm, bun]);
+
+  const defaultCommand = pnpm ?? npm ?? yarn ?? bun ?? "";
+
+  if (!isClient) {
+    return (
+      <div className="relative overflow-hidden rounded-xl bg-code mt-4">
+        <div className="px-4 shadow-[inset_0_-1px_0_0] shadow-border">
+          <div className="flex h-10 items-center gap-2 rounded-none bg-transparent p-0 text-muted-foreground [&_svg]:size-4">
+            {getIconForPackageManager("pnpm")}
+            <span className="font-mono text-sm">pnpm</span>
+          </div>
+        </div>
+        <pre className="overflow-x-auto overscroll-x-contain scroll-fade-effect-x p-4">
+          <code
+            data-slot="code-block"
+            data-language="bash"
+            className="font-mono text-sm leading-none text-muted-foreground"
+          >
+            <span className="select-none">$ </span>
+            {defaultCommand}
+          </code>
+        </pre>
+        <CopyButton
+          className="absolute top-2 right-2 z-10 rounded-md border-none"
+          variant="secondary"
+          size="icon-xs"
+          text={defaultCommand}
+          onCopySuccess={(copiedCommand) => {
+            onCopySuccess?.({
+              packageManager: "pnpm",
+              command: copiedCommand,
+            });
+          }}
+          onCopyError={onCopyError}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="relative overflow-hidden rounded-xl bg-code mt-4">
