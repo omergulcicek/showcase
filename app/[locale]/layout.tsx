@@ -4,6 +4,7 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import { GlobalRail } from "@/components/global-rail";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
 import { Header } from "@/components/header";
 import { CustomSidebarTrigger } from "@/components/custom-sidebar-trigger";
 import { DynamicBreadcrumb } from "@/components/dynamic-breadcrumb";
@@ -86,6 +87,7 @@ export default async function RootLayout({
                   </SidebarProvider>
                 </div>
               </div>
+              <Toaster />
             </ThemeProvider>
           </NextIntlClientProvider>
         </QueryProvider>
