@@ -3,26 +3,30 @@
 import { Globe } from "lucide-react";
 import { useLocale } from "next-intl";
 
-import { DEFAULT_LOCALE, LOCALES, SUPPORTED_LOCALES } from "@/constants/i18n.constants";
+import {
+  DEFAULT_LOCALE,
+  LOCALES,
+  SUPPORTED_LOCALES,
+} from "@/constants/i18n.constants";
 import { getLocaleLabel, isLocaleCode } from "@/lib/locale";
 
 import { usePathname, useRouter } from "@/i18n/navigation";
 
-import {
-  Button,
-} from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
 export function LocaleSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
   const currentLocale = useLocale();
-  const activeLocale = isLocaleCode(currentLocale) ? currentLocale : DEFAULT_LOCALE;
+  const activeLocale = isLocaleCode(currentLocale)
+    ? currentLocale
+    : DEFAULT_LOCALE;
 
   if (SUPPORTED_LOCALES.length <= 1) return null;
 

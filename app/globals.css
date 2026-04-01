@@ -160,7 +160,7 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-border, currentColor);
+    border-color: var(--border);
   }
   * {
     @apply outline-ring/50;

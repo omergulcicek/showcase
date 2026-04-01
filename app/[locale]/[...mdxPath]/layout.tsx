@@ -3,8 +3,6 @@ import { getPageMap } from "nextra/page-map";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
-import "nextra-theme-docs/style.css";
-
 import type { Metadata } from "next";
 import type { PageMapItem } from "nextra";
 

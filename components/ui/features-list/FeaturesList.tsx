@@ -2,7 +2,12 @@
 
 import { useTranslations } from "next-intl";
 
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { getFeaturesData } from "@/data/features-data";
 
 export function FeaturesList() {
