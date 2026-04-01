@@ -4,15 +4,18 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin();
 const withNextra = nextra({});
 
-export default withNextIntl(withNextra({
-  i18n: {
-    locales: ['en', 'tr'],
-    defaultLocale: 'en'
-  },
-  trailingSlash: true,
-  turbopack: {
-    resolveAlias: {
-      "next-mdx-import-source-file": "./mdx-components.js",
+export default withNextIntl(
+  withNextra({
+    i18n: {
+      locales: ["en", "tr"],
+      defaultLocale: "en",
     },
-  },
-}));
+    trailingSlash: true,
+    output: "standalone",
+    turbopack: {
+      resolveAlias: {
+        "next-mdx-import-source-file": "./mdx-components.js",
+      },
+    },
+  }),
+);

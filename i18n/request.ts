@@ -5,7 +5,13 @@ import { routing } from "@/i18n/routing";
 
 export default getRequestConfig(async ({ requestLocale }) => {
   const requested = await requestLocale;
-  const locale = hasLocale(routing.locales, requested) ? requested : routing.defaultLocale;
+  const trimmed =
+    typeof requested === "string" ? requested.trim() : "";
+  const candidate = trimmed.length > 0 ? trimmed : undefined;
+  const locale =
+    candidate !== undefined && hasLocale(routing.locales, candidate)
+      ? candidate
+      : routing.defaultLocale;
 
   return {
     locale,

@@ -42,9 +42,13 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale =
+    typeof rawLocale === "string" && rawLocale.trim().length > 0
+      ? rawLocale.trim()
+      : "";
 
-  if (!hasLocale(routing.locales, locale)) {
+  if (!locale || !hasLocale(routing.locales, locale)) {
     notFound();
   }
 

@@ -1,10 +1,14 @@
 import { Layout, LastUpdated } from "nextra-theme-docs";
 import { getPageMap } from "nextra/page-map";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { hasLocale } from "next-intl";
+import { notFound } from "next/navigation";
 import "nextra-theme-docs/style.css";
 
 import type { Metadata } from "next";
 import type { PageMapItem } from "nextra";
+
+import { routing } from "@/i18n/routing";
 
 const PROJECT_NAMES: Record<string, string> = {
   "nextjs-boilerplate": "Next.js Boilerplate",
@@ -89,7 +93,18 @@ export default async function DocsLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale =
+    typeof rawLocale === "string" && rawLocale.trim().length > 0
+      ? rawLocale.trim()
+      : "";
+
+  if (!locale || !hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  setRequestLocale(locale);
+
   const rawPageMap = await getPageMap(`/${locale}`);
   const pageMap = resolveLocaleInPageMap(rawPageMap, locale);
   

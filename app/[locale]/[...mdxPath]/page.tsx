@@ -1,16 +1,35 @@
 import { setRequestLocale } from "next-intl/server";
+import { hasLocale } from "next-intl";
+import { notFound } from "next/navigation";
 import { generateStaticParamsFor, importPage } from "nextra/pages";
 import { useMDXComponents as getMDXComponents } from "@/mdx-components";
 
+import { routing } from "@/i18n/routing";
+
+function resolveLocale(params: { locale?: string }): string {
+  const raw = params.locale;
+  const locale =
+    typeof raw === "string" && raw.trim().length > 0 ? raw.trim() : "";
+  if (!locale || !hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+  return locale;
+}
+
 export async function generateStaticParams() {
-  return await generateStaticParamsFor("mdxPath", "locale")();
+  const params = await generateStaticParamsFor("mdxPath", "locale")();
+  if (!Array.isArray(params)) {
+    throw new Error("generateStaticParamsFor returned invalid value");
+  }
+  return params;
 }
 
 export async function generateMetadata(props: {
   params: Promise<{ locale: string; mdxPath?: string[] }>;
 }) {
   const params = await props.params;
-  const { metadata } = await importPage(params.mdxPath ?? [], params.locale);
+  const locale = resolveLocale(params);
+  const { metadata } = await importPage(params.mdxPath ?? [], locale);
 
   const mdxPath = params.mdxPath ?? [];
   const projectSlug = mdxPath[0];
@@ -60,9 +79,9 @@ export default async function Page(props: {
   children?: React.ReactNode;
 }) {
   const params = await props.params;
-  const { locale } = params;
+  const locale = resolveLocale(params);
   setRequestLocale(locale);
-  
+
   const {
     default: MDXContent,
     toc,
