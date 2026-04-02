@@ -92,7 +92,7 @@ const data: Record<string, any> = {
       },
       {
         name: "X (Twitter)",
-        url: "https://twitter.com/virastack",
+        url: "https://x.com/virastack",
         icon: XIcon,
         external: true,
       },

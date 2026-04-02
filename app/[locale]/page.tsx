@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Github } from "lucide-react";
 import { projects } from "@/data/projects";
 import { ProjectCard } from "@/components/project-card";
+import { UserCard } from "@/components/user-card";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import { Button } from "@/components/ui/button";
 
@@ -15,9 +16,10 @@ export default async function HomePage({
   setRequestLocale(locale);
 
   const t = await getTranslations("Home");
+  const tMaintainers = await getTranslations("Maintainers");
 
   return (
-    <main className="flex min-h-[calc(100vh-160px)] flex-col gap-8 px-12 md:px-16 pb-8">
+    <main className="flex min-h-[calc(100vh-160px)] max-w-6xl 2xl:mx-auto flex-col gap-8 xl:gap-24 px-12 md:px-16 pb-8">
       <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="flex flex-col items-center justify-center col-span-1">
           <CardContainer
@@ -60,10 +62,33 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-8">
-        {projects.map((project) => (
-          <ProjectCard key={project.name} project={project} />
-        ))}
+      <section className="flex flex-col gap-4 mt-8">
+        <h2 className="text-xl md:text-2xl font-semibold tracking-tight">
+          {t("openSourceLibraries")}
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          {projects.map((project) => (
+            <ProjectCard key={project.name} project={project} />
+          ))}
+        </div>
+      </section>
+
+      <section className="flex flex-col gap-4 mt-8">
+        <h2 className="text-xl md:text-2xl font-semibold tracking-tight">
+          {tMaintainers("title")}
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <UserCard
+            name="Ömer Gülçiçek"
+            description={tMaintainers("roles.founder")}
+            image="/profile.jpg"
+            links={{
+              website: "https://omergulcicek.com",
+              twitter: "https://x.com/omergulcicek",
+              github: "https://github.com/omergulcicek",
+            }}
+          />
+        </div>
       </section>
     </main>
   );

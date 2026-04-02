@@ -26,7 +26,7 @@ const links = [
   },
   {
     name: "X (Twitter)",
-    url: "https://twitter.com/omergulcicek",
+    url: "https://x.com/omergulcicek",
     icon: XIcon,
     external: true,
   },

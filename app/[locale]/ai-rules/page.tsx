@@ -72,8 +72,8 @@ export function UserProfile({ userId }: { userId: string }) {
   const afterHtml = await highlightCode(afterCode, "github-dark");
 
   return (
-    <main className="flex min-h-[calc(100vh-160px)] flex-col gap-16 mb-20 md:mb-40">
-      <section className="container py-4 px-12 md:px-16">
+    <main className="flex min-h-[calc(100vh-160px)] 2xl:max-w-5xl 2xl:mx-auto flex-col gap-16 mb-20 md:mb-40">
+      <section className="py-4">
         <div className="flex flex-col items-center justify-center gap-6">
           <ViraStackProjectHeading
             projectName={t("hero.projectName")}
@@ -118,7 +118,7 @@ export function UserProfile({ userId }: { userId: string }) {
         </Terminal>
       </section>
 
-      <section className="flex flex-col gap-12 mt-16 max-w-5xl mx-auto w-full px-12 md:px-16">
+      <section className="flex flex-col gap-12 mt-16 w-full">
         {/* Prompt Section */}
         <div className="flex flex-col items-center text-center gap-2 text-sm px-6 mt-10 md:w-1/2 mx-auto">
           <span className="text-muted-foreground font-mono">
@@ -249,10 +249,7 @@ export function UserProfile({ userId }: { userId: string }) {
         </div>
       </section>
 
-      <section
-        id="features"
-        className="flex flex-col gap-8 mt-12 px-12 md:px-16"
-      >
+      <section id="features" className="flex flex-col gap-8 mt-12">
         <div className="text-center max-w-3xl mx-auto mb-4">
           <h2 className="text-3xl font-bold mb-4">{t("principles.title")}</h2>
           <p className="text-muted-foreground text-lg">
@@ -311,7 +308,7 @@ export function UserProfile({ userId }: { userId: string }) {
 
       <section
         id="workflow"
-        className="flex flex-col gap-10 mt-20 max-w-4xl mx-auto w-full px-12 md:px-16"
+        className="flex flex-col gap-10 mt-20 max-w-4xl mx-auto w-full"
       >
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-3">{t("workflow.title")}</h2>

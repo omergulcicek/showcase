@@ -2,7 +2,8 @@
   "Home": {
     "title": "ViraStack",
     "description": "Modern yazılım standartları için yüksek performanslı Frontend mimarileri ve geliştirici odaklı araçlar.",
-    "ctaGithub": "GitHub'da Destekle"
+    "ctaGithub": "GitHub'da Destekle",
+    "openSourceLibraries": "Açık Kaynak Kütüphaneler"
   },
   "Labs": {
     "title": "Laboratuvar",

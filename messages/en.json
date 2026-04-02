@@ -2,7 +2,8 @@
   "Home": {
     "title": "ViraStack",
     "description": "High-performance Frontend architectures and developer-centric tools for modern software standards.",
-    "ctaGithub": "Star on GitHub"
+    "ctaGithub": "Star on GitHub",
+    "openSourceLibraries": "Open Source Libraries"
   },
   "Labs": {
     "title": "Laboratory",
