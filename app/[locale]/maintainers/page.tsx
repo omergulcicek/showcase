@@ -1,18 +1,20 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { UserCard } from "@/components/user-card";
 
-export async function generateMetadata(props: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata(props: {
+  params: Promise<{ locale: string }>;
+}) {
   const params = await props.params;
   const locale = params?.locale || "en";
   const t = await getTranslations({ locale, namespace: "Maintainers" });
   return {
     title: t("title"),
-    description: t("description1")
+    description: t("description1"),
   };
 }
 
 export default async function MaintainersPage({
-  params
+  params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
@@ -36,14 +38,14 @@ export default async function MaintainersPage({
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
         <UserCard
           name="Ömer Gülçiçek"
           description={t("roles.founder")}
           image="/profile.jpg"
           links={{
             website: "https://omergulcicek.com",
-            twitter: "https://twitter.com/omergulcicek",
+            twitter: "https://x.com/omergulcicek",
             github: "https://github.com/omergulcicek",
           }}
         />
