@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Link, usePathname } from "@/i18n/navigation";
-import { Users, Github, Twitter, LifeBuoy, FlaskConical } from "lucide-react";
+import { Users, Github, LifeBuoy, FlaskConical } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 
+import { XIcon } from "@/components/icons/X";
 import { projects } from "@/data/projects";
 
 const links = [
@@ -26,7 +27,7 @@ const links = [
   {
     name: "X (Twitter)",
     url: "https://twitter.com/omergulcicek",
-    icon: Twitter,
+    icon: XIcon,
     external: true,
   },
 ];
@@ -42,7 +43,7 @@ export function GlobalRail() {
   return (
     <>
       <div className="hidden md:block w-14 shrink-0 transition-all duration-300 group-[.hide-mini-sidebar]/body:w-0 group-[.hide-mini-sidebar]/body:opacity-0" />
-      <div className="hidden md:flex flex-col items-center w-14 h-[calc(100svh-4rem)] fixed left-0 top-12 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] border-r border-border/40 bg-sidebar py-4 gap-2 z-20 shrink-0 transition-transform duration-300 group-[.hide-mini-sidebar]/body:-translate-x-full">
+      <div className="hidden md:flex flex-col items-center w-14 h-[calc(100svh-3rem)] fixed left-0 top-12 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] border-r border-border/40 bg-sidebar py-4 gap-2 z-20 shrink-0 transition-transform duration-300 group-[.hide-mini-sidebar]/body:-translate-x-full">
         {/* Projects */}
         <div className="flex flex-col gap-1 w-full items-center">
           <TooltipProvider delayDuration={0}>

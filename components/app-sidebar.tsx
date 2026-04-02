@@ -3,6 +3,7 @@
 import * as React from "react";
 import { usePathname, Link } from "@/i18n/navigation";
 import {
+  createLucideIcon,
   BookOpen,
   Code2,
   Component,
@@ -43,6 +44,8 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { cn } from "@/lib/utils";
+
+import { XIcon } from "@/components/icons/X";
 
 import { projects } from "@/data/projects";
 
@@ -90,7 +93,7 @@ const data: Record<string, any> = {
       {
         name: "X (Twitter)",
         url: "https://twitter.com/virastack",
-        icon: Twitter,
+        icon: XIcon,
         external: true,
       },
     ],
@@ -385,7 +388,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     <Sidebar
       collapsible="icon"
       className={cn(
-        "top-12 h-[calc(100svh-4rem)]",
+        "top-12 h-[calc(100svh-3rem)]",
         (context === "input-mask" || context === "password-toggle") &&
           "md:left-14",
       )}

@@ -22,10 +22,12 @@ export async function generateMetadata(props: {
   const params = await props.params;
   const mdxPath = params.mdxPath ?? [];
   const projectSlug = mdxPath[0];
-  
+
   let projectName = "";
   if (projectSlug) {
-    projectName = PROJECT_NAMES[projectSlug] || projectSlug.charAt(0).toUpperCase() + projectSlug.slice(1);
+    projectName =
+      PROJECT_NAMES[projectSlug] ||
+      projectSlug.charAt(0).toUpperCase() + projectSlug.slice(1);
   }
 
   return {
@@ -67,7 +69,7 @@ const footer = (
 
 function resolveLocaleInPageMap(
   pageMap: PageMapItem[],
-  locale: string
+  locale: string,
 ): PageMapItem[] {
   return pageMap.map((item) => {
     const cloned = { ...item } as PageMapItem & { href?: string };
@@ -89,9 +91,10 @@ export default async function DocsLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: string; mdxPath?: string[] }>;
 }) {
-  const { locale: rawLocale } = await params;
+  const { locale: rawLocale, mdxPath } = await params;
+  const projectKey = mdxPath?.[0];
   const locale =
     typeof rawLocale === "string" && rawLocale.trim().length > 0
       ? rawLocale.trim()
@@ -105,7 +108,7 @@ export default async function DocsLayout({
 
   const rawPageMap = await getPageMap(`/${locale}`);
   const pageMap = resolveLocaleInPageMap(rawPageMap, locale);
-  
+
   const t = await getTranslations({ locale, namespace: "Common.Nextra" });
 
   // Theme schema only allows `prev` / `next` booleans (no prevText/nextText).
@@ -119,31 +122,34 @@ export default async function DocsLayout({
       <Layout
         banner={banner}
         pageMap={pageMap}
-        docsRepositoryBase="https://github.com/virastack"
+        docsRepositoryBase="https://github.com/virastack/virastack.com"
         footer={footer}
-        editLink={t("editLink")}
+        editLink={false}
         feedback={{
           content: t("feedback"),
-          labels: "feedback"
+          labels: "feedback",
+          link: projectKey
+            ? `https://github.com/virastack/${projectKey}/issues`
+            : "https://github.com/virastack/virastack.com/issues",
         }}
         toc={{
           title: t("tocTitle"),
           backToTop: t("backToTop"),
-          float: true
+          float: true,
         }}
         themeSwitch={{
           dark: t("themeDark"),
           light: t("themeLight"),
-          system: t("themeSystem")
+          system: t("themeSystem"),
         }}
-        lastUpdated={<LastUpdated locale={locale}>{t("lastUpdated")}</LastUpdated>}
+        lastUpdated={
+          <LastUpdated locale={locale}>{t("lastUpdated")}</LastUpdated>
+        }
         search={t("search")}
         navigation={docsNavigation}
         copyPageButton={false}
       >
-        <div className="px-4">
-          {children}
-        </div>
+        <div className="px-4">{children}</div>
       </Layout>
     </>
   );

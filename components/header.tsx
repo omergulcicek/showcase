@@ -1,13 +1,14 @@
 "use client";
 
 import { Link, usePathname } from "@/i18n/navigation";
-import { Github, Twitter } from "lucide-react";
+import { Github } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { LocaleSwitcher } from "./locale-switcher";
 import { Button } from "./ui/button";
 
 import { projects } from "@/data/projects";
 import { Separator } from "./ui/separator";
+import { XIcon } from "./icons/X";
 
 export function Header() {
   const pathname = usePathname();
@@ -76,7 +77,7 @@ export function Header() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Twitter />
+                  <XIcon />
                   <span className="sr-only">X (Twitter)</span>
                 </a>
               </Button>
