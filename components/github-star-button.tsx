@@ -9,14 +9,21 @@ interface GithubStarButtonProps {
   href: string;
   /** Icon-only (e.g. project cards); default full label */
   iconOnly?: boolean;
+  variant?: "default" | "secondary" | "outline";
+  size?: "default" | "sm" | "lg" | "icon" | "icon-sm" | "icon-lg";
 }
 
-export function GithubStarButton({ href, iconOnly }: GithubStarButtonProps) {
+export function GithubStarButton({
+  href,
+  iconOnly,
+  variant = "default",
+  size = "default",
+}: GithubStarButtonProps) {
   const t = useTranslations("Common.Action");
 
   if (iconOnly) {
     return (
-      <Button variant="outline" size="icon-sm" asChild>
+      <Button variant={variant} size={size} asChild>
         <Link
           href={href}
           target="_blank"
@@ -30,7 +37,7 @@ export function GithubStarButton({ href, iconOnly }: GithubStarButtonProps) {
   }
 
   return (
-    <Button variant="outline" size="sm" asChild>
+    <Button variant={variant} size={size} asChild>
       <Link href={href} target="_blank" rel="noopener noreferrer">
         <Github />
         {t("starOnGithub")}
