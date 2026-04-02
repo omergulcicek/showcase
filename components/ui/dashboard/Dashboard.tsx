@@ -16,7 +16,7 @@ export function Dashboard() {
   const t = useTranslations("NextjsBoilerplate.Dashboard");
 
   return (
-    <section className="container py-16 px-12 md:px-16">
+    <section className="container py-4 px-12 md:px-16">
       <div className="flex flex-col items-center justify-center gap-6">
         <ViraStackProjectHeading
           projectName={t("projectName")}

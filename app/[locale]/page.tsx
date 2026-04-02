@@ -6,7 +6,7 @@ import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import { AuroraText } from "@/components/ui/aurora-text";
 
 export default async function HomePage({
-  params
+  params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
@@ -40,7 +40,7 @@ export default async function HomePage({
           </CardContainer>
         </div>
         <div className="flex flex-col items-start justify-center col-span-2">
-          <h1 className="text-2xl md:text-4xl lg:text-8xl font-black mb-4 text-shadow-lg">
+          <h1 className="text-2xl md:text-4xl lg:text-8xl font-extrabold mb-4 text-shadow-lg">
             <AuroraText
               colors={["teal-500", "sky-500", "teal-500"].map(
                 (p) => `var(--color-${p})`,

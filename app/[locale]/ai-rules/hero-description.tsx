@@ -11,7 +11,7 @@ export function AiRulesHeroDescription() {
   const t = useTranslations("AIRules");
 
   return (
-    <Balancer as="p" className="max-w-4xl px-3 text-center text-base">
+    <Balancer as="p" className="max-w-4xl text-base">
       {t.rich("hero.description", {
         discipline: semibold,
         mdc: semibold,

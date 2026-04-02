@@ -15,7 +15,7 @@ export function FeaturesList() {
   const data = getFeaturesData(t);
 
   return (
-    <section className="w-full bg-muted/50 py-16 px-12 md:px-16">
+    <section className="w-full py-16 px-12 md:px-16">
       <div className="mx-auto mb-6 max-w-5xl space-y-2 text-center">
         <h2 className="text-2xl font-semibold tracking-tight">{t("title")}</h2>
         <p className="text-muted-foreground">{t("description")}</p>

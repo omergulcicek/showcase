@@ -73,7 +73,7 @@ export function UserProfile({ userId }: { userId: string }) {
 
   return (
     <main className="flex min-h-[calc(100vh-160px)] flex-col gap-16 mb-20 md:mb-40">
-      <section className="container py-16 px-12 md:px-16">
+      <section className="container py-4 px-12 md:px-16">
         <div className="flex flex-col items-center justify-center gap-6">
           <ViraStackProjectHeading
             projectName={t("hero.projectName")}

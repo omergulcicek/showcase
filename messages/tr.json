@@ -64,10 +64,10 @@
     "standards": "Her projede mutlak kod bütünlüğünü sağlayan, yapılandırma gerektirmeyen ESLint ve Prettier paketi.",
     "errorGuard": "Sıfır sürtünmeli React ortamları için profesyonel düzeyde hata yönetimi ve akıllı kurtarma protokolleri.",
     "titles": {
-      "nextjsBoilerplate": "Next.js Başlangıç Şablonu",
-      "aiRules": "AI Kuralları",
-      "inputMask": "Giriş Maskesi",
-      "passwordToggle": "Şifre Göster/Gizle",
+      "nextjsBoilerplate": "Next.js Boilerplate",
+      "aiRules": "AI Rules",
+      "inputMask": "Input Mask",
+      "passwordToggle": "Password Toggle",
       "modernWeb": "3 Dakikada Modern Web",
       "tanstackBoilerplate": "TanStack Boilerplate",
       "cli": "Start (CLI)",
@@ -358,26 +358,26 @@
       }
     }
   },
-    "PasswordToggle": {
-      "examples": {
-        "customText": {
-          "show": "Goster",
-          "hide": "Gizle",
-          "placeholder": "Sifre"
-        }
-      },
-      "navigation": {
-        "gettingStarted": "Başlarken",
-        "examples": "Örnekler",
-        "overview": "Genel Bakış",
-        "basic": "Temel Kullanım",
-        "customIcons": "Özel İkonlar",
-        "customText": "Özel Metin",
-        "selfClosing": "Kendi Kendini Kapatan",
-        "shadcn": "Shadcn UI",
-        "apiReference": "API Referansı"
+  "PasswordToggle": {
+    "examples": {
+      "customText": {
+        "show": "Goster",
+        "hide": "Gizle",
+        "placeholder": "Sifre"
       }
     },
+    "navigation": {
+      "gettingStarted": "Başlarken",
+      "examples": "Örnekler",
+      "overview": "Genel Bakış",
+      "basic": "Temel Kullanım",
+      "customIcons": "Özel İkonlar",
+      "customText": "Özel Metin",
+      "selfClosing": "Kendi Kendini Kapatan",
+      "shadcn": "Shadcn UI",
+      "apiReference": "API Referansı"
+    }
+  },
   "ModernWeb": {
     "Step0": {
       "title": "İçerik Her Şeydir",
