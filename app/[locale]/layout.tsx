@@ -18,6 +18,7 @@ import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: {
@@ -39,7 +40,7 @@ export function generateStaticParams() {
 
 export default async function RootLayout({
   children,
-  params
+  params,
 }: {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
@@ -59,7 +60,12 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} dir="ltr" suppressHydrationWarning className="group/body">
+    <html
+      lang={locale}
+      dir="ltr"
+      suppressHydrationWarning
+      className="group/body"
+    >
       <body>
         <QueryProvider>
           <NextIntlClientProvider messages={messages} locale={locale}>
@@ -91,6 +97,9 @@ export default async function RootLayout({
             </ThemeProvider>
           </NextIntlClientProvider>
         </QueryProvider>
+        {process.env.NEXT_PUBLIC_GA_ID ? (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        ) : null}
       </body>
     </html>
   );

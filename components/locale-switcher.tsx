@@ -1,6 +1,6 @@
 "use client";
 
-import { Globe } from "lucide-react";
+import { Languages } from "lucide-react";
 import { useLocale } from "next-intl";
 
 import {
@@ -35,7 +35,7 @@ export function LocaleSwitcher() {
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" size="icon" aria-label="Change language">
-            <Globe className="size-4" />
+            <Languages className="size-4" />
             <span className="sr-only">Change language</span>
           </Button>
         </DropdownMenuTrigger>
