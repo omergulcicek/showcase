@@ -53,7 +53,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 </Link>
               </Button>
             )}
-            {project.repo && <GithubStarButton href={project.repo} iconOnly />}
+            {project.repo && (
+              <GithubStarButton
+                href={project.repo}
+                iconOnly
+                size="icon-sm"
+                variant="outline"
+              />
+            )}
           </div>
         </div>
       )}
