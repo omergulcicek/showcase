@@ -1,7 +1,8 @@
 {
   "Home": {
     "title": "ViraStack",
-    "description": "Modern yazılım standartları için yüksek performanslı Frontend mimarileri ve geliştirici odaklı araçlar."
+    "description": "Modern yazılım standartları için yüksek performanslı Frontend mimarileri ve geliştirici odaklı araçlar.",
+    "ctaGithub": "GitHub'da Destekle"
   },
   "Labs": {
     "title": "Laboratuvar",
@@ -37,6 +38,7 @@
       "maintainers": "Geliştiriciler"
     },
     "Action": {
+      "documentation": "Dokümantasyon",
       "starOnGithub": "GitHub'da Destekle"
     },
     "Nextra": {

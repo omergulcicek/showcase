@@ -1,7 +1,8 @@
 {
   "Home": {
     "title": "ViraStack",
-    "description": "High-performance Frontend architectures and developer-centric tools for modern software standards."
+    "description": "High-performance Frontend architectures and developer-centric tools for modern software standards.",
+    "ctaGithub": "Star on GitHub"
   },
   "Labs": {
     "title": "Laboratory",
@@ -37,6 +38,7 @@
       "maintainers": "Maintainers"
     },
     "Action": {
+      "documentation": "Documentation",
       "starOnGithub": "Star on GitHub"
     },
     "Nextra": {

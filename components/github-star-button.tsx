@@ -7,10 +7,27 @@ import { useTranslations } from "next-intl";
 
 interface GithubStarButtonProps {
   href: string;
+  /** Icon-only (e.g. project cards); default full label */
+  iconOnly?: boolean;
 }
 
-export function GithubStarButton({ href }: GithubStarButtonProps) {
+export function GithubStarButton({ href, iconOnly }: GithubStarButtonProps) {
   const t = useTranslations("Common.Action");
+
+  if (iconOnly) {
+    return (
+      <Button variant="outline" size="icon-sm" asChild>
+        <Link
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={t("starOnGithub")}
+        >
+          <Github className="size-4" />
+        </Link>
+      </Button>
+    );
+  }
 
   return (
     <Button variant="outline" size="sm" asChild>

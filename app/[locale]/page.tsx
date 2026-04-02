@@ -1,9 +1,10 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
+import { Github } from "lucide-react";
 import { projects } from "@/data/projects";
 import { ProjectCard } from "@/components/project-card";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
-import { AuroraText } from "@/components/ui/aurora-text";
+import { Button } from "@/components/ui/button";
 
 export default async function HomePage({
   params,
@@ -39,20 +40,23 @@ export default async function HomePage({
             </CardBody>
           </CardContainer>
         </div>
-        <div className="flex flex-col items-start justify-center col-span-2">
-          <h1 className="text-2xl md:text-4xl lg:text-8xl font-extrabold mb-4 text-shadow-lg">
-            <AuroraText
-              colors={["teal-500", "sky-500", "teal-500"].map(
-                (p) => `var(--color-${p})`,
-              )}
-            >
-              Vira
-            </AuroraText>
-            Stack
+        <div className="flex flex-col items-start justify-center col-span-2 gap-4">
+          <h1 className="text-2xl md:text-4xl lg:text-8xl font-extrabold text-shadow-lg">
+            ViraStack
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl font-semibold leading-snug">
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground font-normal leading-relaxed max-w-prose">
             {t("description")}
           </p>
+          <Button asChild>
+            <a
+              href="https://github.com/virastack"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github />
+              {t("ctaGithub")}
+            </a>
+          </Button>
         </div>
       </section>
 

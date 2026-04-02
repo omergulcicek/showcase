@@ -2,6 +2,8 @@ export type Project = {
   name: string;
   descriptionKey: string;
   url: string;
+  /** First docs entry path (same as sidebar), locale-relative */
+  docsUrl?: string;
   repo?: string;
   color: string;
   bgColor: string;
@@ -14,6 +16,7 @@ export const projects: Project[] = [
     name: "Next.js Boilerplate",
     descriptionKey: "nextjsBoilerplate",
     url: "/nextjs-boilerplate",
+    docsUrl: "/nextjs-boilerplate",
     repo: "https://github.com/virastack/nextjs-boilerplate",
     color: "bg-sky-500",
     bgColor: "bg-sky-50 dark:bg-sky-500/10",
@@ -23,6 +26,7 @@ export const projects: Project[] = [
     name: "AI Rules",
     descriptionKey: "aiRules",
     url: "/ai-rules",
+    docsUrl: "/ai-rules",
     repo: "https://github.com/virastack/ai-rules",
     color: "bg-fuchsia-500",
     bgColor: "bg-fuchsia-50 dark:bg-fuchsia-500/10",
@@ -32,6 +36,7 @@ export const projects: Project[] = [
     name: "Input Mask",
     descriptionKey: "inputMask",
     url: "/input-mask",
+    docsUrl: "/input-mask/getting-started",
     repo: "https://github.com/virastack/input-mask",
     color: "bg-indigo-500",
     bgColor: "bg-indigo-50 dark:bg-indigo-500/10",
@@ -41,6 +46,7 @@ export const projects: Project[] = [
     name: "Password Toggle",
     descriptionKey: "passwordToggle",
     url: "/password-toggle",
+    docsUrl: "/password-toggle/getting-started",
     repo: "https://github.com/virastack/password-toggle",
     color: "bg-rose-500",
     bgColor: "bg-rose-50 dark:bg-rose-500/10",
@@ -50,6 +56,7 @@ export const projects: Project[] = [
     name: "Modern Web in 3 Minutes",
     descriptionKey: "modernWeb",
     url: "/modern-web-in-3-minutes",
+    docsUrl: "/modern-web-in-3-minutes",
     repo: "https://github.com/virastack/modern-web-in-3-minutes",
     color: "bg-amber-400",
     bgColor: "bg-amber-50 dark:bg-amber-500/10",
