@@ -2,7 +2,8 @@
 
 import React from "react";
 import { Link, usePathname } from "@/i18n/navigation";
-import { Users, Github, LifeBuoy, FlaskConical } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { Users, Github, Info, Map, Star } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
@@ -14,10 +15,14 @@ import { cn } from "@/lib/utils";
 import { XIcon } from "@/components/icons/X";
 import { projects } from "@/data/projects";
 
-const links = [
-  { name: "Labs", url: "/labs", icon: FlaskConical },
-  { name: "Support", url: "/support", icon: LifeBuoy },
-  { name: "Maintainers", url: "/maintainers", icon: Users },
+const internalLinks = [
+  { translationKey: "about" as const, url: "/about", icon: Info },
+  { translationKey: "roadmap" as const, url: "/roadmap", icon: Map },
+  { translationKey: "maintainers" as const, url: "/maintainers", icon: Users },
+  { translationKey: "community" as const, url: "/community", icon: Star },
+];
+
+const externalLinks = [
   {
     name: "GitHub",
     url: "https://github.com/virastack",
@@ -34,6 +39,7 @@ const links = [
 
 export function GlobalRail() {
   const pathname = usePathname();
+  const tNav = useTranslations("Common.Navigation");
 
   const isMask = pathname.startsWith("/input-mask");
   const isPassword = pathname.startsWith("/password-toggle");
@@ -98,7 +104,30 @@ export function GlobalRail() {
         {/* Links */}
         <div className="flex flex-col gap-1 w-full items-center">
           <TooltipProvider delayDuration={0}>
-            {links.map((item) => {
+            {internalLinks.map((item) => {
+              const label = tNav(item.translationKey);
+              const isActive =
+                pathname === item.url || pathname.startsWith(`${item.url}/`);
+              return (
+                <Tooltip key={item.url}>
+                  <TooltipTrigger asChild>
+                    <Link
+                      href={item.url}
+                      className={cn(
+                        "flex items-center justify-center size-8 rounded-lg text-sidebar-foreground/70 transition-colors hover:bg-sidebar-accent hover:text-sidebar-foreground",
+                        isActive && "bg-sidebar-accent text-sidebar-foreground",
+                      )}
+                    >
+                      <item.icon className="size-4" />
+                    </Link>
+                  </TooltipTrigger>
+                  <TooltipContent side="right" sideOffset={10}>
+                    {label}
+                  </TooltipContent>
+                </Tooltip>
+              );
+            })}
+            {externalLinks.map((item) => {
               const isActive =
                 pathname === item.url || pathname.startsWith(`${item.url}/`);
               return (

@@ -1,6 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
-import { Github } from "lucide-react";
+import { ArrowRight, Github } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import { projects } from "@/data/projects";
 import { ProjectCard } from "@/components/project-card";
 import { UserCard } from "@/components/user-card";
@@ -17,9 +18,10 @@ export default async function HomePage({
 
   const t = await getTranslations("Home");
   const tMaintainers = await getTranslations("Maintainers");
+  const tCommunity = await getTranslations("Community");
 
   return (
-    <main className="flex min-h-[calc(100vh-160px)] max-w-6xl 2xl:mx-auto flex-col gap-8 xl:gap-24 px-12 md:px-16 pb-8">
+    <main className="flex min-h-[calc(100vh-160px)] max-w-6xl 2xl:mx-auto flex-col gap-8 xl:gap-24 px-12 md:px-16 mb-40">
       <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="flex flex-col items-center justify-center col-span-1">
           <CardContainer
@@ -62,7 +64,22 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="flex flex-col gap-4 mt-8">
+      <section
+        aria-labelledby="home-about-heading"
+        className="flex flex-col gap-4"
+      >
+        <h2
+          id="home-about-heading"
+          className="text-xl md:text-2xl font-semibold tracking-tight"
+        >
+          {t("aboutSeoTitle")}
+        </h2>
+        <p className="text-base md:text-lg text-muted-foreground font-normal leading-relaxed">
+          {t("aboutSeoBody")}
+        </p>
+      </section>
+
+      <section className="flex flex-col gap-4">
         <h2 className="text-xl md:text-2xl font-semibold tracking-tight">
           {t("openSourceLibraries")}
         </h2>
@@ -73,7 +90,7 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="flex flex-col gap-4 mt-8">
+      <section className="flex flex-col gap-4">
         <h2 className="text-xl md:text-2xl font-semibold tracking-tight">
           {tMaintainers("title")}
         </h2>
@@ -88,6 +105,27 @@ export default async function HomePage({
               github: "https://github.com/omergulcicek",
             }}
           />
+        </div>
+      </section>
+
+      <section className="flex flex-col gap-4">
+        <h2 className="text-xl md:text-2xl font-semibold tracking-tight">
+          {tCommunity("title")}
+        </h2>
+        <p className="text-base md:text-lg text-muted-foreground font-normal leading-relaxed max-w-prose">
+          {tCommunity("homeTeaser")}
+        </p>
+        <div className="flex flex-wrap items-center gap-3">
+          <Button variant="outline" asChild>
+            <a
+              href="https://github.com/virastack"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github />
+              {t("ctaGithub")}
+            </a>
+          </Button>
         </div>
       </section>
     </main>

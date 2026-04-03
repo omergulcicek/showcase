@@ -7,12 +7,13 @@ import {
   BookOpen,
   Code2,
   Component,
-  FlaskConical,
   Github,
   Home,
+  Info,
   LayoutTemplate,
-  LifeBuoy,
+  Map,
   Settings2,
+  Star,
   ShieldAlert,
   Terminal,
   Twitter,
@@ -67,22 +68,28 @@ const data: Record<string, any> = {
     projects: sortedProjects,
     links: [
       {
-        name: "Labs",
-        url: "/labs",
-        icon: FlaskConical,
-        translationKey: "Common.Navigation.labs",
+        name: "About",
+        url: "/about",
+        icon: Info,
+        translationKey: "Common.Navigation.about",
       },
       {
-        name: "Support",
-        url: "/support",
-        icon: LifeBuoy,
-        translationKey: "Common.Navigation.support",
+        name: "Roadmap",
+        url: "/roadmap",
+        icon: Map,
+        translationKey: "Common.Navigation.roadmap",
       },
       {
         name: "Maintainers",
         url: "/maintainers",
         icon: Users,
         translationKey: "Common.Navigation.maintainers",
+      },
+      {
+        name: "Community",
+        url: "/community",
+        icon: Star,
+        translationKey: "Common.Navigation.community",
       },
       {
         name: "GitHub",
@@ -441,7 +448,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
             <SidebarGroup>
               <SidebarGroupLabel>
-                {t("Common.Navigation.community")}
+                {t("Common.Navigation.explore")}
               </SidebarGroupLabel>
               <SidebarMenu>
                 {data.home.links.map((item: any) => {

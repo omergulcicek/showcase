@@ -3,17 +3,47 @@
     "title": "ViraStack",
     "description": "Modern yazılım standartları için yüksek performanslı Frontend mimarileri ve geliştirici odaklı araçlar.",
     "ctaGithub": "GitHub'da Destekle",
-    "openSourceLibraries": "Açık Kaynak Kütüphaneler"
+    "openSourceLibraries": "Açık Kaynak Kütüphaneler",
+    "aboutSeoTitle": "Hakkında",
+    "aboutSeoBody": "ViraStack, React ve Next.js ekosistemini yüksek disiplinli standartlarla bir araya getiren modern bir frontend ekosistemidir. Karmaşık yapılandırmalar yerine ürünleşmiş mimariler sunarak, her ölçekteki proje için hızlı, ölçeklenebilir ve sürdürülebilir bir geliştirme zemini sağlar. Yapay zeka uyumlu protokolleri ve hazır başlangıç kitleriyle, geliştirici üretkenliğini en üst seviyeye çıkarmayı hedefler.",
+    "aboutSeoCta": "Hakkında sayfasının tamamını oku"
   },
-  "Labs": {
-    "title": "Laboratuvar",
-    "description": "ViraStack ekosistemini karmaşıklığı otomatikleştirmek için tasarlanmış yüksek disiplinli geliştirici araçlarıyla genişletiyoruz. Akıllı CLI iş akışları ve dayanıklı hata yönetimi mimarilerinden birleştirilmiş yapılandırma standartlarına kadar, tavizsiz yazılım kalitesi için DX odaklı altyapının yeni neslini inşa ediyoruz."
+  "Roadmap": {
+    "title": "Yol haritası",
+    "description": "ViraStack ekosisteminde sırada ne var: yaklaşan ve üzerinde çalışılan projeler, deneyler ve sürümler—planı ve önceliklerin nasıl şekillendiğini buradan takip edebilirsiniz."
   },
-  "Support": {
-    "title": "Destek",
+  "Community": {
+    "title": "Topluluk",
+    "homeTeaser": "ViraStack'in büyümesi ve ulaşılabilirliği topluluğumuza bağlıdır. Büyümemize yardımcı olmak ve yapacaklarımızı şekillendirmek için projelerimizi GitHub'da yıldızlamak en etkili yoldur.",
     "description1": "ViraStack'in büyümesi ve ulaşılabilirliği doğrudan topluluğumuza bağlıdır. Büyümemize yardımcı olmanın ve bu ekosistemi sürdürülebilir kılmanın en etkili yolu, görünürlüğümüzü artırmak için projelerimizi GitHub'da yıldızlamaktır.",
     "description2": "Gelecek projelerimize verilen her yıldız büyük bir motivasyon kaynağıdır ve gelecekteki özellikleri önceliklendirmemize yardımcı olur.",
     "description3": "ViraStack'i bizimle birlikte inşa ettiğiniz için teşekkür ederiz."
+  },
+  "About": {
+    "metaTitle": "ViraStack Hakkında: Modern Frontend Ekosistemi | ViraStack",
+    "metaDescription": "ViraStack nedir? React ve Next.js tabanlı başlangıç şablonları, AI Rules, geliştirme prensipleri ve açık kaynak topluluğu. Bireysel geliştiriciler ve küçük ekipler için sürdürülebilir frontend ekosistemi.",
+    "projectName": "Frontend Ekosistemi",
+    "intro": "Yüksek performanslı mimariler ve modern yazılım standartlarıyla inşa edilmiş, geliştirici odaklı açık bir üretim zeminidir. Hız, gelişmiş dosya mimarisi ve modüler paketlerle çalışmak isteyen tüm geliştiriciler içindir.",
+    "whatIsHeading": "ViraStack Nedir?",
+    "whatIsBody": "React, Next.js ve TypeScript ekosistemini en verimli haliyle bir araya getiren yüksek disiplinli bir geliştirme zeminidir. ViraStack; karmaşık konfigürasyon süreçlerini ürünleşmiş standartlara dönüştürerek, her ölçekteki proje için kaliteli, sürdürülebilir ve tekrarlanabilir bir mimari sunmayı hedefler.",
+    "principlesHeading": "Geliştirme Prensiplerimiz",
+    "perfTitle": "Performans ve Güncel Stack",
+    "perfBody": "Ölçeklenebilir, okunabilir ve modern teknolojilerle optimize edilmiş mimariler sunuyoruz. En güncel kütüphaneleri performans kaygısı gütmeden projenize entegre ediyoruz.",
+    "dxTitle": "Geliştirici Deneyimi (DX)",
+    "dxBody": "Başlangıç kitleri, özel hook'lar ve mikro yardımcılarla tekrarlayan işleri minimize ediyoruz. Geliştiricinin sadece iş mantığına odaklanmasını sağlayan akışlar kurguluyoruz.",
+    "archTitle": "Disiplinli Mimari",
+    "archBody": "TypeScript ve net sınırlar sayesinde \"her projede baştan karar verme\" yükünü ortadan kaldırıyoruz. Takım içi tutarlılığı sağlayan katı ama esnek standartlar belirliyoruz.",
+    "aiTitle": "Yapay Zeka Uyumu",
+    "aiBody": "İnsan ve yapay zekanın aynı mimari dilde buluştuğu sürdürülebilir bir düzen kuruyoruz. AI Rules protokolleri ile asistanların kod üretim kalitesini artırıyoruz.",
+    "layersHeading": "Ekosistem Katmanları",
+    "starterTitle": "React Başlangıç Kiti (Next.js/TanStack)",
+    "starterBody": "Tutarlı dosya düzeni, üretime hazır yapı ve tekrar kullanılabilir kalıplarla projeye en hızlı girişi sağlayan profesyonel başlangıç şablonları sunuyoruz. Bu şablonlar modern frontend ihtiyaçlarını eksiksiz karşılar.",
+    "helpersTitle": "Mikro Yardımcılar ve Standartlar",
+    "helpersBody": "Form yönetimini kolaylaştıran pratik paketler, AI kod yazım sürecini disipline eden mimari kurallar ve modern web standartlarını özetleyen rehberler ile günlük iş yükünüzü hafifletiyoruz.",
+    "roadmapTitle": "Yol Haritası: CLI ve daha fazlası",
+    "roadmapBody": "<start>Start (CLI)</start>, <standards>Standards</standards> ve <errorguard>Error Guard</errorguard> gibi projelerle ekosistemi uçtan uca tamamlıyoruz. Gelecek vizyonumuz, her aşamada güvenli ve ölçeklenebilir bir geliştirme hattı oluşturmaktır.",
+    "communityHeading": "Topluluk ve Katkı",
+    "communityBody": "Katkıda bulunmak için <github>GitHub projelerimizi yıldızlayarak</github> bize görünürlük kazandırabilir, geri bildirimlerinizle ekosistemin yönünü belirleyebilirsiniz. <community>Topluluk sayfamıza</community> göz atabilir veya doğrudan kod tabanına katkı sunabilirsiniz."
   },
   "Maintainers": {
     "title": "Geliştiriciler",
@@ -33,9 +63,10 @@
     },
     "Navigation": {
       "projects": "Projeler",
+      "explore": "Keşfet",
+      "about": "Hakkında",
+      "roadmap": "Yol haritası",
       "community": "Topluluk",
-      "labs": "Laboratuvar",
-      "support": "Destek",
       "maintainers": "Geliştiriciler"
     },
     "Action": {

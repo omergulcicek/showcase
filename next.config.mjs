@@ -30,6 +30,26 @@ export default withNextIntl(
       return config;
     },
     trailingSlash: true,
+    async redirects() {
+      return [
+        { source: "/en/labs", destination: "/en/roadmap", permanent: true },
+        { source: "/en/labs/", destination: "/en/roadmap/", permanent: true },
+        { source: "/tr/labs", destination: "/tr/roadmap", permanent: true },
+        { source: "/tr/labs/", destination: "/tr/roadmap/", permanent: true },
+        { source: "/en/support", destination: "/en/community", permanent: true },
+        {
+          source: "/en/support/",
+          destination: "/en/community/",
+          permanent: true,
+        },
+        { source: "/tr/support", destination: "/tr/community", permanent: true },
+        {
+          source: "/tr/support/",
+          destination: "/tr/community/",
+          permanent: true,
+        },
+      ];
+    },
     output: "standalone",
     transpilePackages: ["nextra", "next-intl"],
     turbopack: {

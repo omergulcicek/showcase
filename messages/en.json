@@ -3,17 +3,47 @@
     "title": "ViraStack",
     "description": "High-performance Frontend architectures and developer-centric tools for modern software standards.",
     "ctaGithub": "Star on GitHub",
-    "openSourceLibraries": "Open Source Libraries"
+    "openSourceLibraries": "Open Source Libraries",
+    "aboutSeoTitle": "About",
+    "aboutSeoBody": "ViraStack is a modern frontend ecosystem that brings the React and Next.js landscape together with high-discipline standards. By transforming complex configurations into productized architectures, it provides a fast, scalable, and sustainable development foundation for projects of any scale. With AI-aligned protocols and ready-to-use starter kits, it aims to maximize developer productivity to the fullest.",
+    "aboutSeoCta": "Read the full about page"
   },
-  "Labs": {
-    "title": "Laboratory",
-    "description": "We are expanding the ViraStack ecosystem with high-discipline developer tools designed to automate complexity. From intelligent CLI workflows and resilient error-handling architectures to unified configuration standards, we are building the next generation of DX-focused infrastructure for uncompromising software quality."
+  "Roadmap": {
+    "title": "Roadmap",
+    "description": "What we are building next across the ViraStack ecosystem: upcoming and in-progress projects, experiments, and releases—so you can see what is planned and how priorities evolve."
   },
-  "Support": {
-    "title": "Support",
+  "Community": {
+    "title": "Community",
+    "homeTeaser": "The growth and reach of ViraStack depend on our community. Starring our projects on GitHub is the most effective way to help us grow and shape what we build next.",
     "description1": "The growth and reach of ViraStack depend directly on our community. The most effective way to help us grow and keep this ecosystem sustainable is by starring our projects on GitHub to increase our visibility.",
     "description2": "Every star given to our upcoming projects serves as a great motivation and helps us prioritize future features.",
     "description3": "Thank you for building ViraStack with us."
+  },
+  "About": {
+    "metaTitle": "About ViraStack: Modern Frontend Ecosystem | ViraStack",
+    "metaDescription": "What is ViraStack? React and Next.js-based starter templates, AI Rules, development principles, and an open source community. A sustainable frontend ecosystem for individual developers and small teams.",
+    "projectName": "Frontend ecosystem",
+    "intro": "It is an open production ground built with high-performance architectures and modern software standards, developer-focused. It is for all developers who want to work with speed, advanced file architecture, and modular packages.",
+    "whatIsHeading": "What is ViraStack?",
+    "whatIsBody": "It is a highly disciplined development ground that brings the React, Next.js, and TypeScript ecosystem together in its most efficient form. ViraStack aims to offer quality, sustainable, and repeatable architecture for projects of every scale by transforming complex configuration processes into productized standards.",
+    "principlesHeading": "Our development principles",
+    "perfTitle": "Performance and current stack",
+    "perfBody": "We offer architectures that are scalable, readable, and optimized with modern technologies. We integrate the latest libraries into your project without performance concerns.",
+    "dxTitle": "Developer experience (DX)",
+    "dxBody": "We minimize repetitive work with starter kits, custom hooks, and micro helpers. We design flows that let the developer focus only on business logic.",
+    "archTitle": "Disciplined architecture",
+    "archBody": "Thanks to TypeScript and clear boundaries, we remove the burden of \"deciding from scratch on every project.\" We set strict but flexible standards that ensure consistency within the team.",
+    "aiTitle": "AI alignment",
+    "aiBody": "We establish a sustainable order where humans and AI meet in the same architectural language. With AI Rules protocols we improve the code generation quality of assistants.",
+    "layersHeading": "Ecosystem layers",
+    "starterTitle": "React starter kit (Next.js/TanStack)",
+    "starterBody": "We offer professional starter templates that provide the fastest entry to the project with consistent file layout, production-ready structure, and reusable patterns. These templates fully meet modern frontend needs.",
+    "helpersTitle": "Micro helpers and standards",
+    "helpersBody": "We lighten your daily workload with practical packages that ease form management, architectural rules that discipline the AI code-writing process, and guides that summarize modern web standards.",
+    "roadmapTitle": "Roadmap: CLI and more",
+    "roadmapBody": "With projects such as <start>Start (CLI)</start>, <standards>Standards</standards>, and <errorguard>Error Guard</errorguard> we complete the ecosystem end to end. Our future vision is to create a secure and scalable development pipeline at every stage.",
+    "communityHeading": "Community and contribution",
+    "communityBody": "To contribute, <github>by starring our GitHub projects</github> you can give us visibility, and with your feedback you can shape the direction of the ecosystem. You can visit <community>our community page</community> or contribute directly to the codebase."
   },
   "Maintainers": {
     "title": "Maintainers",
@@ -33,9 +63,10 @@
     },
     "Navigation": {
       "projects": "Projects",
+      "explore": "Explore",
+      "about": "About",
+      "roadmap": "Roadmap",
       "community": "Community",
-      "labs": "Labs",
-      "support": "Support",
       "maintainers": "Maintainers"
     },
     "Action": {
