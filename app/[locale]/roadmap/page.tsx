@@ -26,7 +26,7 @@ export default async function RoadmapPage({
   const roadmapProjects = projects.filter((p) => p.status);
 
   return (
-    <main className="flex min-h-[calc(100vh-160px)] flex-col gap-8 px-12 md:px-16 pb-8">
+    <main className="flex min-h-[calc(100vh-160px)] 2xl:max-w-6xl 2xl:mx-auto flex-col gap-8 px-12 md:px-16 pb-8">
       <div className="flex flex-col gap-4">
         <h1 className="text-4xl font-black">{t("title")}</h1>
         <p className="text-lg text-muted-foreground max-w-3xl">

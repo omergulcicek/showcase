@@ -50,7 +50,7 @@ export default async function AboutPage({
   const t = await getTranslations("About");
 
   return (
-    <main className="flex min-h-[calc(100vh-160px)] flex-col gap-16 px-8 md:px-16 pb-24 2xl:max-w-4xl 2xl:mx-auto">
+    <main className="flex min-h-[calc(100vh-160px)] flex-col gap-16 px-8 md:px-16 pb-24 2xl:max-w-6xl 2xl:mx-auto">
       <header className="flex flex-col gap-4 pt-10">
         <ViraStackProjectHeading
           projectName={t("projectName")}

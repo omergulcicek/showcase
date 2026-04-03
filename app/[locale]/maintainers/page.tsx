@@ -24,7 +24,7 @@ export default async function MaintainersPage({
   const t = await getTranslations("Maintainers");
 
   return (
-    <main className="flex min-h-[calc(100vh-160px)] flex-col gap-8 px-12 md:px-16 pb-8">
+    <main className="flex min-h-[calc(100vh-160px)] 2xl:max-w-6xl 2xl:mx-auto flex-col gap-8 px-12 md:px-16 pb-8">
       <div className="flex flex-col gap-4">
         <h1 className="text-4xl font-black">{t("title")}</h1>
         <p className="text-lg text-muted-foreground max-w-3xl">
@@ -38,7 +38,7 @@ export default async function MaintainersPage({
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <UserCard
           name="Ömer Gülçiçek"
           description={t("roles.founder")}
