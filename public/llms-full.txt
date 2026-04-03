@@ -1,0 +1,82 @@
+# ViraStack web — full context for LLMs and tooling
+
+This file describes the `virastack-showcase` Next.js application: routing, i18n, documentation pipeline, and where to change UI copy vs MDX content. Use it when editing this repository or answering questions about the public site.
+
+## Canonical site
+
+- Production host: https://virastack.com
+- Root request redirects to default locale: `/en/` (see `app/page.tsx`).
+- `next.config.mjs` sets `trailingSlash: true` — prefer URLs with a trailing slash when linking.
+
+## What this repo is
+
+- A **showcase and documentation site** for ViraStack open-source projects (boilerplates, libraries, guides).
+- **UI strings** are translated with **next-intl** (`messages/en.json`, `messages/tr.json`).
+- **Long-form docs** for some products use **Nextra 4** + **MDX** under `content/<locale>/...`, rendered by the catch-all route `app/[locale]/[...mdxPath]/`.
+
+## Locales
+
+- Supported: `en`, `tr`.
+- Default locale: `en` (`constants/i18n.constants.ts`, `nextra-i18n.shared.mjs`).
+- Nextra locale list must stay in sync: `NEXTRA_I18N` in `nextra-i18n.shared.mjs` is the single source for Nextra; `routing` in `i18n/routing.ts` uses the same locale codes via `SUPPORTED_LOCALES`.
+
+## High-level directory map
+
+- `app/` — App Router. Locale segment: `app/[locale]/`.
+  - `app/page.tsx` — redirects to `/en`.
+  - `app/[locale]/layout.tsx` — shell: header, sidebar, theme, toasts, `NextIntlClientProvider`, `QueryProvider`, Google Analytics.
+  - `app/[locale]/[...mdxPath]/` — Nextra MDX pages (dynamic; see `page.tsx` for metadata and `dynamic = "force-dynamic"` rationale).
+  - Other folders under `app/[locale]/` — React pages (about, roadmap, project landing pages, demos).
+- `content/en/`, `content/tr/` — MDX trees per product (e.g. `input-mask/`, `password-toggle/`). Sidebar order/titles use `_meta.js` files.
+- `components/` — Shared UI (includes shadcn-style components under `components/ui/`).
+- `data/projects.ts` — Project cards: name, `descriptionKey` (for next-intl), paths, optional `docsUrl`, GitHub `repo`, status.
+- `messages/en.json`, `messages/tr.json` — next-intl message catalogs.
+- `i18n/` — `routing.ts`, `request.ts` (loads messages, `timeZone: "Europe/Istanbul"`), `navigation.ts` (locale-aware `Link`).
+- `public/` — Static assets; `llms.txt` and `llms-full.txt` are served here at site root.
+
+## Technology stack (package highlights)
+
+- Next.js 16, React 19, TypeScript.
+- Tailwind CSS 4, PostCSS.
+- next-intl for i18n.
+- Nextra 4 + nextra-theme-docs for MDX docs; theme styles imported in `app/[locale]/layout.tsx`.
+- TanStack React Query, TanStack Table (where used).
+- Forms: React Hook Form, Zod, `@hookform/resolvers`.
+- UI: Radix / shadcn-style primitives, lucide-react, Sonner, next-themes, Framer Motion / motion, Recharts (demos).
+- Scoped npm packages used in demos: `@virastack/input-mask`, `@virastack/password-toggle`.
+
+## Configuration notes
+
+- `next.config.mjs`: composes `createNextIntlPlugin()` and `nextra()`. Defines `i18n` for Nextra from `NEXTRA_I18N`, `env` for `NEXTRA_*`, and a `webpack.DefinePlugin` block so Nextra server chunks receive `process.env.NEXTRA_DEFAULT_LOCALE` and `process.env.NEXTRA_LOCALES` (commented as fixing MDX 500 on Vercel).
+- `output: "standalone"` for container/edge-friendly builds.
+- Redirects: `/labs` → `/roadmap`, `/support` → `/community` (per locale prefix in config).
+
+## Product list (from `data/projects.ts`)
+
+- Next.js Boilerplate — `/nextjs-boilerplate`, repo virastack/nextjs-boilerplate
+- AI Rules — `/ai-rules`, repo virastack/ai-rules
+- Input Mask — docs `/input-mask/getting-started`, repo virastack/input-mask
+- Password Toggle — docs `/password-toggle/getting-started`, repo virastack/password-toggle
+- Modern Web in 3 Minutes — `/modern-web-in-3-minutes`, repo virastack/modern-web-in-3-minutes
+- TanStack Boilerplate — `/tanstack-boilerplate`, status In Dev
+- Start (CLI) — `/cli`, status Research, repo virastack/cli
+- Standards — `/standards`, status Coming Soon, repo virastack/standards
+- Error Guard — `/error-guard`, status Coming Soon, repo virastack/error-guard
+
+## Editing guidelines for contributors
+
+- **New UI copy** for locale-aware pages: add keys to both `messages/en.json` and `messages/tr.json`; use `useTranslations` or server APIs from next-intl as elsewhere in the app.
+- **Navigation / sidebar**: `components/app-sidebar.tsx` references `projects` from `data/projects.ts` and translation keys for labels.
+- **New MDX documentation**: add under `content/en/<slug>/` and mirror structure in `content/tr/<slug>/` when Turkish is required; maintain `_meta.js` for Nextra navigation.
+- **Project card**: extend `data/projects.ts` and add matching description keys in message JSON files.
+
+## Scripts (package.json)
+
+- `pnpm dev` — Next dev server
+- `pnpm build` — production build (`NEXT_TURBOPACK=0 next build`)
+- `pnpm start` — production server
+- `pnpm lint` — ESLint
+
+## Optional
+
+- Search UI assets live under `public/_pagefind/` (Pagefind).

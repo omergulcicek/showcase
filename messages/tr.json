@@ -328,7 +328,7 @@
       "libraries": "Kütüphaneler",
       "validation": "Doğrulama",
       "apiReference": "API Referansı",
-      "engine": "Motor",
+      "engine": "Temel",
       "utilities": "Araçlar",
       "types": "Tipler"
     },
@@ -420,7 +420,7 @@
       "action": "ilk şey nedir?"
     },
     "Step1": {
-      "title": "Motor",
+      "title": "Temel",
       "description1": "Eskiden web sadece HTML ve CSS'ten ibaretti. Bugün modern web'in temelini ",
       "and": "ve",
       "alternatively": "Alternatif olarak, ",

@@ -1,0 +1,35 @@
+# ViraStack
+
+> ViraStack web: open-source frontend tooling showcase, product docs (Nextra MDX), and marketing pages. Next.js App Router, next-intl (en/tr), Nextra 4.
+
+Full machine-oriented map and repo conventions: [llms-full.txt](/llms-full.txt)
+
+## Site (default locale: English)
+
+- [Home](https://virastack.com/en/): project hub and entry
+- [About](https://virastack.com/en/about/): project / org context
+- [Roadmap](https://virastack.com/en/roadmap/): planned work
+- [Maintainers](https://virastack.com/en/maintainers/): people
+- [Community](https://virastack.com/en/community/): community links
+- [Standards](https://virastack.com/en/standards/): standards initiative (coming soon)
+- [CLI](https://virastack.com/en/cli/): Start CLI (research)
+- [Dashboard demo](https://virastack.com/en/dashboard/): UI demo page
+
+## Product pages & docs (locale-prefixed)
+
+- [Next.js Boilerplate](https://virastack.com/en/nextjs-boilerplate/)
+- [AI Rules](https://virastack.com/en/ai-rules/)
+- [Input Mask — docs](https://virastack.com/en/input-mask/getting-started/)
+- [Password Toggle — docs](https://virastack.com/en/password-toggle/getting-started/)
+- [Modern Web in 3 Minutes](https://virastack.com/en/modern-web-in-3-minutes/)
+- [TanStack Boilerplate](https://virastack.com/en/tanstack-boilerplate/)
+- [Error Guard](https://virastack.com/en/error-guard/)
+
+## Turkish locale
+
+- [Ana sayfa (tr)](https://virastack.com/tr/)
+
+## Source & packages
+
+- Organization: [github.com/virastack](https://github.com/virastack)
+- This site’s stack: Next.js 16, React 19, TypeScript, Tailwind CSS 4, next-intl, Nextra, TanStack Query, Zod, React Hook Form.
