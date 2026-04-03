@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useTranslations } from "next-intl";
 import { usePathname, Link } from "@/i18n/navigation";
 import {
   Breadcrumb,
@@ -20,7 +21,16 @@ const projectNames: Record<string, string> = {
   cli: "Start (CLI)",
 };
 
-function formatSegment(segment: string, index: number) {
+const staticNavSegments = new Set(["about", "roadmap", "community", "maintainers"]);
+
+function formatSegment(
+  segment: string,
+  index: number,
+  tNav: ReturnType<typeof useTranslations<"Common.Navigation">>,
+) {
+  if (staticNavSegments.has(segment)) {
+    return tNav(segment as "about" | "roadmap" | "community" | "maintainers");
+  }
   if (index === 0 && projectNames[segment]) {
     return projectNames[segment];
   }
@@ -32,6 +42,7 @@ function formatSegment(segment: string, index: number) {
 
 export function DynamicBreadcrumb() {
   const pathname = usePathname();
+  const tNav = useTranslations("Common.Navigation");
   const segments = pathname.split("/").filter(Boolean);
 
   if (pathname === "/") return null;
@@ -57,7 +68,7 @@ export function DynamicBreadcrumb() {
           {segments.map((segment, index) => {
             const isLast = index === segments.length - 1;
             const href = `/${segments.slice(0, index + 1).join("/")}`;
-            const title = formatSegment(segment, index);
+            const title = formatSegment(segment, index, tNav);
 
             return (
               <React.Fragment key={href}>
